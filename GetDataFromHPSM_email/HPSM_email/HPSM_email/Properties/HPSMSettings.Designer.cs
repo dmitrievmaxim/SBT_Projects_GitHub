@@ -25,7 +25,7 @@ namespace HPSM_email.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\SBT-Dmitriev-MV\\DEV\\GetDataFromHPSM_email\\tmp_test")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\SBT-Dmitriev-MV\\DEV\\Projects\\GetDataFromHPSM_email\\tmp_test\\")]
         public string pathToFiles {
             get {
                 return ((string)(this["pathToFiles"]));
@@ -37,7 +37,7 @@ namespace HPSM_email.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("lastfile")]
+        [global::System.Configuration.DefaultSettingValueAttribute("000")]
         public string prevFileName {
             get {
                 return ((string)(this["prevFileName"]));

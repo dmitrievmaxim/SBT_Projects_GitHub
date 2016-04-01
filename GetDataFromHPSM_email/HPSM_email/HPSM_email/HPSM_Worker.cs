@@ -5,30 +5,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using sql_w = HPSM_email.SQL_Worker;
+using prop = HPSM_email.Properties;
+using System.IO;
 
 namespace HPSM_email
 {
     class HPSM_Worker
     {
-        public bool _flag;
-        public string _message;
-
         private IList<Attribs.HPSM_Attribs> _listAllTimesheetsHPSM = new List<Attribs.HPSM_Attribs>();
 
         public HPSM_Worker()
         {
-            Files_Worker f_worker = new Files_Worker();
-            f_worker.Work(out _flag, out _message);
+            try
+            {
+                Files_Worker f_worker = new Files_Worker();
+                f_worker.Work();
+                string path = prop.HPSMSettings.Default.pathToFiles;
+                string file = prop.HPSMSettings.Default.prevFileName;
+                System.IO.File.Move(path + file, path + file + ".xls");
 
-            if (_flag == false)
-            
-            //string path = @"C:\Users\SBT-Dmitriev-MV\DEV\GetDataFromHPSM_email\hpsm_data.XLS";
 
-            DropCreateExecutes(); //Drop and creates tempo table
-            ExcelWorker.ExcelWorker exl = new ExcelWorker.ExcelWorker(path);
-            exl.ReadExcel(ref _listAllTimesheetsHPSM);
-            exl.ExcelStop();
-            ExportData();
+
+                //string path = @"C:\Users\SBT-Dmitriev-MV\DEV\GetDataFromHPSM_email\hpsm_data.XLS";
+
+                DropCreateExecutes(); //Drop and creates tempo table
+                ExcelWorker.ExcelWorker exl = new ExcelWorker.ExcelWorker(path);
+                exl.ReadExcel(ref _listAllTimesheetsHPSM);
+                exl.ExcelStop();
+                ExportData();
+            }
+            catch (Exception ex)
+            {
+                throw new HPSMException(ex.ToString());
+            }
         }
 
         private void DropCreateExecutes()

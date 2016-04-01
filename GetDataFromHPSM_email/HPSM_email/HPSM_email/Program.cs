@@ -10,16 +10,13 @@ namespace HPSM_email
 {
     class Program
     {
+        public static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         static void Main(string[] args)
         {
-            bool flag;
-            string message;
-            Files_Worker f_work = new Files_Worker();
-            f_work.Work(out flag, out message);
-            /*
             HPSM_Worker work = new HPSM_Worker();
+            log.Info("Import SUCCESS\n");
             Console.WriteLine("Import SUCCESS\n");
-            Console.ReadKey();*/
+            Console.ReadKey();
         }
     }
 }

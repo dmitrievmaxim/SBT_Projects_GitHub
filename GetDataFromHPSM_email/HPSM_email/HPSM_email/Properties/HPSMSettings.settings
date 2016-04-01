@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="pathToFiles" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Users\SBT-Dmitriev-MV\DEV\GetDataFromHPSM_email\tmp_test</Value>
+      <Value Profile="(Default)">C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_email\tmp_test\</Value>
     </Setting>
     <Setting Name="prevFileName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">lastfile</Value>
+      <Value Profile="(Default)">000</Value>
     </Setting>
     <Setting Name="prevFileCreatedDate" Type="System.DateTime" Scope="User">
       <Value Profile="(Default)">2016-03-01</Value>

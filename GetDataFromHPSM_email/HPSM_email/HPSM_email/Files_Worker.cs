@@ -20,8 +20,8 @@ namespace HPSM_email
         {
             try
             {
-                List<string> files = GetFiles(_path, "*?.xls|*.xlsx");
-
+                //List<string> files = GetFiles(_path, "*?.xls|*.xlsx");
+                List<string> files = GetFiles(_path);
                 for (int k = 0; k < files.Count; k++)
                 {
                     for (int j = 0; j < files.Count - k - 1; j++)
@@ -62,20 +62,41 @@ namespace HPSM_email
             }
         }
 
-        static List<string> GetFiles(string path, string searchPattern)
+        static List<string> GetFiles(string _path) // Неизвестно расширение файлов
         {
-            string[] searchPatterns = searchPattern.Split('|');
             List<string> files = new List<string>();
-            foreach (string sp in searchPatterns)
+            try
             {
-                List<string> tmp = new List<string>();
-                tmp.AddRange(Directory.GetFiles(path, sp));
+                files.AddRange(Directory.GetFiles(_path));
+            }
+            catch (Exception ex)
+            {
+                throw new HPSMException(ex.ToString());
+            }
+            return files;
+        }
 
-                for (int n = 0; n < tmp.Count; n++)
+        static List<string> GetFiles(string path, string searchPattern) //Известено расширение файлов
+        {
+            List<string> files = new List<string>();
+            try
+            {
+                string[] searchPatterns = searchPattern.Split('|');
+                foreach (string sp in searchPatterns)
                 {
-                    if (new FileInfo(tmp[n]).Extension == sp.Substring(sp.IndexOf('.')))
-                        files.Add(tmp[n]);
+                    List<string> tmp = new List<string>();
+                    tmp.AddRange(Directory.GetFiles(path, sp));
+
+                    for (int n = 0; n < tmp.Count; n++)
+                    {
+                        if (new FileInfo(tmp[n]).Extension == sp.Substring(sp.IndexOf('.')))
+                            files.Add(tmp[n]);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                throw new HPSMException(ex.ToString());
             }
             return files;
         }
@@ -83,18 +104,32 @@ namespace HPSM_email
         static void cleanOldFiles(ref List<string> files)
         {
             int filesLimit = 31;
-            if (files.Count > filesLimit)
+            try
             {
-                List<string> removeFiles = files.GetRange(filesLimit, files.Count - filesLimit);
-                files.RemoveRange(filesLimit, files.Count - filesLimit);
-                deleteFiles(ref removeFiles);
+                if (files.Count > filesLimit)
+                {
+                    List<string> removeFiles = files.GetRange(filesLimit, files.Count - filesLimit);
+                    files.RemoveRange(filesLimit, files.Count - filesLimit);
+                    deleteFiles(ref removeFiles);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new HPSMException(ex.ToString());
             }
         }
 
         static void deleteFiles(ref List<string> removeFiles)
         {
-            foreach (var file in removeFiles)
-                File.Delete(file);
+            try
+            {
+                foreach (var file in removeFiles)
+                    File.Delete(file);
+            }
+            catch (Exception ex)
+            {
+                throw new HPSMException(ex.ToString());
+            }
         }
     }
 }
