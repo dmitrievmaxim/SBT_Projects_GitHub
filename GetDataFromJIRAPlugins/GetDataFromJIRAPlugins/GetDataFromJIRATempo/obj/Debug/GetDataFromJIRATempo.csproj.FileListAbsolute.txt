@@ -1,0 +1,3 @@
+C:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\bin\Debug\GetDataFromJIRATempo.exe.config
+C:\Users\TEMP.MYCOMPUTER\Desktop\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\bin\Debug\GetDataFromJIRATempo.exe.config
+C:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins_new\GetDataFromJIRAPlugins\GetDataFromJIRATempo\bin\Debug\GetDataFromJIRATempo.exe.config

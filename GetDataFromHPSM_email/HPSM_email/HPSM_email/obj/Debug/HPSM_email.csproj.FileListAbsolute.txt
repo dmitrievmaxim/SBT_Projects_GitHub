@@ -1,0 +1,8 @@
+C:\Users\SBT-Dmitriev-MV\DEV\GetDataFromHPSM_email\HPSM_email\HPSM_email\bin\Debug\HPSM_email.exe.config
+C:\Users\SBT-Dmitriev-MV\DEV\GetDataFromHPSM_email\HPSM_email\HPSM_email\bin\Debug\HPSM_email.exe
+C:\Users\SBT-Dmitriev-MV\DEV\GetDataFromHPSM_email\HPSM_email\HPSM_email\bin\Debug\HPSM_email.pdb
+C:\Users\SBT-Dmitriev-MV\DEV\GetDataFromHPSM_email\HPSM_email\HPSM_email\bin\Debug\log4net.dll
+C:\Users\SBT-Dmitriev-MV\DEV\GetDataFromHPSM_email\HPSM_email\HPSM_email\bin\Debug\Oracle.DataAccess.dll
+C:\Users\SBT-Dmitriev-MV\DEV\GetDataFromHPSM_email\HPSM_email\HPSM_email\bin\Debug\log4net.xml
+C:\Users\SBT-Dmitriev-MV\DEV\GetDataFromHPSM_email\HPSM_email\HPSM_email\obj\Debug\HPSM_email.exe
+C:\Users\SBT-Dmitriev-MV\DEV\GetDataFromHPSM_email\HPSM_email\HPSM_email\obj\Debug\HPSM_email.pdb

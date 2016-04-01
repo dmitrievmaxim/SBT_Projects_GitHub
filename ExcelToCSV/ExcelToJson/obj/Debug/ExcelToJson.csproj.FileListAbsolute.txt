@@ -1,0 +1,16 @@
+C:\Users\SBT-Dmitriev-MV\DEV\ExcelToJson\ExcelToJson\bin\Debug\ExcelToJson.exe.config
+C:\Users\SBT-Dmitriev-MV\DEV\ExcelToJson\ExcelToJson\bin\Debug\ExcelToJson.exe
+C:\Users\SBT-Dmitriev-MV\DEV\ExcelToJson\ExcelToJson\bin\Debug\ExcelToJson.pdb
+C:\Users\SBT-Dmitriev-MV\DEV\ExcelToJson\ExcelToJson\bin\Debug\Newtonsoft.Json.dll
+C:\Users\SBT-Dmitriev-MV\DEV\ExcelToJson\ExcelToJson\bin\Debug\Newtonsoft.Json.xml
+C:\Users\SBT-Dmitriev-MV\DEV\ExcelToJson\ExcelToJson\obj\Debug\ExcelToJson.csprojResolveAssemblyReference.cache
+C:\Users\SBT-Dmitriev-MV\DEV\ExcelToJson\ExcelToJson\obj\Debug\ExcelToJson.exe
+C:\Users\SBT-Dmitriev-MV\DEV\ExcelToJson\ExcelToJson\obj\Debug\ExcelToJson.pdb
+C:\Users\SBT-Dmitriev-MV\Desktop\ExcelToCSV\ExcelToJson\bin\Debug\ExcelToJson.exe.config
+C:\Users\SBT-Dmitriev-MV\Desktop\ExcelToCSV\ExcelToJson\obj\Debug\ExcelToJson.exe
+C:\Users\SBT-Dmitriev-MV\Desktop\ExcelToCSV\ExcelToJson\obj\Debug\ExcelToJson.pdb
+C:\Users\SBT-Dmitriev-MV\Desktop\ExcelToCSV\ExcelToJson\obj\Debug\ExcelToJson.csprojResolveAssemblyReference.cache
+C:\Users\SBT-Dmitriev-MV\Desktop\ExcelToCSV\ExcelToJson\bin\Debug\ExcelToJson.exe
+C:\Users\SBT-Dmitriev-MV\Desktop\ExcelToCSV\ExcelToJson\bin\Debug\ExcelToJson.pdb
+C:\Users\SBT-Dmitriev-MV\Desktop\ExcelToCSV\ExcelToJson\bin\Debug\Newtonsoft.Json.dll
+C:\Users\SBT-Dmitriev-MV\Desktop\ExcelToCSV\ExcelToJson\bin\Debug\Newtonsoft.Json.xml

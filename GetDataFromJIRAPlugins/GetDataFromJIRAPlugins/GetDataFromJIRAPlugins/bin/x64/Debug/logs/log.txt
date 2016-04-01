@@ -1,0 +1,4 @@
+2016-03-25 11:09:26,047 [10] INFO  GetDataFromJIRAPlugins.Program [(null)] - Authorization SUCCESS
+
+2016-03-25 11:12:39,883 [10] INFO  GetDataFromJIRAPlugins.Program [(null)] - Import SUCCESS
+

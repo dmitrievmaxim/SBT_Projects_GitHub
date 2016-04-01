@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="GetDataFromJIRATempo.Properties" GeneratedClassName="TempoSettings">
+  <Profiles />
+  <Settings>
+    <Setting Name="dateStart" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">2016-03-01</Value>
+    </Setting>
+    <Setting Name="dateFinish" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">2016-03-31</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

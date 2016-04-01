@@ -1,0 +1,323 @@
+2016-03-25 11:44:01,227 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:01,519 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:01,911 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:02,165 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:02,446 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:02,755 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:03,084 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:03,389 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:03,690 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:03,998 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:04,248 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:04,538 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:04,844 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:05,170 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:05,456 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:05,718 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:05,969 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:06,258 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:06,564 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:06,816 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:07,141 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:07,405 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:07,706 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:07,973 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:08,225 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:08,519 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:08,862 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:09,153 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:09,405 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:09,697 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:09,996 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:10,310 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:10,625 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:10,879 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:11,176 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:11,431 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:11,684 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:11,986 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:12,230 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:12,490 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:12,818 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:13,119 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:13,422 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:13,738 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:14,053 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:14,369 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:14,683 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:14,998 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:15,305 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:15,738 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:16,047 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:16,302 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:44:16,598 [9] ERROR GetDataFromJIRAPlugins.SQL_Worker [(null)] - Oracle.DataAccess.Client.OracleException (0x80004005): ORA-00001: unique constraint (SBT_REP.ID_TIMESHEET_PK) violated
+ORA-06512: at line 1
+   at Oracle.DataAccess.Client.OracleException.HandleErrorHelper(Int32 errCode, OracleConnection conn, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, String procedure, Boolean bCheck, Int32 isRecoverable, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleException.HandleError(Int32 errCode, OracleConnection conn, String procedure, IntPtr opsErrCtx, OpoSqlValCtx* pOpoSqlValCtx, Object src, Boolean bCheck, OracleLogicalTransaction m_OracleLogicalTransaction)
+   at Oracle.DataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at GetDataFromJIRAPlugins.SQL_Worker.Execute(String sql) in c:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\SQL_Worker.cs:line 43
+2016-03-25 11:48:35,845 [8] INFO  GetDataFromJIRAPlugins.JIRA_Authorization [(null)] - Start auth
+2016-03-25 11:48:36,077 [8] INFO  GetDataFromJIRATempo.Program [(null)] - Authorization SUCCESS
+
+2016-03-25 11:50:40,796 [8] INFO  GetDataFromJIRATempo.Program [(null)] - Import SUCCESS
+

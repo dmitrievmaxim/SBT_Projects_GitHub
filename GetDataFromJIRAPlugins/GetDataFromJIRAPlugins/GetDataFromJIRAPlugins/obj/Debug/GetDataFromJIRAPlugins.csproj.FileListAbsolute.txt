@@ -1,0 +1,10 @@
+C:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\bin\Debug\GetDataFromJIRAPlugins.exe.config
+C:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\bin\Debug\GetDataFromJIRAPlugins.exe
+C:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\bin\Debug\GetDataFromJIRAPlugins.pdb
+C:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\bin\Debug\Newtonsoft.Json.dll
+C:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\bin\Debug\Oracle.DataAccess.dll
+C:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\bin\Debug\RestSharp.dll
+C:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\bin\Debug\Newtonsoft.Json.xml
+C:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\bin\Debug\RestSharp.xml
+C:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\obj\Debug\GetDataFromJIRAPlugins.exe
+C:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\obj\Debug\GetDataFromJIRAPlugins.pdb

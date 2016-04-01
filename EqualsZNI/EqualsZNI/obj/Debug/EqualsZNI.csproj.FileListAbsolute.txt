@@ -1,0 +1,14 @@
+C:\Users\SBT-Dmitriev-MV\Desktop\Козырева\tmp\ChangeExcel\ChangeExcel\bin\Debug\ChangeExcel.exe.config
+C:\Users\SBT-Dmitriev-MV\Desktop\Козырева\tmp\ChangeExcel\ChangeExcel\obj\Debug\ChangeExcel.exe
+C:\Users\SBT-Dmitriev-MV\Desktop\Козырева\tmp\ChangeExcel\ChangeExcel\obj\Debug\ChangeExcel.pdb
+C:\Users\SBT-Dmitriev-MV\Desktop\Козырева\tmp\ChangeExcel\ChangeExcel\bin\Debug\ChangeExcel.exe
+C:\Users\SBT-Dmitriev-MV\Desktop\Козырева\tmp\ChangeExcel\ChangeExcel\bin\Debug\ChangeExcel.pdb
+C:\Users\SBT-Dmitriev-MV\Desktop\Козырева\tmp\ChangeExcel\ChangeExcel\bin\Debug\Newtonsoft.Json.dll
+C:\Users\SBT-Dmitriev-MV\Desktop\Козырева\tmp\ChangeExcel\ChangeExcel\bin\Debug\Newtonsoft.Json.xml
+C:\Users\SBT-Dmitriev-MV\Desktop\Козырева\tmp\ChangeExcel\ChangeExcel\obj\Debug\EqualsZNI.csprojResolveAssemblyReference.cache
+C:\Users\SBT-Dmitriev-MV\Desktop\Козырева\tmp\EqualsZNI\EqualsZNI\bin\Debug\ChangeExcel.exe.config
+C:\Users\SBT-Dmitriev-MV\Desktop\Козырева\tmp\EqualsZNI\EqualsZNI\obj\Debug\ChangeExcel.exe
+C:\Users\SBT-Dmitriev-MV\Desktop\Козырева\tmp\EqualsZNI\EqualsZNI\obj\Debug\ChangeExcel.pdb
+C:\Users\SBT-Dmitriev-MV\DEV\EqualsZNI\EqualsZNI\bin\Debug\ChangeExcel.exe.config
+C:\Users\SBT-Dmitriev-MV\DEV\EqualsZNI\EqualsZNI\obj\Debug\ChangeExcel.exe
+C:\Users\SBT-Dmitriev-MV\DEV\EqualsZNI\EqualsZNI\obj\Debug\ChangeExcel.pdb
