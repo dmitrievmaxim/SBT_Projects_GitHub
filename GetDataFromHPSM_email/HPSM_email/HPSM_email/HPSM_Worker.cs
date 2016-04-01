@@ -10,11 +10,19 @@ namespace HPSM_email
 {
     class HPSM_Worker
     {
+        public bool _flag;
+        public string _message;
+
         private IList<Attribs.HPSM_Attribs> _listAllTimesheetsHPSM = new List<Attribs.HPSM_Attribs>();
 
         public HPSM_Worker()
         {
-            string path = @"C:\Users\SBT-Dmitriev-MV\DEV\GetDataFromHPSM_email\hpsm_data.XLS";
+            Files_Worker f_worker = new Files_Worker();
+            f_worker.Work(out _flag, out _message);
+
+            if (_flag == false)
+            
+            //string path = @"C:\Users\SBT-Dmitriev-MV\DEV\GetDataFromHPSM_email\hpsm_data.XLS";
 
             DropCreateExecutes(); //Drop and creates tempo table
             ExcelWorker.ExcelWorker exl = new ExcelWorker.ExcelWorker(path);

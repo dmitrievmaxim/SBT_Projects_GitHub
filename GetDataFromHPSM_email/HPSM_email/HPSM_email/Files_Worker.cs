@@ -16,7 +16,7 @@ namespace HPSM_email
         DateTime _lastFileCreatedDate = prop.HPSMSettings.Default.prevFileCreatedDate;
 
         //Get all files from working directory
-        public void Work(out bool flag, out string message)
+        public void Work()
         {
             try
             {
@@ -41,31 +41,24 @@ namespace HPSM_email
                 cleanOldFiles(ref files);
                 if (files.Count == 0)
                 {
-                    flag = false;
-                    message = "Warning: Import file is missing";
-                    return;
+                    throw new HPSMException("Warning: Import file is missing");
                 }
                 else if ((Path.GetFileName(files[0]) == _lastFile) &&  (new FileInfo(files[0]).CreationTime == _lastFileCreatedDate))
                 {
-                    flag = false;
-                    message = "Warning: Old file version";
-                    return;
+                    throw new HPSMException("Warning: Old file version");
                 }
                 else
                 {
+                    //Save properties settings
                     prop.HPSMSettings.Default.prevFileName = Path.GetFileName(files[0]);
                     prop.HPSMSettings.Default.prevFileCreatedDate = new FileInfo(files[0]).CreationTime;
                     prop.HPSMSettings.Default.Upgrade();
                     prop.HPSMSettings.Default.Save();
-                    flag = true;
-                    message = "SUCCSSES IMPORT";
                 }
             }
             catch (Exception ex)
             {
-                flag = false;
-                message = ex.ToString();
-                return;
+                throw new HPSMException(ex.ToString());
             }
         }
 

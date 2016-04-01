@@ -23,3 +23,6 @@ C:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDa
 C:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\bin\x64\Debug\Newtonsoft.Json.xml
 C:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\bin\x64\Debug\RestSharp.xml
 C:\Users\SBT-Dmitriev-MV\DEV\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\obj\x64\Debug\GetDataFromJIRAStructure.csprojResolveAssemblyReference.cache
+C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\bin\x64\Debug\GetDataFromJIRAPlugins.exe.config
+C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\obj\x64\Debug\GetDataFromJIRAPlugins.exe
+C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\obj\x64\Debug\GetDataFromJIRAPlugins.pdb
