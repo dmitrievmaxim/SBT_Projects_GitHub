@@ -6,3 +6,6 @@ C:\Users\SBT-Dmitriev-MV\DEV\ExcelToJson\ExcelToJson\bin\Debug\Newtonsoft.Json.x
 C:\Users\SBT-Dmitriev-MV\DEV\ExcelToJson\ExcelToJson\obj\Debug\ExcelToJson.csprojResolveAssemblyReference.cache
 C:\Users\SBT-Dmitriev-MV\DEV\ExcelToJson\ExcelToJson\obj\Debug\ExcelToJson.exe
 C:\Users\SBT-Dmitriev-MV\DEV\ExcelToJson\ExcelToJson\obj\Debug\ExcelToJson.pdb
+C:\Users\SBT-Dmitriev-MV\DEV\Projects\ExcelToJson\ExcelToJson\bin\Debug\ExcelToJson.exe.config
+C:\Users\SBT-Dmitriev-MV\DEV\Projects\ExcelToJson\ExcelToJson\obj\Debug\ExcelToJson.exe
+C:\Users\SBT-Dmitriev-MV\DEV\Projects\ExcelToJson\ExcelToJson\obj\Debug\ExcelToJson.pdb

@@ -22,14 +22,15 @@ namespace HPSM_email
                 f_worker.Work();
                 string path = prop.HPSMSettings.Default.pathToFiles;
                 string file = prop.HPSMSettings.Default.prevFileName;
-                System.IO.File.Move(path + file, path + file + ".xls");
+                string pathFile = path + file + ".xls";
+                System.IO.File.Move(path + file, pathFile);
 
 
 
                 //string path = @"C:\Users\SBT-Dmitriev-MV\DEV\GetDataFromHPSM_email\hpsm_data.XLS";
 
-                DropCreateExecutes(); //Drop and creates tempo table
-                ExcelWorker.ExcelWorker exl = new ExcelWorker.ExcelWorker(path);
+                DropCreateExecutes(); //Drop and creates hpsm table
+                ExcelWorker.ExcelWorker exl = new ExcelWorker.ExcelWorker(pathFile);
                 exl.ReadExcel(ref _listAllTimesheetsHPSM);
                 exl.ExcelStop();
                 ExportData();
