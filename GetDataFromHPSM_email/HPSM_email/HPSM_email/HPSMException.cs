@@ -15,7 +15,8 @@ namespace HPSM_email
         {
             BasicConfigurator.Configure();
             LoggingExtensions.Logging.Log.InitializeWith<LoggingExtensions.log4net.Log4NetLog>();
-            log.Error(message + "\n" + "Import FAILD\n");
+            Console.WriteLine(message);
+            log.Error(message + "\n" + " Import FAILD\n");
         }
     }
 }

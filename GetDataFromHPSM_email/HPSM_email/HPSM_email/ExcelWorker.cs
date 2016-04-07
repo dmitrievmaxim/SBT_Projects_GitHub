@@ -27,10 +27,11 @@ namespace ExcelWorker
                 MyBook = MyApp.Workbooks.Open(path);
                 MySheet = (Excel.Worksheet)MyBook.Sheets[1]; // Explicit cast is not required here
                 lastRow = MySheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell).Row;
-            } catch (Exception ex)
-              {
-                  Console.WriteLine(ex.ToString());
-              }
+            } 
+            catch (Exception ex)
+            {
+                throw new HPSMException(ex.ToString());
+            }
         }
         
         //Reading From Excel
@@ -43,6 +44,8 @@ namespace ExcelWorker
                     System.Array MyValues = (System.Array)MySheet.get_Range("A" +
                        index.ToString(), "E" + index.ToString()).Cells.Value;
 
+                    if ((MyValues.GetValue(1, 1) == "") || (MyValues.GetValue(1, 1) == null))
+                        continue;
                     HPSM_RowList.Add(new Attribs.HPSM_Attribs
                     {
                         I_NUMBER = MyValues.GetValue(1, 1).ToString(),
@@ -51,12 +54,11 @@ namespace ExcelWorker
                         FIO = MyValues.GetValue(1, 4)==null?"":MyValues.GetValue(1, 4).ToString(),
                         KE = MyValues.GetValue(1, 5)==null?"":MyValues.GetValue(1, 5).ToString()
                     });
-                    //Debug.WriteLine(HPSM_RowList.LastOrDefault().I_NUMBER);
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                throw new HPSMException(ex.ToString());
             }
         }
 

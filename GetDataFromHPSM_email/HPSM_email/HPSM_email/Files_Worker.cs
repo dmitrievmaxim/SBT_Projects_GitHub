@@ -3,17 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using prop = HPSM_email.Properties;
 using System.IO;
 using System.Diagnostics;
+using HPSM_email.Properties;
 
 namespace HPSM_email
 {
     class Files_Worker
     {
-        string _path = prop.HPSMSettings.Default.pathToFiles; //Директория на сетевом диске (192.168.99.110)
-        string _lastFile = prop.HPSMSettings.Default.prevFileName;
-        DateTime _lastFileCreatedDate = prop.HPSMSettings.Default.prevFileCreatedDate;
+        string _path = HPSM_Settings.Default.pathToFiles; //Директория на сетевом диске 
+        string _lastFile = HPSM_Settings.Default.prevFileName;
+        DateTime _lastFileCreatedDate = HPSM_Settings.Default.prevFileCreatedDate;
+        readonly string _fileMask = HPSM_Settings.Default.fileMask;
+
+        public string _GetPath { get { return _path; } }
+        public string _GetLastFile { get { return _lastFile; } }
+        public DateTime _GetLastFileCreateDate { get {return _lastFileCreatedDate;} }
 
         //Get all files from working directory
         public void Work()
@@ -21,7 +26,7 @@ namespace HPSM_email
             try
             {
                 //List<string> files = GetFiles(_path, "*?.xls|*.xlsx");
-                List<string> files = GetFiles(_path);
+                List<string> files = GetFilesWithMask(_path, _fileMask);
                 for (int k = 0; k < files.Count; k++)
                 {
                     for (int j = 0; j < files.Count - k - 1; j++)
@@ -43,17 +48,19 @@ namespace HPSM_email
                 {
                     throw new HPSMException("Warning: Import file is missing");
                 }
-                else if ((Path.GetFileName(files[0]) == _lastFile) &&  (new FileInfo(files[0]).CreationTime == _lastFileCreatedDate))
+                else if ((Path.GetFileName(files[0]) == _lastFile) &&  ((new FileInfo(files[0]).CreationTime).ToLongDateString() == _lastFileCreatedDate.ToLongDateString()))
                 {
                     throw new HPSMException("Warning: Old file version");
                 }
                 else
                 {
                     //Save properties settings
-                    prop.HPSMSettings.Default.prevFileName = Path.GetFileName(files[0]);
-                    prop.HPSMSettings.Default.prevFileCreatedDate = new FileInfo(files[0]).CreationTime;
-                    prop.HPSMSettings.Default.Upgrade();
-                    prop.HPSMSettings.Default.Save();
+                    HPSM_Settings.Default.prevFileName = Path.GetFileName(files[0]);
+                    HPSM_Settings.Default.prevFileCreatedDate = new FileInfo(files[0]).CreationTime;
+                    HPSM_Settings.Default.Save();
+
+                    Console.WriteLine("New settings added:");
+                    Console.WriteLine(HPSM_Settings.Default.pathToFiles + "\n" + HPSM_Settings.Default.prevFileName + "\n" + HPSM_Settings.Default.prevFileCreatedDate);
                 }
             }
             catch (Exception ex)
@@ -62,12 +69,12 @@ namespace HPSM_email
             }
         }
 
-        static List<string> GetFiles(string _path) // Неизвестно расширение файлов
+        static List<string> GetFilesWithMask(string path, string fileMask) // Неизвестно расширение файлов
         {
             List<string> files = new List<string>();
             try
             {
-                files.AddRange(Directory.GetFiles(_path));
+                files.AddRange(Directory.GetFiles(path)
             }
             catch (Exception ex)
             {

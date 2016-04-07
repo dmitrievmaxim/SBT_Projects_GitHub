@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using sql_w = HPSM_email.SQL_Worker;
 using prop = HPSM_email.Properties;
 using System.IO;
+using log4net;
+using HPSM_email.Properties;
 
 namespace HPSM_email
 {
@@ -20,17 +22,11 @@ namespace HPSM_email
             {
                 Files_Worker f_worker = new Files_Worker();
                 f_worker.Work();
-                string path = prop.HPSMSettings.Default.pathToFiles;
-                string file = prop.HPSMSettings.Default.prevFileName;
-                string pathFile = path + file + ".xls";
-                System.IO.File.Move(path + file, pathFile);
-
-
-
-                //string path = @"C:\Users\SBT-Dmitriev-MV\DEV\GetDataFromHPSM_email\hpsm_data.XLS";
-
-                DropCreateExecutes(); //Drop and creates hpsm table
-                ExcelWorker.ExcelWorker exl = new ExcelWorker.ExcelWorker(pathFile);
+                string path = HPSM_Settings.Default.pathToFiles;
+                string file = HPSM_Settings.Default.prevFileName;
+                
+                CreateExecutes(); //Creates hpsm table
+                ExcelWorker.ExcelWorker exl = new ExcelWorker.ExcelWorker(path + file);
                 exl.ReadExcel(ref _listAllTimesheetsHPSM);
                 exl.ExcelStop();
                 ExportData();
@@ -41,7 +37,7 @@ namespace HPSM_email
             }
         }
 
-        private void DropCreateExecutes()
+        private void CreateExecutes()
         {
             try
             {
@@ -52,7 +48,8 @@ namespace HPSM_email
                     tbls.Push(str_table.ToString());
                 }
 
-                foreach (string table in tbls)
+                //Снять коммент, если потребуется удалять сущности перед созданием в БД
+                /*foreach (string table in tbls)
                 {
                     if ((table == sql_w.HPSMTables.HPSMLabor.ToString()))
                     {
@@ -60,7 +57,7 @@ namespace HPSM_email
                         sql_w.Execute(string.Format(sql_w._dropSequence, table)); //Drop sequence
                     }
                     sql_w.Execute(string.Format(sql_w._dropTable, table)); //Drop table
-                }
+                }*/
 
                 //Create a HPSM tables, sequences and triggers
                 foreach (sql_w.HPSMTables str_table in Enum.GetValues(typeof(sql_w.HPSMTables)))
@@ -81,28 +78,24 @@ namespace HPSM_email
             }
             catch (Exception ex)
             {
-                //log.Error(ex.ToString());
-                Console.WriteLine(ex.ToString());
-                Debug.WriteLine(ex.ToString());
+                throw new HPSMException(ex.ToString());
             }
         }
 
         private void ExportData()
         {
-            /*try
+            try
             {
-                //Export HPSM
+                //Export in HPSM
                 foreach (var item in _listAllTimesheetsHPSM)
                 {
-                    sql_w.Execute(string.Format(sql_w._insert_TempoLabor, item.ID_identity, item.ID_timesheet, item.ID_issue, (item.Issue_name = item.Issue_name ?? "").Replace("'", "''''"), (item.Summary = item.Summary ?? "").Replace("'", "''''"), item.Timespent, item.Workdate.ToString("d"), item.Full_name, item.User_name, item.Issue_type, item.ID_project, (item.Description = item.Description ?? "").Replace("'", "''''"), (item.WorkType_val = item.WorkType_val ?? "").Replace("'", "''''"), (item.AS_num = item.AS_num ?? "").Replace("'", "''''"), (item.AS_val = item.AS_val ?? "").Replace("'", "''''")));
+                    sql_w.Execute(string.Format(sql_w._insert_HPSMLabor, 0, item.I_NUMBER, item.DT.ToString("d"), item.TIME_SPEND, item.FIO, item.KE = item.KE??""));
                 }
             }
             catch (Exception ex)
             {
-                log.Error(ex.ToString());
-                Console.WriteLine(ex.ToString());
-                Debug.WriteLine(ex.ToString());
-            }*/
+                throw new HPSMException(ex.ToString());
+            }
         }
     }
 }

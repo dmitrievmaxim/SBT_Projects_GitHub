@@ -331,3 +331,18 @@ ORA-06512: at line 1
 
 2016-04-04 14:28:50,825 [9] INFO  GetDataFromJIRATempo.Program [(null)] - Import SUCCESS
 
+2016-04-05 11:47:35,843 [10] INFO  GetDataFromJIRAPlugins.JIRA_Authorization [(null)] - Start auth
+2016-04-05 11:47:36,923 [10] INFO  GetDataFromJIRATempo.Program [(null)] - Authorization SUCCESS
+
+2016-04-05 11:50:35,648 [10] INFO  GetDataFromJIRATempo.Program [(null)] - Import SUCCESS
+
+2016-04-05 11:51:23,963 [10] INFO  GetDataFromJIRAPlugins.JIRA_Authorization [(null)] - Start auth
+2016-04-05 11:51:24,173 [10] INFO  GetDataFromJIRATempo.Program [(null)] - Authorization SUCCESS
+
+2016-04-05 11:54:32,906 [10] INFO  GetDataFromJIRATempo.Program [(null)] - Import SUCCESS
+
+2016-04-05 11:55:14,074 [7] INFO  GetDataFromJIRAPlugins.JIRA_Authorization [(null)] - Start auth
+2016-04-05 11:55:14,284 [7] INFO  GetDataFromJIRATempo.Program [(null)] - Authorization SUCCESS
+
+2016-04-05 11:58:11,977 [7] INFO  GetDataFromJIRATempo.Program [(null)] - Import SUCCESS
+

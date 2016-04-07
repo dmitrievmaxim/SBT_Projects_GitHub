@@ -13,11 +13,11 @@ namespace HPSM_email.Properties {
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "12.0.0.0")]
-    internal sealed partial class HPSMSettings : global::System.Configuration.ApplicationSettingsBase {
+    internal sealed partial class HPSM_Settings : global::System.Configuration.ApplicationSettingsBase {
         
-        private static HPSMSettings defaultInstance = ((HPSMSettings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new HPSMSettings())));
+        private static HPSM_Settings defaultInstance = ((HPSM_Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new HPSM_Settings())));
         
-        public static HPSMSettings Default {
+        public static HPSM_Settings Default {
             get {
                 return defaultInstance;
             }
@@ -25,7 +25,7 @@ namespace HPSM_email.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\SBT-Dmitriev-MV\\DEV\\Projects\\GetDataFromHPSM_email\\tmp_test\\")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\SBT-Dmitriev-MV\\DEV\\Projects\\GetDataFromHPSM_email\\tmp_test")]
         public string pathToFiles {
             get {
                 return ((string)(this["pathToFiles"]));
@@ -37,7 +37,7 @@ namespace HPSM_email.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("000")]
+        [global::System.Configuration.DefaultSettingValueAttribute("111")]
         public string prevFileName {
             get {
                 return ((string)(this["prevFileName"]));
@@ -49,13 +49,25 @@ namespace HPSM_email.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2016-03-01")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2016-02-10")]
         public global::System.DateTime prevFileCreatedDate {
             get {
                 return ((global::System.DateTime)(this["prevFileCreatedDate"]));
             }
             set {
                 this["prevFileCreatedDate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("HPSM_labor_*")]
+        public string fileMask {
+            get {
+                return ((string)(this["fileMask"]));
+            }
+            set {
+                this["fileMask"] = value;
             }
         }
     }

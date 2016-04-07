@@ -1,3 +1,7 @@
+C:\Users\SBT-Dmitriev-MV\DEV\Projects\_GetDataFromHPSM_email\HPSM_email\HPSM_email\bin\x64\Debug\HPSM_email.exe.config
+C:\Users\SBT-Dmitriev-MV\DEV\Projects\_GetDataFromHPSM_email\HPSM_email\HPSM_email\obj\x64\Debug\HPSM_email.exe
+C:\Users\SBT-Dmitriev-MV\DEV\Projects\_GetDataFromHPSM_email\HPSM_email\HPSM_email\obj\x64\Debug\HPSM_email.pdb
+C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_email\HPSM_email\HPSM_email\bin\x64\Debug\log4.config
 C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_email\HPSM_email\HPSM_email\bin\x64\Debug\HPSM_email.exe.config
 C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_email\HPSM_email\HPSM_email\bin\x64\Debug\HPSM_email.exe
 C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_email\HPSM_email\HPSM_email\bin\x64\Debug\HPSM_email.pdb
