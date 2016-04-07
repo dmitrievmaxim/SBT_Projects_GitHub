@@ -25,7 +25,7 @@ namespace HPSM_email.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\SBT-Dmitriev-MV\\DEV\\Projects\\GetDataFromHPSM_email\\tmp_test")]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\\\172.29.75.120\\HPSM\\")]
         public string pathToFiles {
             get {
                 return ((string)(this["pathToFiles"]));
@@ -37,7 +37,7 @@ namespace HPSM_email.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("111")]
+        [global::System.Configuration.DefaultSettingValueAttribute("HPSM_labor_05.04.2016")]
         public string prevFileName {
             get {
                 return ((string)(this["prevFileName"]));
@@ -49,7 +49,7 @@ namespace HPSM_email.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2016-02-10")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2016-04-05")]
         public global::System.DateTime prevFileCreatedDate {
             get {
                 return ((global::System.DateTime)(this["prevFileCreatedDate"]));

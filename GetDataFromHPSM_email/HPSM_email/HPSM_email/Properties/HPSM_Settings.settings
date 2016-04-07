@@ -3,13 +3,13 @@
   <Profiles />
   <Settings>
     <Setting Name="pathToFiles" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_email\tmp_test</Value>
+      <Value Profile="(Default)">\\172.29.75.120\HPSM\</Value>
     </Setting>
     <Setting Name="prevFileName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">111</Value>
+      <Value Profile="(Default)">HPSM_labor_05.04.2016</Value>
     </Setting>
     <Setting Name="prevFileCreatedDate" Type="System.DateTime" Scope="User">
-      <Value Profile="(Default)">2016-02-10</Value>
+      <Value Profile="(Default)">2016-04-05</Value>
     </Setting>
     <Setting Name="fileMask" Type="System.String" Scope="User">
       <Value Profile="(Default)">HPSM_labor_*</Value>

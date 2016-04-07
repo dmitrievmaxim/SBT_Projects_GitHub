@@ -89,7 +89,8 @@ namespace HPSM_email
                 //Export in HPSM
                 foreach (var item in _listAllTimesheetsHPSM)
                 {
-                    sql_w.Execute(string.Format(sql_w._insert_HPSMLabor, 0, item.I_NUMBER, item.DT.ToString("d"), item.TIME_SPEND, item.FIO, item.KE = item.KE??""));
+                    sql_w.Execute(string.Format(sql_w._insert_HPSMLabor, 0, item.I_NUMBER, item.DT.ToString("d"), item.TIME_SPEND, item.FIO, item.KE = item.KE ?? "", Program.currentDate));
+                    
                 }
             }
             catch (Exception ex)

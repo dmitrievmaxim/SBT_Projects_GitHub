@@ -59,8 +59,8 @@ namespace HPSM_email
                     HPSM_Settings.Default.prevFileCreatedDate = new FileInfo(files[0]).CreationTime;
                     HPSM_Settings.Default.Save();
 
-                    Console.WriteLine("New settings added:");
-                    Console.WriteLine(HPSM_Settings.Default.pathToFiles + "\n" + HPSM_Settings.Default.prevFileName + "\n" + HPSM_Settings.Default.prevFileCreatedDate);
+                    Debug.WriteLine("New settings added:");
+                    Debug.WriteLine(HPSM_Settings.Default.pathToFiles + "\n" + HPSM_Settings.Default.prevFileName + "\n" + HPSM_Settings.Default.prevFileCreatedDate);
                 }
             }
             catch (Exception ex)
@@ -69,12 +69,12 @@ namespace HPSM_email
             }
         }
 
-        static List<string> GetFilesWithMask(string path, string fileMask) // Неизвестно расширение файлов
+        static List<string> GetFilesWithMask(string path, string fileMask) // Известна маска файла
         {
             List<string> files = new List<string>();
             try
             {
-                files.AddRange(Directory.GetFiles(path)
+                files.AddRange(Directory.EnumerateFiles(path, fileMask, SearchOption.TopDirectoryOnly));
             }
             catch (Exception ex)
             {
