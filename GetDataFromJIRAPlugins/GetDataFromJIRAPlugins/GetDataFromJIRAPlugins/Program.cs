@@ -16,6 +16,7 @@ namespace GetDataFromJIRAPlugins
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         static void Main(string[] args)
         {
+            log.Info("---------------START----------------");
             //JIRA Authorization
             JIRA_Authorization auth = new JIRA_Authorization();
             if (auth.RunQuery(JIRA_Authorization.JiraResource.project))
@@ -31,7 +32,7 @@ namespace GetDataFromJIRAPlugins
 
             JIRA_Worker jiraWorker = new JIRA_Worker();
             log.Info("Import SUCCESS\n");
-            Console.ReadKey();
+            log.Info("---------------FINISH----------------");
         }
     }
 }

@@ -41,8 +41,6 @@ namespace GetDataFromJIRAPlugins
                 
                 foreach (var project in _listAllProjects)
                 {
-                    //if (project.Name_project != "Проект АС БПС") continue;
-                    
                     Debug.WriteLine(project.Name_project);
                     string data = GetData(string.Format(Constants._jiraProdBaseURL + Constants._tempoRest, prop.TempoSettings.Default.dateStart.ToString("yyyy-MM-dd"), prop.TempoSettings.Default.dateFinish.ToString("yyyy-MM-dd"), project.Name_project_PKEY), WebRequestMethods.Http.Get);
                     if ((!string.IsNullOrEmpty(data))&&!data.Equals("[]"))
@@ -54,9 +52,7 @@ namespace GetDataFromJIRAPlugins
             }
             catch (Exception ex)
             {
-                log.Error(ex.ToString());
-                Console.WriteLine(ex.ToString());
-                Debug.WriteLine(ex.ToString());
+                throw new TempoException(ex.ToString());
             }
         }
 
@@ -100,9 +96,7 @@ namespace GetDataFromJIRAPlugins
             }
             catch (Exception ex)
             {
-                log.Error(ex.ToString());
-                Console.WriteLine(ex.ToString());
-                Debug.WriteLine(ex.ToString());
+                throw new TempoException(ex.ToString());
             }
         }
 
@@ -131,8 +125,7 @@ namespace GetDataFromJIRAPlugins
             }
             catch (Exception ex)
             {
-                log.Error(ex.ToString());
-                Console.WriteLine(ex.ToString());
+                throw new TempoException(ex.ToString());
             }
         }
 
@@ -184,9 +177,7 @@ namespace GetDataFromJIRAPlugins
             }
             catch (Exception ex)
             {
-                log.Error(ex.ToString());
-                Console.WriteLine(ex.ToString());
-                return null;
+                throw new TempoException(ex.ToString());
             }
         }
 
@@ -202,9 +193,7 @@ namespace GetDataFromJIRAPlugins
             }
             catch (Exception ex)
             {
-                log.Error(ex.ToString());
-                Console.WriteLine(ex.ToString());
-                Debug.WriteLine(ex.ToString());
+                throw new TempoException(ex.ToString());
             }
         }
         
@@ -229,29 +218,42 @@ namespace GetDataFromJIRAPlugins
             }
             catch (Exception ex)
             {
-                log.Error(ex.ToString());
-                Console.WriteLine(ex.ToString());
-                return null;
+                throw new TempoException(ex.ToString());
             }
         }
 
         private string GetEncodedCredentials()
         {
-            string mergedCredentials = string.Format("{0}:{1}", Constants._jiraProdUsername, Constants._jiraProdPassword);
-            byte[] byteCredentials = UTF8Encoding.UTF8.GetBytes(mergedCredentials);
-            return Convert.ToBase64String(byteCredentials);
+
+            try
+            {
+                string mergedCredentials = string.Format("{0}:{1}", Constants._jiraProdUsername, Constants._jiraProdPassword);
+                byte[] byteCredentials = UTF8Encoding.UTF8.GetBytes(mergedCredentials);
+                return Convert.ToBase64String(byteCredentials);
+            }
+            catch (Exception ex)
+            {
+                throw new TempoException(ex.ToString());
+            }
         }
 
         //Get data using RESTSHARP EXAMPLE
         public string GetDataTest(string baseuri)
         {
-            var client = new RestClient(baseuri);
-            var request = new RestRequest("rest/structure/1.0/structure", Method.GET);
-            request.AddHeader("Accept", "application/json");
-            request.AddHeader("Authorization", "Basic " + GetEncodedCredentials());
-            IRestResponse response = client.Execute(request);
-            var content = response.Content;
-            return null;
+            try
+            {
+                var client = new RestClient(baseuri);
+                var request = new RestRequest("rest/structure/1.0/structure", Method.GET);
+                request.AddHeader("Accept", "application/json");
+                request.AddHeader("Authorization", "Basic " + GetEncodedCredentials());
+                IRestResponse response = client.Execute(request);
+                var content = response.Content;
+                return content;
+            }
+            catch (Exception ex)
+            {
+                throw new TempoException(ex.ToString());
+            }
         }
     }
 }

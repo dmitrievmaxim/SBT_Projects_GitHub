@@ -61,9 +61,7 @@ namespace GetDataFromJIRAPlugins
             }
             catch (Exception ex)
             {
-                log.Error(ex.ToString());
-                Console.WriteLine(ex.ToString());
-                return false;
+                throw new StructureException(ex.ToString());
             } 
         }
 

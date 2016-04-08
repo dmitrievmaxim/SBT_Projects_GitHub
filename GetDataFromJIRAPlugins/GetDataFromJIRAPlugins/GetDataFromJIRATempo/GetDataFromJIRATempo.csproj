@@ -97,9 +97,12 @@
       <DependentUpon>TempoSettings.settings</DependentUpon>
     </Compile>
     <Compile Include="SQL_Worker.cs" />
+    <Compile Include="TempoException.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="log4.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

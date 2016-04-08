@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using log4net;
 using log4net.Config;
+using GetDataFromJIRATempo;
 
 namespace GetDataFromJIRAPlugins
 {
@@ -64,9 +65,7 @@ namespace GetDataFromJIRAPlugins
             }
             catch (Exception ex)
             {
-                log.Error(ex.ToString());
-                Console.WriteLine(ex.ToString());
-                return false;
+                throw new TempoException(ex.ToString());
             } 
         }
 

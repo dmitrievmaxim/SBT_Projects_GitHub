@@ -8,36 +8,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GetDataFromJIRATempo.Properties {
+namespace GetDataFromJIRAPlugins.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "12.0.0.0")]
-    internal sealed partial class TempoSettings : global::System.Configuration.ApplicationSettingsBase {
+    internal sealed partial class StructureSettings : global::System.Configuration.ApplicationSettingsBase {
         
-        private static TempoSettings defaultInstance = ((TempoSettings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new TempoSettings())));
+        private static StructureSettings defaultInstance = ((StructureSettings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new StructureSettings())));
         
-        public static TempoSettings Default {
+        public static StructureSettings Default {
             get {
                 return defaultInstance;
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2016-03-01")]
-        public global::System.DateTime dateStart {
-            get {
-                return ((global::System.DateTime)(this["dateStart"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2016-03-31")]
-        public global::System.DateTime dateFinish {
-            get {
-                return ((global::System.DateTime)(this["dateFinish"]));
             }
         }
         
@@ -61,7 +43,7 @@ namespace GetDataFromJIRATempo.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("TempoAdmin")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Dmitriev_M")]
         public string jiraProdUsername {
             get {
                 return ((string)(this["jiraProdUsername"]));
@@ -70,20 +52,10 @@ namespace GetDataFromJIRATempo.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Ntvgjflvby")]
+        [global::System.Configuration.DefaultSettingValueAttribute("d22912m")]
         public string jiraProdPassword {
             get {
                 return ((string)(this["jiraProdPassword"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.99.114)(PORT=1500))" +
-            "(CONNECT_DATA=(SERVICE_NAME=SBTJ2)));User Id=SBT_REP;Password=S8T_R3P;")]
-        public string jiraProdConnectionString {
-            get {
-                return ((string)(this["jiraProdConnectionString"]));
             }
         }
         

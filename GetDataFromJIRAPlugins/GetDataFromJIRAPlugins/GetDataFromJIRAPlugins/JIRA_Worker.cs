@@ -93,9 +93,7 @@ namespace GetDataFromJIRAPlugins
             }
             catch (Exception ex)
             {
-                log.Error(ex.ToString());
-                Console.WriteLine(ex.ToString());
-                Debug.WriteLine(ex.ToString());
+                throw new StructureException(ex.ToString());
             }
         }
 
@@ -147,9 +145,7 @@ namespace GetDataFromJIRAPlugins
             }
             catch (Exception ex)
             {
-                log.Error(ex.ToString());
-                Console.WriteLine(ex.ToString());
-                Debug.WriteLine(ex.ToString());
+                throw new StructureException(ex.ToString());
             }
         }
 
@@ -191,9 +187,7 @@ namespace GetDataFromJIRAPlugins
             }
             catch (Exception ex)
             {
-                log.Error(ex.ToString());
-                Console.WriteLine(ex.ToString());
-                Debug.WriteLine(ex.ToString());
+                throw new StructureException(ex.ToString());
             }
         }
         
@@ -217,9 +211,7 @@ namespace GetDataFromJIRAPlugins
             }
             catch (Exception ex)
             {
-                log.Error(ex.ToString());
-                Console.WriteLine(ex.ToString());
-                return null;
+                throw new StructureException(ex.ToString());
             }
         }
 
@@ -242,10 +234,7 @@ namespace GetDataFromJIRAPlugins
             }
             catch (Exception ex)
             {
-                log.Error(ex.ToString());
-                Console.WriteLine(ex.ToString());
-                Debug.WriteLine(ex.ToString());
-                return null;
+                throw new StructureException(ex.ToString());
             }
         }
 
@@ -257,10 +246,7 @@ namespace GetDataFromJIRAPlugins
             }
             catch (Exception ex)
             {
-                log.Error(ex.ToString());
-                Console.WriteLine(ex.ToString());
-                Debug.WriteLine(ex.ToString());
-                return null;
+                throw new StructureException(ex.ToString());
             }
         }
 
@@ -285,9 +271,7 @@ namespace GetDataFromJIRAPlugins
             }
             catch (Exception ex)
             {
-                log.Error(ex.ToString());
-                Console.WriteLine(ex.ToString());
-                return null;
+                throw new StructureException(ex.ToString());
             }
         }
 
