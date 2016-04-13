@@ -1,0 +1,4 @@
+2016-04-13 18:05:13,420 [1] INFO  HPSM_client.Program [(null)] - ---------------START----------------
+2016-04-13 18:05:15,003 [1] INFO  HPSM_client.Program [(null)] - Import SUCCESS
+
+2016-04-13 18:05:15,012 [1] INFO  HPSM_client.Program [(null)] - ---------------FINISH----------------

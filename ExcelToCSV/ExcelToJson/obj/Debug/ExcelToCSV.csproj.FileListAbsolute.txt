@@ -1,3 +1,6 @@
 C:\Users\SBT-Dmitriev-MV\DEV\ExcelToCSV\ExcelToJson\bin\Debug\ExcelToJson.exe.config
 C:\Users\SBT-Dmitriev-MV\DEV\ExcelToCSV\ExcelToJson\obj\Debug\ExcelToJson.exe
 C:\Users\SBT-Dmitriev-MV\DEV\ExcelToCSV\ExcelToJson\obj\Debug\ExcelToJson.pdb
+C:\Users\SBT-Dmitriev-MV\DEV\Projects\ExcelToCSV\ExcelToJson\bin\Debug\ExcelToJson.exe.config
+C:\Users\SBT-Dmitriev-MV\DEV\Projects\ExcelToCSV\ExcelToJson\obj\Debug\ExcelToJson.exe
+C:\Users\SBT-Dmitriev-MV\DEV\Projects\ExcelToCSV\ExcelToJson\obj\Debug\ExcelToJson.pdb

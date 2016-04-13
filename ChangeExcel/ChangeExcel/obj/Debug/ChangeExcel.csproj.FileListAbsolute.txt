@@ -6,3 +6,6 @@ C:\Users\SBT-Dmitriev-MV\DEV\ChangeExcel\ChangeExcel\bin\Debug\Newtonsoft.Json.x
 C:\Users\SBT-Dmitriev-MV\DEV\ChangeExcel\ChangeExcel\obj\Debug\ChangeExcel.exe
 C:\Users\SBT-Dmitriev-MV\DEV\ChangeExcel\ChangeExcel\obj\Debug\ChangeExcel.pdb
 C:\Users\SBT-Dmitriev-MV\DEV\ChangeExcel\ChangeExcel\obj\Debug\ChangeExcel.csprojResolveAssemblyReference.cache
+C:\Users\SBT-Dmitriev-MV\DEV\Projects\ChangeExcel\ChangeExcel\bin\Debug\ChangeExcel.exe.config
+C:\Users\SBT-Dmitriev-MV\DEV\Projects\ChangeExcel\ChangeExcel\obj\Debug\ChangeExcel.exe
+C:\Users\SBT-Dmitriev-MV\DEV\Projects\ChangeExcel\ChangeExcel\obj\Debug\ChangeExcel.pdb

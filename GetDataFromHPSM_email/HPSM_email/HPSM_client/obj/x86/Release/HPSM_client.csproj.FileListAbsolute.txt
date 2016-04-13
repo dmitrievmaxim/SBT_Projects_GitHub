@@ -1,0 +1,2 @@
+C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_email\HPSM_email\HPSM_email\bin\x86\Release\HPSM_email.exe.config
+C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_email\HPSM_email\HPSM_client\bin\x86\Release\HPSM_email.exe.config
