@@ -15,6 +15,7 @@ namespace HPSM_client
 {
     class HPSM_Worker
     {
+        public static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         private IList<Attribs.HPSM_Attribs> _listAllTimesheetsHPSM = new List<Attribs.HPSM_Attribs>();
 
         public HPSM_Worker()
@@ -25,19 +26,38 @@ namespace HPSM_client
                 f_worker.Work();
                 string path = HPSM_Settings.Default.pathToFiles;
                 string file = HPSM_Settings.Default.prevFileName;
+                log.Info("File for import: " + file);
+                log.Info("File created: " + HPSM_Settings.Default.prevFileCreatedDate);
                 
                 CreateExecutes(); //Creates hpsm table
 
+                switch (Path.GetExtension(path + file))
+                {
+                    case ".xls":
+                        {
+                            ExcelWorker.Excel_Worker_ExcelLibrary exl_ = new ExcelWorker.Excel_Worker_ExcelLibrary(path + file);
+                            exl_.ReadExcel(ref _listAllTimesheetsHPSM);
+                        }
+                        break;
+                    case ".xlsx": 
+                        {
+                            ExcelWorker.Excel_Worker_EPPLUS exl_ = new ExcelWorker.Excel_Worker_EPPLUS(path + file);
+                            exl_.ReadExcel(ref _listAllTimesheetsHPSM);
+                        }
+                        break;
+                    default: break;
+                }
+
+
                 //Если на клиентах НЕ установлен Excel
-                ExcelWorker.Excel_Worker_ExcelLibrary exl_ = new ExcelWorker.Excel_Worker_ExcelLibrary(path + file);
-                exl_.ReadExcel(ref _listAllTimesheetsHPSM);
+                
 
                 //*****************************//
                 //Если на клиентах установлен Excel
                 //ExcelWorker.ExcelWorker exl = new ExcelWorker.ExcelWorker(path + file);
                 //exl.ReadExcel(ref _listAllTimesheetsHPSM);
                 //exl.ExcelStop();
-                //****************************//
+                //*****************************//
 
                 ExportData();
             }

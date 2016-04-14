@@ -25,7 +25,7 @@ namespace HPSM_client.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("\\\\172.29.75.120\\HPSM\\")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\SBT-Dmitriev-MV\\DEV\\Projects\\GetDataFromHPSM_email\\tmp_test\\")]
         public string pathToFiles {
             get {
                 return ((string)(this["pathToFiles"]));
@@ -34,7 +34,7 @@ namespace HPSM_client.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("HPSM_labor_*")]
+        [global::System.Configuration.DefaultSettingValueAttribute("СП_ИНЦ_*")]
         public string fileMask {
             get {
                 return ((string)(this["fileMask"]));

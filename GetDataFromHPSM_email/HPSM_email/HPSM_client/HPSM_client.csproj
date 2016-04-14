@@ -87,6 +87,9 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EPPlus">
+      <HintPath>..\packages\EPPlus.dll</HintPath>
+    </Reference>
     <Reference Include="ExcelLibrary">
       <HintPath>..\packages\ExcelLibrary.dll</HintPath>
     </Reference>

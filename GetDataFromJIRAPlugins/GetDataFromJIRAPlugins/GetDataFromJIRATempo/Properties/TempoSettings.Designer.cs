@@ -25,7 +25,7 @@ namespace GetDataFromJIRATempo.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2016-01-01")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2016-03-01")]
         public global::System.DateTime dateStart {
             get {
                 return ((global::System.DateTime)(this["dateStart"]));
@@ -34,7 +34,7 @@ namespace GetDataFromJIRATempo.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2016-02-29")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2016-03-31")]
         public global::System.DateTime dateFinish {
             get {
                 return ((global::System.DateTime)(this["dateFinish"]));
