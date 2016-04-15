@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="pathToFiles" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_email\tmp_test\</Value>
+      <Value Profile="(Default)">C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_email\tmp_test\XXX</Value>
     </Setting>
     <Setting Name="fileMask" Type="System.String" Scope="Application">
       <Value Profile="(Default)">СП_ИНЦ_*</Value>

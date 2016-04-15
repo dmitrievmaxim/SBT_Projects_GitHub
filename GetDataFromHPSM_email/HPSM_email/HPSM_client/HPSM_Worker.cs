@@ -45,12 +45,15 @@ namespace HPSM_client
                             exl_.ReadExcel(ref _listAllTimesheetsHPSM);
                         }
                         break;
+                    case ".html":
+                        {
+                            HTML_Worker html_ = new HTML_Worker(path + file);
+                            html_.ParseHTML(ref _listAllTimesheetsHPSM);
+                        }
+                        break;
                     default: break;
                 }
 
-
-                //Если на клиентах НЕ установлен Excel
-                
 
                 //*****************************//
                 //Если на клиентах установлен Excel

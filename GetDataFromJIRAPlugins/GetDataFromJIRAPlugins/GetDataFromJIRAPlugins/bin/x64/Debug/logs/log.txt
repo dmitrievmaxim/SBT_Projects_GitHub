@@ -4,3 +4,9 @@
 2016-04-14 10:56:01,624 [8] INFO  GetDataFromJIRAPlugins.Program [(null)] - Import SUCCESS
 
 2016-04-14 10:56:01,624 [8] INFO  GetDataFromJIRAPlugins.Program [(null)] - ---------------FINISH----------------
+2016-04-15 19:12:10,419 [9] INFO  GetDataFromJIRAPlugins.Program [(null)] - ---------------START----------------
+2016-04-15 19:12:10,731 [9] INFO  GetDataFromJIRAPlugins.Program [(null)] - Authorization SUCCESS
+
+2016-04-15 19:16:29,807 [9] INFO  GetDataFromJIRAPlugins.Program [(null)] - Import SUCCESS
+
+2016-04-15 19:16:29,807 [9] INFO  GetDataFromJIRAPlugins.Program [(null)] - ---------------FINISH----------------

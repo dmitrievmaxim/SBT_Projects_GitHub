@@ -5,19 +5,24 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Excel = Microsoft.Office.Interop.Excel;
+using Excel_interop = Microsoft.Office.Interop.Excel;
 using HPSM_client;
 using ExcelLib = ExcelLibrary.SpreadSheet;
 using OfficeOpenXml;
 using System.IO;
+using System.Reflection;
+using NPOI.SS.UserModel;
+using NPOI.HSSF.UserModel;
+using System.Data;
 
 namespace ExcelWorker
 {
+    //КЛАСС ДЛЯ РАБОТЫ С EXCEL (УСТАНОВЛЕН OFFICE)
     class ExcelWorker
     {
-        private static Excel.Workbook MyBook = null;
-        private static Excel.Application MyApp = null;
-        private static Excel.Worksheet MySheet = null;
+        private static Excel_interop.Workbook MyBook = null;
+        private static Excel_interop.Application MyApp = null;
+        private static Excel_interop.Worksheet MySheet = null;
 
         private int lastRow { get; set; }
 
@@ -25,11 +30,12 @@ namespace ExcelWorker
         {
             try
             {
-                MyApp = new Excel.Application();
+                MyApp = new Excel_interop.Application();
                 MyApp.Visible = false;
                 MyBook = MyApp.Workbooks.Open(path);
-                MySheet = (Excel.Worksheet)MyBook.Sheets[1]; // Explicit cast is not required here
-                lastRow = MySheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell).Row;
+                MySheet = (Excel_interop.Worksheet)MyBook.Sheets[1]; // Explicit cast is not required here
+                MySheet.Unprotect();
+                lastRow = MySheet.Cells.SpecialCells(Excel_interop.XlCellType.xlCellTypeLastCell).Row;
             } 
             catch (Exception ex)
             {
@@ -96,7 +102,6 @@ namespace ExcelWorker
             try
             {
                 FileStream str = new FileStream(FilePath, FileMode.Open, FileAccess.ReadWrite);
-
                 ExcelLib.Workbook workbook = ExcelLib.Workbook.Load(str);
                 ExcelLib.Worksheet worksheet = workbook.Worksheets[0];
                 int lastRow = worksheet.Cells.LastRowIndex;
