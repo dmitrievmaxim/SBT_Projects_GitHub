@@ -25,15 +25,6 @@ namespace HPSM_client.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\SBT-Dmitriev-MV\\DEV\\Projects\\GetDataFromHPSM_email\\tmp_test\\XXX")]
-        public string pathToFiles {
-            get {
-                return ((string)(this["pathToFiles"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("СП_ИНЦ_*")]
         public string fileMask {
             get {
@@ -72,6 +63,15 @@ namespace HPSM_client.Properties {
             }
             set {
                 this["prevFileCreatedDate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("c:\\Users\\SBT-Dmitriev-MV\\DEV\\Projects\\GetDataFromHPSM_email\\tmp_test\\")]
+        public string pathToFiles {
+            get {
+                return ((string)(this["pathToFiles"]));
             }
         }
     }

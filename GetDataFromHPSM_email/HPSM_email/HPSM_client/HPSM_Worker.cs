@@ -125,6 +125,7 @@ namespace HPSM_client
                     sql_w.Execute(string.Format(sql_w._insert_HPSMLabor, 0, item.I_NUMBER, item.DT.ToString("d"), item.TIME_SPEND, item.FIO, item.KE = item.KE ?? "", Program.currentDate));
                     
                 }
+                log.Info("Added " + _listAllTimesheetsHPSM.Count + " rows");
             }
             catch (Exception ex)
             {

@@ -2,9 +2,6 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="HPSM_client.Properties" GeneratedClassName="HPSM_Settings">
   <Profiles />
   <Settings>
-    <Setting Name="pathToFiles" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_email\tmp_test\XXX</Value>
-    </Setting>
     <Setting Name="fileMask" Type="System.String" Scope="Application">
       <Value Profile="(Default)">СП_ИНЦ_*</Value>
     </Setting>
@@ -16,6 +13,9 @@
     </Setting>
     <Setting Name="prevFileCreatedDate" Type="System.DateTime" Scope="User">
       <Value Profile="(Default)">2016-01-01</Value>
+    </Setting>
+    <Setting Name="pathToFiles" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">c:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_email\tmp_test\</Value>
     </Setting>
   </Settings>
 </SettingsFile>

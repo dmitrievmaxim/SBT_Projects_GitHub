@@ -12,8 +12,8 @@ namespace HPSM_client
     {
         public string FilePath { get; set; }
 
-        string headerXPath = "//TD[@id='shapka']"; //Шапка
-        string rowXPath = "//TR[TD/@class='EF_TXT']"; //Строка
+        //string headerXPath = "//TD[@id='shapka']"; //Шапка
+        //string rowXPath = "//TR[TD/@class='EF_TXT']"; //Строка
 
         public HTML_Worker(string path)
         {
@@ -41,7 +41,6 @@ namespace HPSM_client
                     int counter = 0;
                     foreach (HtmlNode nodeCol in nodeRow.ChildNodes)//td
                     {
-                        Console.WriteLine(nodeCol.InnerHtml);
                         foreach (var attr in nodeCol.Attributes)
                         {
                             if ((attr.Name == "class") && (attr.Value == "E")) break;
@@ -49,10 +48,6 @@ namespace HPSM_client
                             {
                                 tmpArr[counter] = nodeCol.InnerHtml;
                                 counter++;
-                                if (nodeCol.InnerHtml == "IM0022241")
-                                {
-                                    Console.WriteLine();
-                                }
                             }
                         }
                     }

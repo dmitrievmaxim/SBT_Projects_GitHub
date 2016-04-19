@@ -8,7 +8,6 @@ C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_email\HPSM_email\HPSM_clie
 C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_email\HPSM_email\HPSM_client\bin\x64\Debug\oraociicus12.dll
 C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_email\HPSM_email\HPSM_client\bin\x64\Debug\oraons.dll
 C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_email\HPSM_email\HPSM_client\bin\x64\Debug\OraOps12.dll
-C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_email\HPSM_email\HPSM_client\bin\x64\Debug\Spire.XLS.dll
 C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_email\HPSM_email\HPSM_client\bin\x64\Debug\log4.config
 C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_email\HPSM_email\HPSM_client\bin\x64\Debug\HPSM_email.exe
 C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_email\HPSM_email\HPSM_client\bin\x64\Debug\HPSM_email.pdb
@@ -19,3 +18,8 @@ C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_email\HPSM_email\HPSM_clie
 C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_email\HPSM_email\HPSM_client\bin\x64\Debug\this.Log-log4net.dll
 C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_email\HPSM_email\HPSM_client\bin\x64\Debug\this.Log.dll
 C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_email\HPSM_email\HPSM_client\bin\x64\Debug\log4net.xml
+C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_email\HPSM_email\HPSM_client\bin\x64\Debug\Excel.dll
+C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_email\HPSM_email\HPSM_client\bin\x64\Debug\HtmlAgilityPack.dll
+C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_email\HPSM_email\HPSM_client\bin\x64\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_email\HPSM_email\HPSM_client\bin\x64\Debug\NPOI.dll
+C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_email\HPSM_email\HPSM_client\bin\x64\Debug\Excel.pdb
