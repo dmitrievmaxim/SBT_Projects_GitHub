@@ -1,0 +1,1 @@
+C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\bin\x64\Release\GetDataFromJIRATempo.exe.config

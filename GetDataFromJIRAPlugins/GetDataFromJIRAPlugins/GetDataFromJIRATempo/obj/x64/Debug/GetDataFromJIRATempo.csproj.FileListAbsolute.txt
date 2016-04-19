@@ -40,6 +40,5 @@ C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromJIRAPlugins\GetDataFromJIRAPlug
 C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\bin\x64\Debug\log4net.xml
 C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\bin\x64\Debug\Newtonsoft.Json.xml
 C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\bin\x64\Debug\RestSharp.xml
-C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\obj\x64\Debug\GetDataFromJIRATempo.csprojResolveAssemblyReference.cache
 C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\obj\x64\Debug\GetDataFromJIRATempo.exe
 C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\obj\x64\Debug\GetDataFromJIRATempo.pdb

@@ -16,11 +16,11 @@ namespace HPSM_client
         static void Main(string[] args)
         {
             log.Info("---------------START----------------");
-            log.Info("Started at: " + DateTime.Now.ToShortDateString());
+            log.Info("Started at: " + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString());
             BasicConfigurator.Configure();
             HPSM_Worker work = new HPSM_Worker();
             log.Info("Import SUCCESS\n");
-            log.Info("Finished at: " + DateTime.Now.ToShortDateString());
+            log.Info("Finished at: " + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString());
             log.Info("---------------FINISH----------------");
         }
     }
