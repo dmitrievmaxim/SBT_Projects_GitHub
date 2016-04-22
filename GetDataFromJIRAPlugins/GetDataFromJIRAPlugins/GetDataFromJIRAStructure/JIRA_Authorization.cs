@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 
-namespace GetDataFromJIRAPlugins
+namespace GetDataFromJIRAStructure
 {
     public class JIRA_Authorization
     {

@@ -12,7 +12,7 @@ using log4net;
 using log4net.Config;
 using GetDataFromJIRATempo;
 
-namespace GetDataFromJIRAPlugins
+namespace GetDataFromJIRAStructure
 {
     public class JIRA_Authorization
     {

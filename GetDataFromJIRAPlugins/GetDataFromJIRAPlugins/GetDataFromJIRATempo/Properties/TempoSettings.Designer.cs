@@ -25,24 +25,6 @@ namespace GetDataFromJIRATempo.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2016-04-01")]
-        public global::System.DateTime dateStart {
-            get {
-                return ((global::System.DateTime)(this["dateStart"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2016-04-30")]
-        public global::System.DateTime dateFinish {
-            get {
-                return ((global::System.DateTime)(this["dateFinish"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("https://atlasminsk.sbertech.by/jira/")]
         public string jiraProdBaseURL {
             get {
@@ -94,6 +76,24 @@ namespace GetDataFromJIRATempo.Properties {
         public string jiraTestConnectionString {
             get {
                 return ((string)(this["jiraTestConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("62")]
+        public int deltaTime {
+            get {
+                return ((int)(this["deltaTime"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("30")]
+        public int threadLimit {
+            get {
+                return ((int)(this["threadLimit"]));
             }
         }
     }

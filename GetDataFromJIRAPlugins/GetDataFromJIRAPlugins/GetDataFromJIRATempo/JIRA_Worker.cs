@@ -13,11 +13,12 @@ using System.Diagnostics;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Schema;
 using System.Text.RegularExpressions;
-using sql_w = GetDataFromJIRAPlugins.SQL_Worker;
+using sql_w = GetDataFromJIRAStructure.SQL_Worker;
 using prop = GetDataFromJIRATempo.Properties;
 using GetDataFromJIRATempo;
+using System.Threading;
 
-namespace GetDataFromJIRAPlugins
+namespace GetDataFromJIRAStructure
 {
     class JIRA_Worker
     {
@@ -38,17 +39,74 @@ namespace GetDataFromJIRAPlugins
                 //Fill custom fields mapping lists
                 MappingAttribs(ref _workTypeMapping, Constants._workTypeSource);
                 MappingAttribs(ref _asMapping, Constants._asSource);
-                
+
+                DateTime startDate = Program.currentTime.AddDays(-Constants._deltaTime);
+                DateTime finDate;
+                double threadCount = Math.Ceiling((double)Constants._deltaTime / (double)Constants._threadLimit);
+
+                Dictionary<Data, Thread> dictThreads = new Dictionary<Data, Thread>();
+                for (int t = 1; t <= threadCount; t++)
+                {
+                    if (startDate.AddDays(t * Constants._threadLimit) <= Program.currentTime)
+                    {
+                        finDate = startDate.AddDays(t * Constants._threadLimit);
+                    }
+                    else finDate = Program.currentTime;
+                    if (startDate < finDate)
+                    {
+                        Data data = new Data(startDate, finDate);
+                        Thread thread = new Thread(GetDataFromThread);
+                        dictThreads.Add(data.Clone() as Data, thread);
+                        //thread.Start(data.Clone());
+                        startDate = startDate.AddDays(Constants._threadLimit + 1);
+                        //thread.Join();
+                    }
+                }
+                foreach (var thread in dictThreads)
+                {
+                    thread.Value.Start(thread.Key);
+                }
+
+                foreach (var thread in dictThreads)
+                {
+                    do
+                    {
+                        Thread.Sleep(100);
+                    } while (thread.Value.IsAlive);
+                }
+
+                ExportData();
+                UpdateInsertTempo();
+                DropTables();
+            }
+            catch (Exception ex)
+            {
+                throw new TempoException(ex.ToString());
+            }
+        }
+
+        private void UpdateInsertTempo()
+        {
+            sql_w.Execute(sql_w._update_TempoLabor);
+            sql_w.Execute(sql_w._insert_TempoLabor);
+        }
+
+        private void GetDataFromThread (object dataObj)
+        {
+            try
+            {
                 foreach (var project in _listAllProjects)
                 {
                     Debug.WriteLine(project.Name_project);
-                    string data = GetData(string.Format(Constants._jiraProdBaseURL + Constants._tempoRest, prop.TempoSettings.Default.dateStart.ToString("yyyy-MM-dd"), prop.TempoSettings.Default.dateFinish.ToString("yyyy-MM-dd"), project.Name_project_PKEY), WebRequestMethods.Http.Get);
-                    if ((!string.IsNullOrEmpty(data))&&!data.Equals("[]"))
+                    string data = GetData(string.Format(Constants._jiraProdBaseURL + Constants._tempoRest, (dataObj as Data).startDate.ToString("yyyy-MM-dd"), (dataObj as Data).finDate.ToString("yyyy-MM-dd"), project.Name_project_PKEY), WebRequestMethods.Http.Get);
+                    if ((!string.IsNullOrEmpty(data)) && !data.Equals("[]"))
                     {
-                        _listAllTimesheets = _listAllTimesheets.Concat(GetObjTempo(data)).ToList();
+                        lock (_listAllTimesheets)
+                        {
+                            _listAllTimesheets = _listAllTimesheets.Concat(GetObjTempo(data)).ToList();
+                        }
                     }
                 }
-                ExportData();
             }
             catch (Exception ex)
             {
@@ -60,23 +118,7 @@ namespace GetDataFromJIRAPlugins
         {
             try
             {
-                //Clean a Tempo table
-                Stack<string> tbls = new Stack<string>();
-                foreach (sql_w.TempoTables str_table in Enum.GetValues(typeof(sql_w.TempoTables)))
-                {
-                    tbls.Push(str_table.ToString());
-                }
-
-                foreach (string table in tbls)
-                {
-                    if ((table == sql_w.TempoTables.TempoLabor.ToString()))
-                    {
-                        sql_w.Execute(string.Format(sql_w._dropTrigger, table)); //Drop trigger
-                        sql_w.Execute(string.Format(sql_w._dropSequence, table)); //Drop sequence
-                    }
-                    sql_w.Execute(string.Format(sql_w._dropTable, table)); //Drop table
-                }
-
+                DropTables();
                 //Create a tempo tables, sequences and triggers
                 foreach (sql_w.TempoTables str_table in Enum.GetValues(typeof(sql_w.TempoTables)))
                 {
@@ -84,10 +126,12 @@ namespace GetDataFromJIRAPlugins
                     {
                         case sql_w.TempoTables.TempoLabor:
                             sql_w.Execute(sql_w._createTable_TempoLabor); break;
+                        case sql_w.TempoTables.TempoLaborTmp:
+                            sql_w.Execute(sql_w._createTable_TempoLaborTmp); break;
                         default: break;
                     }
 
-                    if ((str_table == sql_w.TempoTables.TempoLabor))
+                    if ((str_table == sql_w.TempoTables.TempoLabor) || (str_table == sql_w.TempoTables.TempoLaborTmp))
                     {
                         sql_w.Execute(string.Format(sql_w._createSequence, str_table)); //Create sequence
                         sql_w.Execute(string.Format(sql_w._createTrigger, str_table)); //Create trigger
@@ -97,6 +141,26 @@ namespace GetDataFromJIRAPlugins
             catch (Exception ex)
             {
                 throw new TempoException(ex.ToString());
+            }
+        }
+
+        private void DropTables()
+        {
+            //Clean a TMP Tempo table
+            Stack<string> tbls = new Stack<string>();
+            foreach (sql_w.TempoTables str_table in Enum.GetValues(typeof(sql_w.TempoTables)))
+            {
+                tbls.Push(str_table.ToString());
+            }
+
+            foreach (string table in tbls)
+            {
+                if ((table == sql_w.TempoTables.TempoLaborTmp.ToString()))
+                {
+                    sql_w.Execute(string.Format(sql_w._dropTrigger, table)); //Drop trigger
+                    sql_w.Execute(string.Format(sql_w._dropSequence, table)); //Drop sequence
+                    sql_w.Execute(string.Format(sql_w._dropTable, table)); //Drop table
+                }
             }
         }
 
@@ -188,8 +252,9 @@ namespace GetDataFromJIRAPlugins
                 //Export tempo
                 foreach (var item in _listAllTimesheets)
                 {
-                    sql_w.Execute(string.Format(sql_w._insert_TempoLabor, item.ID_identity, item.ID_timesheet, item.ID_issue, (item.Issue_name = item.Issue_name ?? "").Replace("'", "''''"), (item.Summary = item.Summary ?? "").Replace("'", "''''"), item.Timespent, item.Workdate.ToString("d"), item.Full_name, item.User_name, item.Issue_type, item.ID_project, (item.Description = item.Description ?? "").Replace("'", "''''"), (item.WorkType_val = item.WorkType_val??"").Replace("'", "''''"), (item.AS_num = item.AS_num??"").Replace("'", "''''"), (item.AS_val = item.AS_val??"").Replace("'", "''''")));
+                    sql_w.Execute(string.Format(sql_w._insert_TempoLaborTmp, item.ID_identity, item.ID_timesheet, item.ID_issue, (item.Issue_name = item.Issue_name ?? "").Replace("'", "''''"), (item.Summary = item.Summary ?? "").Replace("'", "''''"), item.Timespent, item.Workdate.ToString("d"), item.Full_name, item.User_name, item.Issue_type, item.ID_project, (item.Description = item.Description ?? "").Replace("'", "''''"), (item.WorkType_val = item.WorkType_val??"").Replace("'", "''''"), (item.AS_num = item.AS_num??"").Replace("'", "''''"), (item.AS_val = item.AS_val??"").Replace("'", "''''")));
                 }
+                log.Info(@"Update/Insert " + _listAllTimesheets.Count + " rows");
             }
             catch (Exception ex)
             {
@@ -255,5 +320,21 @@ namespace GetDataFromJIRAPlugins
                 throw new TempoException(ex.ToString());
             }
         }
+    }
+
+    public class Data:ICloneable
+    {
+        public DateTime startDate { get; set; }
+        public DateTime finDate { get; set; }
+        public Data(DateTime startDate, DateTime finDate)
+        {
+            this.startDate = startDate;
+            this.finDate = finDate;
+        }
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
+
     }
 }

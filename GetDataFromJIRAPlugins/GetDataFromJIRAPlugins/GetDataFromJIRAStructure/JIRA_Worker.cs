@@ -13,15 +13,14 @@ using System.Diagnostics;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Schema;
 using System.Text.RegularExpressions;
-using sql_w = GetDataFromJIRAPlugins.SQL_Worker;
+using sql_w = GetDataFromJIRAStructure.SQL_Worker;
 
-namespace GetDataFromJIRAPlugins
+namespace GetDataFromJIRAStructure
 {
     class JIRA_Worker
     {
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        
-        private IList<Attribs.JIRA_Structure_Attribs> AllStructures { get; set; }
+
         private IList<Attribs.JIRA_Structure_Attribs> ListAllStructures = new List<Attribs.JIRA_Structure_Attribs>();
         private IList<Attribs.JIRA_Structure_Root> ListAllStructuresRoot = new List<Attribs.JIRA_Structure_Root>();
         private IList<Attribs.JIRA_Structure_Root_Forest> ListAllStructuresRootForest = new List<Attribs.JIRA_Structure_Root_Forest>();
@@ -36,16 +35,12 @@ namespace GetDataFromJIRAPlugins
                 string allStructuresJson = GetData(Constants._jiraProdBaseURL + Constants._structRest + Constants._getStructList, WebRequestMethods.Http.Get);
                 if (!string.IsNullOrEmpty(allStructuresJson))
                 {
-                    AllStructures = GetObjStructures(allStructuresJson); //All structures
+                    ListAllStructures = GetObjStructures(allStructuresJson); //All structures
                 }
-                if ((AllStructures != null) && (AllStructures.Count() > 0))
+                if ((ListAllStructures != null) && (ListAllStructures.Count() > 0))
                 {
-                    foreach (var item in AllStructures)
+                    foreach (var item in ListAllStructures)
                     {
-                        //Add data to ListAllStructures result list
-                        ListAllStructures.Add(new Attribs.JIRA_Structure_Attribs { ID = item.ID, Name = item.Name });
-                        Console.WriteLine("Root: " + item.ID + "\t" + item.Name);
-
                         string currentStructureJson = GetData(string.Format(Constants._jiraProdBaseURL + Constants._structRest + Constants._getStructForest, item.ID), WebRequestMethods.Http.Get);
                         if (!string.IsNullOrEmpty(currentStructureJson))
                         {

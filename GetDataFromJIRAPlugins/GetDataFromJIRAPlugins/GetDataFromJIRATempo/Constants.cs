@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using prop = GetDataFromJIRATempo.Properties;
 
-namespace GetDataFromJIRAPlugins
+namespace GetDataFromJIRAStructure
 {
     class Constants
     {
@@ -26,6 +26,9 @@ namespace GetDataFromJIRAPlugins
         public static string _jiraProdConnectionString = prop.TempoSettings.Default.jiraProdConnectionString;
         public static string _jiraTestConnectionString = prop.TempoSettings.Default.jiraTestConnectionString;
 
+        //APP
+        public static int _deltaTime = prop.TempoSettings.Default.deltaTime;
+        public static int _threadLimit = prop.TempoSettings.Default.threadLimit;
     }
 }
 

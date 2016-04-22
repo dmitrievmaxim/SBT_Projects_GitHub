@@ -7,7 +7,7 @@ using System.Data;
 using Oracle.DataAccess.Client;
 
 
-namespace GetDataFromJIRAPlugins
+namespace GetDataFromJIRAStructure
 {
     class SQL_Worker
     {

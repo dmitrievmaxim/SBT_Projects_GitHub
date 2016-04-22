@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using prop = GetDataFromJIRAPlugins.Properties;
+using prop = GetDataFromJIRAStructure.Properties;
 
-namespace GetDataFromJIRAPlugins
+namespace GetDataFromJIRAStructure
 {
     class Constants
     {
