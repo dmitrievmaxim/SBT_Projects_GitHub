@@ -15,6 +15,7 @@ namespace HPSM_client
             public float TIME_SPEND { get; set; }
             public string FIO { get; set; }
             public string KE { get; set; }
+            public string OPERATOR { get; set; }
         }
     }
 }

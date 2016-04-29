@@ -68,7 +68,7 @@ namespace HPSM_client.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("c:\\Users\\SBT-Dmitriev-MV\\DEV\\Projects\\GetDataFromHPSM_email\\tmp_test\\")]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\\\172.29.75.120\\Export\\HPSM\\")]
         public string pathToFiles {
             get {
                 return ((string)(this["pathToFiles"]));

@@ -15,7 +15,7 @@
       <Value Profile="(Default)">Minsk_1CHRM_01.01.2016</Value>
     </Setting>
     <Setting Name="pathToFiles" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">c:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_email\tmp_test\dm</Value>
+      <Value Profile="(Default)">\\172.29.75.120\Export\1C\</Value>
     </Setting>
   </Settings>
 </SettingsFile>

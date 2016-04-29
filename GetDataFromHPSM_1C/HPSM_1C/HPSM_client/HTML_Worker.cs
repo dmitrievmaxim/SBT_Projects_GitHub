@@ -59,7 +59,8 @@ namespace HPSM_client
                             DT = Convert.ToDateTime(string.Format("{0:dd/MM/yy}", tmpArr[1])),
                             TIME_SPEND = (tmpArr[2] == null || tmpArr[2] == "") ? 0 : int.Parse(tmpArr[2]),
                             FIO = tmpArr[3] == null ? "" : tmpArr[3],
-                            KE = tmpArr[4] == null ? "" : tmpArr[4]
+                            KE = tmpArr[4] == null ? "" : tmpArr[4],
+                            OPERATOR = tmpArr[5] == null ? "" : tmpArr[5]
                         });
                 }
             }

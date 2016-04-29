@@ -51,7 +51,7 @@ namespace ExcelWorker
                 for (int index = 10; index <= lastRow; index++)
                 {
                     System.Array MyValues = (System.Array)MySheet.get_Range("A" +
-                       index.ToString(), "E" + index.ToString()).Cells.Value;
+                       index.ToString(), "F" + index.ToString()).Cells.Value;
 
                     if ((MyValues.GetValue(1, 1) == "") || (MyValues.GetValue(1, 1) == null))
                         continue;
@@ -61,7 +61,8 @@ namespace ExcelWorker
                         DT = Convert.ToDateTime(string.Format("{0:dd/MM/yy}", MyValues.GetValue(1, 2).ToString())),
                         TIME_SPEND = int.Parse(MyValues.GetValue(1, 3).ToString()),
                         FIO = MyValues.GetValue(1, 4)==null?"":MyValues.GetValue(1, 4).ToString(),
-                        KE = MyValues.GetValue(1, 5)==null?"":MyValues.GetValue(1, 5).ToString()
+                        KE = MyValues.GetValue(1, 5)==null?"":MyValues.GetValue(1, 5).ToString(),
+                        OPERATOR = MyValues.GetValue(1, 6) == null ? "" : MyValues.GetValue(1, 6).ToString()
                     });
                 }
             }
@@ -119,7 +120,8 @@ namespace ExcelWorker
                         DT = Convert.ToDateTime(string.Format("{0:dd/MM/yy}", row.GetCell(1).ToString())),
                         TIME_SPEND = row.GetCell(2).Value == null ? 0 : int.Parse(row.GetCell(2).ToString()),
                         FIO = row.GetCell(3).Value == null ? "" : row.GetCell(3).ToString(),
-                        KE = row.GetCell(4).Value == null ? "" : row.GetCell(4).ToString()
+                        KE = row.GetCell(4).Value == null ? "" : row.GetCell(4).ToString(),
+                        OPERATOR = row.GetCell(5).Value == null ? "" : row.GetCell(5).ToString()
                     });
                 }
             }
@@ -172,16 +174,12 @@ namespace ExcelWorker
                             DT = Convert.ToDateTime(string.Format("{0:dd/MM/yy}", ws.Cells[index, 2].Value.ToString())),
                             TIME_SPEND = ws.Cells[index, 3].Value == null ? 0 : int.Parse(ws.Cells[index, 3].Value.ToString()),
                             FIO = ws.Cells[index, 4].Value == null ? "" : ws.Cells[index, 4].Value.ToString(),
-                            KE = ws.Cells[index, 5].Value == null ? "" : ws.Cells[index, 5].Value.ToString()
+                            KE = ws.Cells[index, 5].Value == null ? "" : ws.Cells[index, 5].Value.ToString(),
+                            OPERATOR = ws.Cells[index, 6].Value == null ? "" : ws.Cells[index, 6].Value.ToString()
                         });
                     }
                 }
             }
         }
     }
-
-
-
-
-
 }

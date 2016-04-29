@@ -57,9 +57,7 @@ namespace GetDataFromJIRAStructure
                         Data data = new Data(startDate, finDate);
                         Thread thread = new Thread(GetDataFromThread);
                         dictThreads.Add(data.Clone() as Data, thread);
-                        //thread.Start(data.Clone());
                         startDate = startDate.AddDays(Constants._threadLimit + 1);
-                        //thread.Join();
                     }
                 }
                 foreach (var thread in dictThreads)
@@ -97,6 +95,10 @@ namespace GetDataFromJIRAStructure
             {
                 foreach (var project in _listAllProjects)
                 {
+                    if (project.Name_project_PKEY == "SUPPORTDPT")
+                    {
+                        Console.WriteLine();
+                    }
                     Debug.WriteLine(project.Name_project);
                     string data = GetData(string.Format(Constants._jiraProdBaseURL + Constants._tempoRest, (dataObj as Data).startDate.ToString("yyyy-MM-dd"), (dataObj as Data).finDate.ToString("yyyy-MM-dd"), project.Name_project_PKEY), WebRequestMethods.Http.Get);
                     if ((!string.IsNullOrEmpty(data)) && !data.Equals("[]"))
@@ -202,6 +204,7 @@ namespace GetDataFromJIRAStructure
                 foreach (var jObj in jArr)
                 {
                     Attribs.JIRA_Tempo_Attribs currentItem = JsonConvert.DeserializeObject<Attribs.JIRA_Tempo_Attribs>(jObj.ToString());
+
                     foreach (var worklog_attr in currentItem.Worklog_attribs)
                     {
                         if (Enum.IsDefined(typeof(Attribs.JIRA_customfield_attribs), worklog_attr.Key))
@@ -232,6 +235,10 @@ namespace GetDataFromJIRAStructure
                                     }
                                     break;
                                 }
+                            case Attribs.JIRA_customfield_attribs._Account_:
+                                {
+                                    currentItem.Account = worklog_attr.Value;
+                                } break;
                             default: break;
                         }
                     }
@@ -252,7 +259,7 @@ namespace GetDataFromJIRAStructure
                 //Export tempo
                 foreach (var item in _listAllTimesheets)
                 {
-                    sql_w.Execute(string.Format(sql_w._insert_TempoLaborTmp, item.ID_identity, item.ID_timesheet, item.ID_issue, (item.Issue_name = item.Issue_name ?? "").Replace("'", "''''"), (item.Summary = item.Summary ?? "").Replace("'", "''''"), item.Timespent, item.Workdate.ToString("d"), item.Full_name, item.User_name, item.Issue_type, item.ID_project, (item.Description = item.Description ?? "").Replace("'", "''''"), (item.WorkType_val = item.WorkType_val??"").Replace("'", "''''"), (item.AS_num = item.AS_num??"").Replace("'", "''''"), (item.AS_val = item.AS_val??"").Replace("'", "''''")));
+                    sql_w.Execute(string.Format(sql_w._insert_TempoLaborTmp, item.ID_identity, item.ID_timesheet, item.ID_issue, (item.Issue_name = item.Issue_name ?? "").Replace("'", "''''"), (item.Summary = item.Summary ?? "").Replace("'", "''''"), item.Timespent, item.Workdate.ToString("d"), item.Full_name, item.User_name, item.Issue_type, item.ID_project, (item.Description = item.Description ?? "").Replace("'", "''''"), (item.WorkType_val = item.WorkType_val??"").Replace("'", "''''"), (item.AS_num = item.AS_num??"").Replace("'", "''''"), (item.AS_val = item.AS_val??"").Replace("'", "''''"), (item.Account = item.Account??"").Replace("'","''''")));
                 }
                 log.Info(@"Update/Insert " + _listAllTimesheets.Count + " rows");
             }

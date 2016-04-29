@@ -28,6 +28,10 @@ namespace _1C_client
             public string CHIEF { get; set; }
             public string OFFICE_CORP { get; set; }
             public string DEPARTMENT_CORP { get; set; }
+            public string ORG_POSITION { get; set; }
+            public string EMAIL { get; set; }
+            public string CORP_POSITION { get; set; }
+            public string FIO_PREV { get; set; }
         }
     }
 }

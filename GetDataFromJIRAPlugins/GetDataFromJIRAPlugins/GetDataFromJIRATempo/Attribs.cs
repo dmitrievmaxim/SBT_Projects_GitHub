@@ -43,12 +43,14 @@ namespace GetDataFromJIRATempo
             public string WorkType_val { get; set; }
             public string AS_num { get; set; }
             public string AS_val { get; set; }
+            public string Account { get; set; }
         }
 
         public enum JIRA_customfield_attribs
         {
             _АС_ = 1,
-            _Типработ_ = 2
+            _Типработ_ = 2,
+            _Account_ = 3
         };
 
         public class JIRA_Project

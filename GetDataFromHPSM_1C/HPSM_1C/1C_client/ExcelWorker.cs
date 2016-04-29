@@ -49,7 +49,7 @@ namespace ExcelWorker
                 for (int index = 5; index <= lastRow; index++)
                 {
                     System.Array MyValues = (System.Array)MySheet.get_Range("A" +
-                       index.ToString(), "E" + index.ToString()).Cells.Value;
+                       index.ToString(), "V" + index.ToString()).Cells.Value;
 
                     if ((MyValues.GetValue(1, 1) == "") || (MyValues.GetValue(1, 1) == null))
                         continue;
@@ -73,6 +73,10 @@ namespace ExcelWorker
                         CHIEF = MyValues.GetValue(1, 16) == null ? "" : MyValues.GetValue(1, 16).ToString(),
                         OFFICE_CORP = MyValues.GetValue(1, 17) == null ? "" : MyValues.GetValue(1, 17).ToString(),
                         DEPARTMENT_CORP = MyValues.GetValue(1, 18) == null ? "" : MyValues.GetValue(1, 18).ToString(),
+                        ORG_POSITION = MyValues.GetValue(1, 19) == null ? "" : MyValues.GetValue(1, 19).ToString(),
+                        EMAIL = MyValues.GetValue(1, 20) == null ? "" : MyValues.GetValue(1, 20).ToString(),
+                        CORP_POSITION = MyValues.GetValue(1, 21) == null ? "" : MyValues.GetValue(1, 21).ToString(),
+                        FIO_PREV = MyValues.GetValue(1, 22) == null ? "" : MyValues.GetValue(1, 22).ToString()
                     });
                 }
             }
@@ -144,6 +148,10 @@ namespace ExcelWorker
                         CHIEF = row.GetCell(16).Value == null ? "" : row.GetCell(16).Value.ToString(),
                         OFFICE_CORP = row.GetCell(17).Value == null ? "" : row.GetCell(17).Value.ToString(),
                         DEPARTMENT_CORP = row.GetCell(18).Value == null ? "" : row.GetCell(18).Value.ToString(),
+                        ORG_POSITION = row.GetCell(19).Value == null ? "" : row.GetCell(19).Value.ToString(),
+                        EMAIL = row.GetCell(20).Value == null ? "" : row.GetCell(20).Value.ToString(),
+                        CORP_POSITION = row.GetCell(21).Value == null ? "" : row.GetCell(21).Value.ToString(),
+                        FIO_PREV = row.GetCell(22).Value == null ? "" : row.GetCell(22).Value.ToString()
                     });
                 }
             }
@@ -208,6 +216,10 @@ namespace ExcelWorker
                             CHIEF = ws.Cells[index, 16].Value == null ? "" : ws.Cells[index, 16].Value.ToString(),
                             OFFICE_CORP = ws.Cells[index, 17].Value == null ? "" : ws.Cells[index, 17].Value.ToString(),
                             DEPARTMENT_CORP = ws.Cells[index, 18].Value == null ? "" : ws.Cells[index, 18].Value.ToString(),
+                            ORG_POSITION = ws.Cells[index, 19].Value == null ? "" : ws.Cells[index, 19].Value.ToString(),
+                            EMAIL = ws.Cells[index, 20].Value == null ? "" : ws.Cells[index, 20].Value.ToString(),
+                            CORP_POSITION = ws.Cells[index, 21].Value == null ? "" : ws.Cells[index, 21].Value.ToString(),
+                            FIO_PREV = ws.Cells[index, 22].Value == null ? "" : ws.Cells[index, 22].Value.ToString()
                         });
                     }
                 }
