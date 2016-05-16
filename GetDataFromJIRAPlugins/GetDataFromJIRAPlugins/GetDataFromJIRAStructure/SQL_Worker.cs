@@ -46,16 +46,16 @@ namespace GetDataFromJIRAStructure
 CREATE VIEW ALLSTRUCTURES AS
 SELECT result.""ID"",result.""ID_STRUCT"",str.NAME NAME_STRUCT,result.""ID_ROOT"", iss_1.ISSUE NAME_ROOT, result.""ID_CHILD"", iss_2.ISSUE NAME_CHILD FROM (
 --ROOT без детей
-SELECT ID,ID_STRUCT, ID_ROOT, null ID_CHILD FROM STRUCTUREROOTFORESTTEMP@SBTJTEST s_1 WHERE NOT EXISTS (SELECT *  FROM STRUCTURECHILDFORESTTEMP@SBTJTEST s_2 WHERE s_1.ID_ROOT=s_2.ID_ROOT AND s_1.ID_STRUCT=s_2.ID_STRUCT)
+SELECT ID,ID_STRUCT, ID_ROOT, null ID_CHILD FROM STRUCTUREROOTFORESTTEMP s_1 WHERE NOT EXISTS (SELECT *  FROM STRUCTURECHILDFORESTTEMP s_2 WHERE s_1.ID_ROOT=s_2.ID_ROOT AND s_1.ID_STRUCT=s_2.ID_STRUCT)
 UNION
 --ROOT с детьми
-SELECT ID, ID_STRUCT, ID_ROOT, null ID_CHILD FROM STRUCTUREROOTFORESTTEMP@SBTJTEST s_1 WHERE EXISTS (SELECT * FROM STRUCTURECHILDFORESTTEMP@SBTJTEST s_2 WHERE s_1.ID_ROOT=s_2.ID_ROOT AND s_1.ID_STRUCT=s_2.ID_STRUCT)
+SELECT ID, ID_STRUCT, ID_ROOT, null ID_CHILD FROM STRUCTUREROOTFORESTTEMP s_1 WHERE EXISTS (SELECT * FROM STRUCTURECHILDFORESTTEMP s_2 WHERE s_1.ID_ROOT=s_2.ID_ROOT AND s_1.ID_STRUCT=s_2.ID_STRUCT)
 UNION
 --Дети
-SELECT s_child_forest.* FROM STRUCTURECHILDFORESTTEMP@SBTJTEST s_child_forest LEFT JOIN
-(SELECT ID_STRUCT, ID_ROOT FROM STRUCTUREROOTFORESTTEMP@SBTJTEST s_1 WHERE EXISTS (SELECT * FROM STRUCTURECHILDFORESTTEMP@SBTJTEST s_2 WHERE s_1.ID_ROOT=s_2.ID_ROOT AND s_1.ID_STRUCT=s_2.ID_STRUCT)) tbl 
+SELECT s_child_forest.* FROM STRUCTURECHILDFORESTTEMP s_child_forest LEFT JOIN
+(SELECT ID_STRUCT, ID_ROOT FROM STRUCTUREROOTFORESTTEMP s_1 WHERE EXISTS (SELECT * FROM STRUCTURECHILDFORESTTEMP s_2 WHERE s_1.ID_ROOT=s_2.ID_ROOT AND s_1.ID_STRUCT=s_2.ID_STRUCT)) tbl 
 ON tbl.ID_STRUCT=s_child_forest.ID_STRUCT AND tbl.ID_ROOT=s_child_forest.ID_ROOT
-) result INNER JOIN STRUCTURETEMP@SBTJTEST str ON result.ID_STRUCT=str.ID LEFT JOIN ISSUES iss_1 ON result.ID_ROOT=iss_1.ID LEFT JOIN ISSUES iss_2 ON result.ID_CHILD=iss_2.ID
+) result INNER JOIN STRUCTURETEMP str ON result.ID_STRUCT=str.ID LEFT JOIN ISSUES iss_1 ON result.ID_ROOT=iss_1.ID LEFT JOIN ISSUES iss_2 ON result.ID_CHILD=iss_2.ID
 ORDER BY ID_CHILD';  EXCEPTION WHEN OTHERS THEN IF SQLCODE = -955 THEN NULL; ELSE RAISE; END IF; END;";
 
         public static string _insert_StructureTemp = @"BEGIN EXECUTE IMMEDIATE 'INSERT INTO " + StructureTables.StructureTemp + "(ID, NAME) VALUES ({0},''{1}'')'; END;";
@@ -63,13 +63,13 @@ ORDER BY ID_CHILD';  EXCEPTION WHEN OTHERS THEN IF SQLCODE = -955 THEN NULL; ELS
         public static string _insert_StructureRootForestTemp = @"BEGIN EXECUTE IMMEDIATE 'INSERT INTO " + StructureTables.StructureRootForestTemp + "(ID, ID_struct, ID_root) VALUES ({0},{1},{2})'; END;";
         public static string _insert_StructureChildTemp = @"BEGIN EXECUTE IMMEDIATE 'INSERT INTO " + StructureTables.StructureChildTemp + "(ID) VALUES ({0})'; END;";
         public static string _insert_StructureChildForestTemp = @"BEGIN EXECUTE IMMEDIATE 'INSERT INTO " + StructureTables.StructureChildForestTemp + "(ID, ID_STRUCT, ID_root, ID_child) VALUES ({0},{1},{2},{3})'; END;";
-        public static string _insert_STRUCTURES = @"BEGIN EXECUTE IMMEDIATE 'INSERT INTO " + StructureTables.Structures + @"@SBTJTEST SELECT * FROM ALLSTRUCTURES'; END;";
+        public static string _insert_STRUCTURES = @"BEGIN EXECUTE IMMEDIATE 'INSERT INTO " + StructureTables.Structures + @" SELECT * FROM ALLSTRUCTURES'; END;";
 
         public static void Execute(string sql)
         {
             try
             {
-                using (OracleConnection con = new OracleConnection(Constants._jiraTestConnectionString))
+                using (OracleConnection con = new OracleConnection(Constants._jiraProdConnectionString))
                 {
                     con.Open();
                     using (OracleCommand cmd = new OracleCommand(sql, con))
@@ -109,7 +109,7 @@ ORDER BY ID_CHILD';  EXCEPTION WHEN OTHERS THEN IF SQLCODE = -955 THEN NULL; ELS
         {
             try 
             {
-                using (OracleConnection con = new OracleConnection(Constants._jiraTestConnectionString))
+                using (OracleConnection con = new OracleConnection(Constants._jiraProdConnectionString))
                 {
                     using (OracleCommand cmd = new OracleCommand(procName, con))
                     {

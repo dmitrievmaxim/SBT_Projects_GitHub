@@ -64,5 +64,6 @@ C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_1C\HPSM_1C\HPSM_client\bin
 C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_1C\HPSM_1C\HPSM_client\bin\x64\Release\this.Log.dll
 C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_1C\HPSM_1C\HPSM_client\bin\x64\Release\Excel.pdb
 C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_1C\HPSM_1C\HPSM_client\bin\x64\Release\log4net.xml
+C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_1C\HPSM_1C\HPSM_client\obj\x64\Release\HPSM_client.csprojResolveAssemblyReference.cache
 C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_1C\HPSM_1C\HPSM_client\obj\x64\Release\HPSM_email.exe
 C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromHPSM_1C\HPSM_1C\HPSM_client\obj\x64\Release\HPSM_email.pdb

@@ -10,7 +10,7 @@ namespace HPSM_client
     class Constants
     {
         //DB
-        public static string _jiraProdConnectionString = @"Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.99.114)(PORT=1500))(CONNECT_DATA=(SERVICE_NAME=SBTJ2)));User Id=SBT_REP;Password=S8T_R3P;";
-        public static string _jiraTestConnectionString = HPSM_Settings.Default.jiraTestConnectionString;
+        public static string _jiraProdConnectionString = HPSM_Settings.Default.jiraProdConnectionString;
+        //public static string _jiraTestConnectionString = HPSM_Settings.Default.jiraTestConnectionString;
     }
 }

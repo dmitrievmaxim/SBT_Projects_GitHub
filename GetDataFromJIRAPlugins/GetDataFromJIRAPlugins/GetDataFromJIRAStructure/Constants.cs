@@ -22,7 +22,7 @@ namespace GetDataFromJIRAStructure
         public static string _getStructForestIssue = "structure/{0}/forest?root={1}"; //GET a forest issues {0} - id structure, {1} - root issue (example 12345:0 without 0)
 
         //DB
-        public static string _jiraTestConnectionString = prop.StructureSettings.Default.jiraTestConnectionString;
+        //public static string _jiraTestConnectionString = prop.StructureSettings.Default.jiraTestConnectionString;
         public static string _jiraProdConnectionString = prop.StructureSettings.Default.jiraProdConnectionString;
     }
 }

@@ -24,7 +24,7 @@ namespace GetDataFromJIRAStructure
 
         //DB
         public static string _jiraProdConnectionString = prop.TempoSettings.Default.jiraProdConnectionString;
-        public static string _jiraTestConnectionString = prop.TempoSettings.Default.jiraTestConnectionString;
+        //public static string _jiraTestConnectionString = prop.TempoSettings.Default.jiraTestConnectionString;
 
         //APP
         public static int _deltaTime = prop.TempoSettings.Default.deltaTime;

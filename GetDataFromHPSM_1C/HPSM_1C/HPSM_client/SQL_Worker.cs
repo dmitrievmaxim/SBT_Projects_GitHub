@@ -31,7 +31,7 @@ namespace HPSM_client
         {
             try
             {
-                using (OracleConnection con = new OracleConnection(Constants._jiraTestConnectionString))
+                using (OracleConnection con = new OracleConnection(Constants._jiraProdConnectionString))
                 {
                     con.Open();
                     using (OracleCommand cmd = new OracleCommand(sql, con))

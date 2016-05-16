@@ -43,7 +43,7 @@ namespace GetDataFromJIRAStructure.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Dmitriev_M")]
+        [global::System.Configuration.DefaultSettingValueAttribute("TempoAdmin")]
         public string jiraProdUsername {
             get {
                 return ((string)(this["jiraProdUsername"]));
@@ -52,7 +52,7 @@ namespace GetDataFromJIRAStructure.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("d22912m")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Ntvgjflvby")]
         public string jiraProdPassword {
             get {
                 return ((string)(this["jiraProdPassword"]));
