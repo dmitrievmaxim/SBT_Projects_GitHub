@@ -138,7 +138,9 @@ namespace GetDataFromJIRAStructure
                         sql_w.Execute(string.Format(sql_w._createTrigger, str_table)); //Create trigger
                     }
                 }
-                sql_w.ExecuteProd(sql_w._createView_ALLSTRUCTURES); //Create view on production
+                sql_w.Execute(sql_w._createProcedure_StructureRootTemp_Insert);
+                sql_w.Execute(sql_w._createProcedure_StructureChildTemp_Insert);
+                sql_w.Execute(sql_w._createView_ALLSTRUCTURES); //Create view on production
             }
             catch (Exception ex)
             {
@@ -183,7 +185,7 @@ namespace GetDataFromJIRAStructure
                 }
 
                 //Insert result data from production view AllStructures to Structures table on test
-                sql_w.ExecuteProd(sql_w._insert_STRUCTURES);
+                sql_w.Execute(sql_w._insert_STRUCTURES);
             }
             catch (Exception ex)
             {

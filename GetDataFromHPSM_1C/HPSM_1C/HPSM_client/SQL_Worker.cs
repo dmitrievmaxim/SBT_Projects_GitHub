@@ -19,12 +19,8 @@ namespace HPSM_client
 
         public static string _createSequence = @"BEGIN EXECUTE IMMEDIATE 'CREATE SEQUENCE {0}" + "_s'; EXCEPTION WHEN OTHERS THEN IF SQLCODE = -955 THEN NULL; ELSE RAISE; END IF; END;";
         public static string _createTrigger = @"BEGIN EXECUTE IMMEDIATE 'CREATE TRIGGER {0}_t BEFORE INSERT ON {0} FOR EACH ROW WHEN (new.id = 0) BEGIN SELECT {0}_s.NEXTVAL INTO :new.id FROM dual; END;'; EXCEPTION WHEN OTHERS THEN IF SQLCODE = -4081 THEN NULL; ELSE RAISE; END IF; END;";
-
-        //public static string _createTable_HPSMLabor = @"BEGIN EXECUTE IMMEDIATE 'CREATE TABLE " + HPSMTables.HPSMLabor + @"(ID NUMBER(10) NOT NULL, I_NUMBER VARCHAR(50) NOT NULL, DT DATE NOT NULL, TIME_SPEND FLOAT NOT NULL, FIO VARCHAR(200) NOT NULL, KE VARCHAR(500) NULL, CONSTRAINT I_NUMBER_pk PRIMARY KEY(I_NUMBER))'; END;";
-
         public static string _createTable_HPSMLabor = @"BEGIN EXECUTE IMMEDIATE 'CREATE TABLE " + HPSMTables.HPSMLabor + @"(ID NUMBER(10) NOT NULL, I_NUMBER VARCHAR(50) NOT NULL, DT DATE NOT NULL, TIME_SPEND FLOAT NOT NULL, FIO VARCHAR(200) NOT NULL, KE VARCHAR(500) NULL, Operator VARCHAR(100) NULL, AddedDate DATE NOT NULL, CONSTRAINT ID_pk PRIMARY KEY(ID))'; EXCEPTION WHEN OTHERS THEN IF SQLCODE = -955 THEN NULL; ELSE RAISE; END IF; END;";
-
-
+        
         public static string _insert_HPSMLabor = @"BEGIN EXECUTE IMMEDIATE 'INSERT INTO " + HPSMTables.HPSMLabor + @" VALUES ({0},''{1}'', TO_DATE(''{2}'', ''DD.MM.YYYY''), ROUND({3}/60, 2),''{4}'', ''{5}'', ''{6}'', TO_DATE(''{7}'', ''DD.MM.YYYY''))'; END;";
 
         public static void Execute(string sql)
@@ -46,6 +42,5 @@ namespace HPSM_client
                 throw new HPSMException(ex.ToString());
             }
         }
-
     }
 }

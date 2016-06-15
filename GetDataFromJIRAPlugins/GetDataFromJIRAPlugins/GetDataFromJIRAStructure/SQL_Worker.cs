@@ -31,8 +31,8 @@ namespace GetDataFromJIRAStructure
         public static string _createTrigger = @"BEGIN EXECUTE IMMEDIATE 'CREATE TRIGGER {0}_t BEFORE INSERT ON {0} FOR EACH ROW WHEN (new.id = 0) BEGIN SELECT {0}_s.NEXTVAL INTO :new.id FROM dual; END;'; EXCEPTION WHEN OTHERS THEN IF SQLCODE = -4081 THEN NULL; ELSE RAISE; END IF; END;";
 
         //Процедуры добавления только уникальных ID
-        public static string _createProcedure_StructureRootTemp = @"BEGIN EXECUTE IMMEDIATE 'CREATE OR REPLACE PROCEDURE STRUCTUREROOTTEMP_INSERT (ID_VAL IN NUMBER) AS ID_VAL_COUNT NUMBER; BEGIN SELECT COUNT(*) INTO ID_VAL_COUNT FROM " + StructureTables.StructureRootTemp + " WHERE ID=ID_VAL; IF ID_VAL_COUNT = 0 THEN INSERT INTO " + StructureTables.StructureRootTemp + " (ID) VALUES (STRUCTUREROOTTEMP_INSERT.ID_VAL); END IF; END STRUCTUREROOTTEMP_INSERT;'; END;";
-        public static string _createProcedure_StructureChildTemp = @"BEGIN EXECUTE IMMEDIATE 'CREATE OR REPLACE PROCEDURE STRUCTURECHILDTEMP_INSERT (ID_VAL IN NUMBER) AS ID_VAL_COUNT NUMBER; BEGIN SELECT COUNT(*) INTO ID_VAL_COUNT FROM " + StructureTables.StructureChildTemp + " WHERE ID=ID_VAL; IF ID_VAL_COUNT = 0 THEN INSERT INTO " + StructureTables.StructureChildTemp + "(ID) VALUES (STRUCTURECHILDTEMP_INSERT.ID_VAL); END IF; END STRUCTURECHILDTEMP_INSERT;'; END;";
+        public static string _createProcedure_StructureRootTemp_Insert = @"BEGIN EXECUTE IMMEDIATE 'CREATE OR REPLACE PROCEDURE STRUCTUREROOTTEMP_INSERT (ID_VAL IN NUMBER) AS ID_VAL_COUNT NUMBER; BEGIN SELECT COUNT(*) INTO ID_VAL_COUNT FROM " + StructureTables.StructureRootTemp + " WHERE ID=ID_VAL; IF ID_VAL_COUNT = 0 THEN INSERT INTO " + StructureTables.StructureRootTemp + " (ID) VALUES (STRUCTUREROOTTEMP_INSERT.ID_VAL); END IF; END STRUCTUREROOTTEMP_INSERT;'; END;";
+        public static string _createProcedure_StructureChildTemp_Insert = @"BEGIN EXECUTE IMMEDIATE 'CREATE OR REPLACE PROCEDURE STRUCTURECHILDTEMP_INSERT (ID_VAL IN NUMBER) AS ID_VAL_COUNT NUMBER; BEGIN SELECT COUNT(*) INTO ID_VAL_COUNT FROM " + StructureTables.StructureChildTemp + " WHERE ID=ID_VAL; IF ID_VAL_COUNT = 0 THEN INSERT INTO " + StructureTables.StructureChildTemp + "(ID) VALUES (STRUCTURECHILDTEMP_INSERT.ID_VAL); END IF; END STRUCTURECHILDTEMP_INSERT;'; END;";
 
         public static string _createTable_StructureTemp = @"BEGIN EXECUTE IMMEDIATE 'CREATE TABLE " + StructureTables.StructureTemp + "(ID number(10) NOT NULL, NAME varchar(200) NOT NULL, CONSTRAINT ID_struct_pk PRIMARY KEY (ID))'; EXCEPTION WHEN OTHERS THEN IF SQLCODE = -955 THEN NULL; ELSE RAISE; END IF; END;";
         public static string _createTable_StructureRootTemp = @"BEGIN EXECUTE IMMEDIATE 'CREATE TABLE " + StructureTables.StructureRootTemp + "(ID number(10) NOT NULL, CONSTRAINT ID_root_pk PRIMARY KEY (ID))'; EXCEPTION WHEN OTHERS THEN IF SQLCODE = -955 THEN NULL; ELSE RAISE; END IF; END;";
@@ -66,26 +66,6 @@ ORDER BY ID_CHILD';  EXCEPTION WHEN OTHERS THEN IF SQLCODE = -955 THEN NULL; ELS
         public static string _insert_STRUCTURES = @"BEGIN EXECUTE IMMEDIATE 'INSERT INTO " + StructureTables.Structures + @" SELECT * FROM ALLSTRUCTURES'; END;";
 
         public static void Execute(string sql)
-        {
-            try
-            {
-                using (OracleConnection con = new OracleConnection(Constants._jiraProdConnectionString))
-                {
-                    con.Open();
-                    using (OracleCommand cmd = new OracleCommand(sql, con))
-                    {
-                        cmd.ExecuteNonQuery();
-                    }
-                    con.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new StructureException(ex.ToString());
-            }
-        }
-
-        public static void ExecuteProd(string sql)
         {
             try
             {

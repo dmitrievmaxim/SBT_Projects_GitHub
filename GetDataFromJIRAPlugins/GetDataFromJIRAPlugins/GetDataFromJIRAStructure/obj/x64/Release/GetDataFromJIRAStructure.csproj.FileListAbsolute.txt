@@ -33,6 +33,5 @@ C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromJIRAPlugins\GetDataFromJIRAPlug
 C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRAStructure\bin\x64\Release\log4net.xml
 C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRAStructure\bin\x64\Release\Newtonsoft.Json.xml
 C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRAStructure\bin\x64\Release\RestSharp.xml
-C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRAStructure\obj\x64\Release\GetDataFromJIRAStructure.csprojResolveAssemblyReference.cache
 C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRAStructure\obj\x64\Release\GetDataFromJIRAStructure.exe
 C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRAStructure\obj\x64\Release\GetDataFromJIRAStructure.pdb

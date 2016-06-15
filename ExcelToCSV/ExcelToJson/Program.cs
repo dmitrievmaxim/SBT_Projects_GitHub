@@ -18,14 +18,12 @@ namespace ExcelToJson
         //--------------------ОПИСАНИЕ УТИЛИТЫ-----------------//
         /*
          Данная утилита предназначена для подготовки данных формата excel к импорту (формат CSV) в кастомное поле JIRA
-         
          */
         static void Main(string[] args)
         {
-            var pathExcel = @"C:\Users\SBT-Dmitriev-MV\Desktop\ExcelToCSV\Реестр_АС_11.03.xls";
+            var pathExcel = @"c:\Users\SBT-Dmitriev-MV\DEV\Projects\ExcelToCSV\Реестр.xlsx";
             var sheetName = "АС";
-            var pathCSV = @"C:\Users\SBT-Dmitriev-MV\Desktop\ExcelToCSV\Реестр_АС_11.03_res.csv";
-            int count ;
+            var pathCSV = @"c:\Users\SBT-Dmitriev-MV\DEV\Projects\ExcelToCSV\Реестр_res.csv";
 
             var connectionString = String.Format(@"
                 Provider=Microsoft.ACE.OLEDB.12.0;

@@ -15,10 +15,9 @@ namespace ExcelToJson
     {
         static void Main(string[] args)
         {
-            var pathExcel = @"C:\Users\SBT-Dmitriev-MV\DEV\tasks\Реестр.xls";
+            var pathExcel = @"C:\Users\SBT-Dmitriev-MV\DEV\tasks\Реестр.xlsx";
             var sheetName = "АС";
             var pathJson = @"C:\Users\SBT-Dmitriev-MV\DEV\tasks\projectsSource.json";
-            int count ;
 
             var connectionString = String.Format(@"
                 Provider=Microsoft.ACE.OLEDB.12.0;
@@ -67,6 +66,7 @@ namespace ExcelToJson
             {
                 sb = new StringBuilder(reader.ReadToEnd());
                 sb.Replace("{\"key\"", "\n{\"key\"");
+                sb = new StringBuilder("{\"values\":").Append(sb).Append("}");
             }
 
             using (StreamWriter sw = new StreamWriter(pathJson, false))

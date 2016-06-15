@@ -100,6 +100,10 @@ namespace GetDataFromJIRAStructure
                         Console.WriteLine();
                     }
                     Debug.WriteLine(project.Name_project);
+                    if (project.Name_project=="Проект АС БПС")
+                    {
+                        Console.WriteLine();
+                    }
                     string data = GetData(string.Format(Constants._jiraProdBaseURL + Constants._tempoRest, (dataObj as Data).startDate.ToString("yyyy-MM-dd"), (dataObj as Data).finDate.ToString("yyyy-MM-dd"), project.Name_project_PKEY), WebRequestMethods.Http.Get);
                     if ((!string.IsNullOrEmpty(data)) && !data.Equals("[]"))
                     {
