@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttachmentsModule", "AttachmentsModule\AttachmentsModule.csproj", "{B1A7A36B-185E-4738-BF2C-24535BBF1773}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstEF6App", "FirstEF6App\FirstEF6App.csproj", "{C5874BAF-670D-4785-9FBA-403F252A33A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B1A7A36B-185E-4738-BF2C-24535BBF1773}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B1A7A36B-185E-4738-BF2C-24535BBF1773}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B1A7A36B-185E-4738-BF2C-24535BBF1773}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B1A7A36B-185E-4738-BF2C-24535BBF1773}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5874BAF-670D-4785-9FBA-403F252A33A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5874BAF-670D-4785-9FBA-403F252A33A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5874BAF-670D-4785-9FBA-403F252A33A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5874BAF-670D-4785-9FBA-403F252A33A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
