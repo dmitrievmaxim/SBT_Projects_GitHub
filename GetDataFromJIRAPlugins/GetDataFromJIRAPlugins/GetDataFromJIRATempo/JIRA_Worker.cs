@@ -75,6 +75,7 @@ namespace GetDataFromJIRAStructure
 
                 ExportData();
                 UpdateInsertTempo();
+                DeleteUnusedTempoWorklog();//Удаление из БД записей о работе, которые были удалены из JIRA
                 DropTables();
             }
             catch (Exception ex)
@@ -89,21 +90,17 @@ namespace GetDataFromJIRAStructure
             sql_w.Execute(sql_w._insert_TempoLabor);
         }
 
+        private void DeleteUnusedTempoWorklog()
+        {
+            sql_w.Execute(String.Format(sql_w._delete_Unused_TempoLabor, Program.currentTime.AddDays(-Constants._deltaTime).ToString("dd.MM.yy"), Program.currentTime.ToString("dd.MM.yy")));
+        }
+
         private void GetDataFromThread (object dataObj)
         {
             try
             {
                 foreach (var project in _listAllProjects)
                 {
-                    if (project.Name_project_PKEY == "SUPPORTDPT")
-                    {
-                        Console.WriteLine();
-                    }
-                    Debug.WriteLine(project.Name_project);
-                    if (project.Name_project=="Проект АС БПС")
-                    {
-                        Console.WriteLine();
-                    }
                     string data = GetData(string.Format(Constants._jiraProdBaseURL + Constants._tempoRest, (dataObj as Data).startDate.ToString("yyyy-MM-dd"), (dataObj as Data).finDate.ToString("yyyy-MM-dd"), project.Name_project_PKEY), WebRequestMethods.Http.Get);
                     if ((!string.IsNullOrEmpty(data)) && !data.Equals("[]"))
                     {
