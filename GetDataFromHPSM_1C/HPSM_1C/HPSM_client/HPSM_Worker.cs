@@ -122,7 +122,7 @@ namespace HPSM_client
                 //Export in HPSM
                 foreach (var item in _listAllTimesheetsHPSM)
                 {
-                    sql_w.Execute(string.Format(sql_w._insert_HPSMLabor, 0, item.I_NUMBER, item.DT.ToString("d"), item.TIME_SPEND, item.FIO, item.KE = item.KE ?? "", item.OPERATOR = item.OPERATOR ?? "", Program.currentDate));
+                    sql_w.Execute(string.Format(sql_w._insert_HPSMLabor, 0, item.I_NUMBER, item.DT.ToString("d"), item.TIME_SPEND, item.FIO, item.KE = item.KE.Replace("'","''''") ?? "", item.OPERATOR = item.OPERATOR ?? "", Program.currentDate));
                     
                 }
                 log.Info("Added " + _listAllTimesheetsHPSM.Count + " rows");
