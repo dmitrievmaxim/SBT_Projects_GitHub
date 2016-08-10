@@ -47,9 +47,9 @@ namespace GetDataFromJIRAStructure
                 Dictionary<Data, Thread> dictThreads = new Dictionary<Data, Thread>();
                 for (int t = 1; t <= threadCount; t++)
                 {
-                    if (startDate.AddDays(t * Constants._threadLimit) <= Program.currentTime)
+                    if (startDate.AddDays(Constants._threadLimit) <= Program.currentTime)
                     {
-                        finDate = startDate.AddDays(t * Constants._threadLimit);
+                        finDate = startDate.AddDays(Constants._threadLimit);
                     }
                     else finDate = Program.currentTime;
                     if (startDate < finDate)

@@ -22,3 +22,6 @@ C:\Users\SBT-Dmitriev-MV\DEV\JIRArest\JIRArestUpdate\obj\Debug\JIRArestUpdate.cs
 C:\Users\SBT-Dmitriev-MV\DEV\JIRArest Импорт ЗНИ\JIRArestUpdate\bin\Debug\JIRArestUpdate.exe.config
 C:\Users\SBT-Dmitriev-MV\DEV\JIRArest Импорт ЗНИ\JIRArestUpdate\obj\Debug\JIRArestUpdate.exe
 C:\Users\SBT-Dmitriev-MV\DEV\JIRArest Импорт ЗНИ\JIRArestUpdate\obj\Debug\JIRArestUpdate.pdb
+C:\Users\SBT-Dmitriev-MV\DEV\Projects\JIRArest Импорт ЗНИ\JIRArestUpdate\bin\Debug\JIRArestUpdate.exe.config
+C:\Users\SBT-Dmitriev-MV\DEV\Projects\JIRArest Импорт ЗНИ\JIRArestUpdate\obj\Debug\JIRArestUpdate.exe
+C:\Users\SBT-Dmitriev-MV\DEV\Projects\JIRArest Импорт ЗНИ\JIRArestUpdate\obj\Debug\JIRArestUpdate.pdb

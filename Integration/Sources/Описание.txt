@@ -1,0 +1,12 @@
+TryJira
+http://www.codeproject.com/Tips/828384/Creating-an-Issue-with-Multiple-Attachments-in-Jir
+
+http://www.codeproject.com/Tips/762516/Connecting-to-Jira-using-Csharp
+http://samondotnet.blogspot.com.by/2012/12/introduction-to-dotnetauth.html
+http://www.stum.de/2009/12/22/using-restsharp-to-consume-restful-web-services/
+Atlassian.NET SDK (тоже самое что и .NET farmas-atlassian.net-sdk?)
+RestSharp
+JiraRestClient.NET https://bitbucket.org/MikeJansen/jirarestclient.net/wiki/Home
+https://confluence.atlassian.com/jira/running-jira-over-ssl-or-https-124008.html
+http://maffelu.net/jira-basic-cjira-connection-using-rest/
+https://bitbucket.org/dpbevin/jira-rest-client-dot-net/wiki/Home

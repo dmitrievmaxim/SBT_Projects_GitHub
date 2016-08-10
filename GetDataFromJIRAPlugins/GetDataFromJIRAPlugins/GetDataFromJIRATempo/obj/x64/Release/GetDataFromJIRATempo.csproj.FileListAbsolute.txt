@@ -20,4 +20,3 @@ C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromJIRAPlugins\GetDataFromJIRAPlug
 C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\bin\x64\Release\RestSharp.xml
 C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\obj\x64\Release\GetDataFromJIRATempo.exe
 C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\obj\x64\Release\GetDataFromJIRATempo.pdb
-C:\Users\SBT-Dmitriev-MV\DEV\Projects\GetDataFromJIRAPlugins\GetDataFromJIRAPlugins\GetDataFromJIRATempo\obj\x64\Release\GetDataFromJIRATempo.csprojResolveAssemblyReference.cache
