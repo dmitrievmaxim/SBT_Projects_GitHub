@@ -239,64 +239,37 @@ warning 6002: The table/view 'SBT_REP.SDBO_ACT_SPEC_AUG' does not have a primary
           <Property Name="ТРУДОЗАТРАТЫ" Type="float" Precision="126" Scale="0" Nullable="false" />
           <Property Name="WORK_TYPE_VAL" Type="varchar2" MaxLength="1000" />
         </EntityType>
-
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SBT_REP.SUM_PROJECT_ACTIVITY' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="SUM_PROJECT_ACTIVITY">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="number" Nullable="false" />
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
           <Property Name="МЕСЯЦ" Type="varchar2" MaxLength="16" />
-          <Property Name="ВРЕМЯ_Ч" Type="number" />
+          <Property Name="ВРЕМЯ_Ч" Type="number" Precision="38" Scale="0" />
         </EntityType>
-      
-      <EntityType Name="SUM_TASK_NOT_LINKED_ASBPS">
-        <Key>
-          <PropertyRef Name="ID" />
-        </Key>
-        <Property Name="ID" Type="number" Nullable="false" />
-        <Property Name="МЕСЯЦ" Type="varchar2" MaxLength="16" />
-        <Property Name="ВРЕМЯ_Ч" Type="number" />
-      </EntityType>
-
-      <EntityType Name="SUM_ZNI_TASK_ASBPS">
-        <Key>
-          <PropertyRef Name="ID" />
-        </Key>
-        <Property Name="ID" Type="number" Nullable="false" />
-        <Property Name="МЕСЯЦ" Type="varchar2" MaxLength="16" />
-        <Property Name="ВРЕМЯ_Ч" Type="number" />
-      </EntityType>
-
-      <EntityContainer Name="LaborModelStoreContainer">
-          <EntitySet Name="SUM_PROJECT_ACTIVITY" EntityType="Self.SUM_PROJECT_ACTIVITY" store:Type="Views" store:Schema="SBT_REP" >
-            <DefiningQuery>
-              SELECT
-              "SUM_PROJECT_ACTIVITY"."ID" AS "ID",
-              "SUM_PROJECT_ACTIVITY"."МЕСЯЦ" AS "МЕСЯЦ",
-              "SUM_PROJECT_ACTIVITY"."ВРЕМЯ_Ч" AS "ВРЕМЯ_Ч",
-              FROM "SBT_REP"."SUM_PROJECT_ACTIVITY" "SUM_PROJECT_ACTIVITY"</DefiningQuery>
-          </EntitySet>
-
-        <EntitySet Name="SUM_TASK_NOT_LINKED_ASBPS" EntityType="Self.SUM_TASK_NOT_LINKED_ASBPS" store:Type="Views" store:Schema="SBT_REP" >
-          <DefiningQuery>
-            SELECT
-            "SUM_TASK_NOT_LINKED_ASBPS"."ID" AS "ID",
-            "SUM_TASK_NOT_LINKED_ASBPS"."МЕСЯЦ" AS "МЕСЯЦ",
-            "SUM_TASK_NOT_LINKED_ASBPS"."ВРЕМЯ_Ч" AS "ВРЕМЯ_Ч",
-            FROM "SBT_REP"."SUM_TASK_NOT_LINKED_ASBPS" "SUM_TASK_NOT_LINKED_ASBPS"
-          </DefiningQuery>
-        </EntitySet>
-
-        <EntitySet Name="SUM_ZNI_TASK_ASBPS" EntityType="Self.SUM_ZNI_TASK_ASBPS" store:Type="Views" store:Schema="SBT_REP" >
-          <DefiningQuery>
-            SELECT
-            "SUM_ZNI_TASK_ASBPS"."ID" AS "ID",
-            "SUM_ZNI_TASK_ASBPS"."МЕСЯЦ" AS "МЕСЯЦ",
-            "SUM_ZNI_TASK_ASBPS"."ВРЕМЯ_Ч" AS "ВРЕМЯ_Ч",
-            FROM "SBT_REP"."SUM_ZNI_TASK_ASBPS" "SUM_ZNI_TASK_ASBPS"
-          </DefiningQuery>
-        </EntitySet>
-          
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SBT_REP.SUM_TASK_NOT_LINKED_ASBPS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SUM_TASK_NOT_LINKED_ASBPS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="МЕСЯЦ" Type="varchar2" MaxLength="16" />
+          <Property Name="ВРЕМЯ_Ч" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SBT_REP.SUM_ZNI_TASK_ASBPS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SUM_ZNI_TASK_ASBPS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="МЕСЯЦ" Type="varchar2" MaxLength="16" />
+          <Property Name="ВРЕМЯ_Ч" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityContainer Name="LaborModelStoreContainer">
           <EntitySet Name="CONF_REP_LABOR_JIRA_HPSM" EntityType="Self.CONF_REP_LABOR_JIRA_HPSM" Schema="SBT_REP" store:Type="Tables" />
           <EntitySet Name="DATA_1C" EntityType="Self.DATA_1C" Schema="SBT_REP" store:Type="Tables" />
           <EntitySet Name="HPSMLABOR" EntityType="Self.HPSMLABOR" Schema="SBT_REP" store:Type="Tables" />
@@ -415,6 +388,27 @@ FROM "SBT_REP"."NKFO2_ACT_SPEC_AUG" "NKFO2_ACT_SPEC_AUG"</DefiningQuery>
 "SDBO_ACT_SPEC_AUG"."WORK_TYPE_VAL" AS "WORK_TYPE_VAL"
 FROM "SBT_REP"."SDBO_ACT_SPEC_AUG" "SDBO_ACT_SPEC_AUG"</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="SUM_PROJECT_ACTIVITY" EntityType="Self.SUM_PROJECT_ACTIVITY" store:Type="Views" store:Schema="SBT_REP">
+            <DefiningQuery>SELECT 
+"SUM_PROJECT_ACTIVITY"."ID" AS "ID", 
+"SUM_PROJECT_ACTIVITY"."МЕСЯЦ" AS "МЕСЯЦ", 
+"SUM_PROJECT_ACTIVITY"."ВРЕМЯ_Ч" AS "ВРЕМЯ_Ч"
+FROM "SBT_REP"."SUM_PROJECT_ACTIVITY" "SUM_PROJECT_ACTIVITY"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SUM_TASK_NOT_LINKED_ASBPS" EntityType="Self.SUM_TASK_NOT_LINKED_ASBPS" store:Type="Views" store:Schema="SBT_REP">
+            <DefiningQuery>SELECT 
+"SUM_TASK_NOT_LINKED_ASBPS"."ID" AS "ID", 
+"SUM_TASK_NOT_LINKED_ASBPS"."МЕСЯЦ" AS "МЕСЯЦ", 
+"SUM_TASK_NOT_LINKED_ASBPS"."ВРЕМЯ_Ч" AS "ВРЕМЯ_Ч"
+FROM "SBT_REP"."SUM_TASK_NOT_LINKED_ASBPS" "SUM_TASK_NOT_LINKED_ASBPS"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SUM_ZNI_TASK_ASBPS" EntityType="Self.SUM_ZNI_TASK_ASBPS" store:Type="Views" store:Schema="SBT_REP">
+            <DefiningQuery>SELECT 
+"SUM_ZNI_TASK_ASBPS"."ID" AS "ID", 
+"SUM_ZNI_TASK_ASBPS"."МЕСЯЦ" AS "МЕСЯЦ", 
+"SUM_ZNI_TASK_ASBPS"."ВРЕМЯ_Ч" AS "ВРЕМЯ_Ч"
+FROM "SBT_REP"."SUM_ZNI_TASK_ASBPS" "SUM_ZNI_TASK_ASBPS"</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -489,32 +483,6 @@ FROM "SBT_REP"."SDBO_ACT_SPEC_AUG" "SDBO_ACT_SPEC_AUG"</DefiningQuery>
           <Property Name="ACCOUNT_VAL" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
           <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
           <Property Name="ПРИОРИТЕТ" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="SUM_PROJECT_ACTIVITY">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32"  Nullable="false"/>
-          <Property Name="МЕСЯЦ" Type="String" MaxLength="16" FixedLength="false" Unicode="false"/>
-          <Property Name="ВРЕМЯ_Ч" Type="Int32" />
-        </EntityType>
-
-        <EntityType Name="SUM_TASK_NOT_LINKED_ASBPS">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32"  Nullable="false"/>
-          <Property Name="МЕСЯЦ" Type="String" MaxLength="16" FixedLength="false" Unicode="false"/>
-          <Property Name="ВРЕМЯ_Ч" Type="Int32" />
-        </EntityType>
-
-        <EntityType Name="SUM_ZNI_TASK_ASBPS">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32"  Nullable="false"/>
-          <Property Name="МЕСЯЦ" Type="String" MaxLength="16" FixedLength="false" Unicode="false"/>
-          <Property Name="ВРЕМЯ_Ч" Type="Int32" />
         </EntityType>
         
         <EntityType Name="DATA_1C">
@@ -685,6 +653,30 @@ FROM "SBT_REP"."SDBO_ACT_SPEC_AUG" "SDBO_ACT_SPEC_AUG"</DefiningQuery>
           <Property Name="ТРУДОЗАТРАТЫ" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
           <Property Name="WORK_TYPE_VAL" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="SUM_PROJECT_ACTIVITY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="МЕСЯЦ" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="ВРЕМЯ_Ч" Type="Decimal" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="SUM_TASK_NOT_LINKED_ASBPS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="МЕСЯЦ" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="ВРЕМЯ_Ч" Type="Decimal" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="SUM_ZNI_TASK_ASBPS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="МЕСЯЦ" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="ВРЕМЯ_Ч" Type="Decimal" Precision="38" Scale="0" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -746,36 +738,6 @@ FROM "SBT_REP"."SDBO_ACT_SPEC_AUG" "SDBO_ACT_SPEC_AUG"</DefiningQuery>
                 <ScalarProperty Name="ПОДРАЗДВЕРХ" ColumnName="ПОДРАЗДВЕРХ" />
                 <ScalarProperty Name="ПОДРАЗДНИЗ" ColumnName="ПОДРАЗДНИЗ" />
                 <ScalarProperty Name="СИСТЕМА" ColumnName="СИСТЕМА" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-
-          <EntitySetMapping Name="SUM_PROJECT_ACTIVITY">
-            <EntityTypeMapping TypeName="LaborModel.SUM_PROJECT_ACTIVITY">
-              <MappingFragment StoreEntitySet="SUM_PROJECT_ACTIVITY">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="МЕСЯЦ" ColumnName="МЕСЯЦ" />
-                <ScalarProperty Name="ВРЕМЯ_Ч" ColumnName="ВРЕМЯ_Ч" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-
-          <EntitySetMapping Name="SUM_TASK_NOT_LINKED_ASBPS">
-            <EntityTypeMapping TypeName="LaborModel.SUM_TASK_NOT_LINKED_ASBPS">
-              <MappingFragment StoreEntitySet="SUM_TASK_NOT_LINKED_ASBPS">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="МЕСЯЦ" ColumnName="МЕСЯЦ" />
-                <ScalarProperty Name="ВРЕМЯ_Ч" ColumnName="ВРЕМЯ_Ч" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-
-          <EntitySetMapping Name="SUM_ZNI_TASK_ASBPS">
-            <EntityTypeMapping TypeName="LaborModel.SUM_ZNI_TASK_ASBPS">
-              <MappingFragment StoreEntitySet="SUM_ZNI_TASK_ASBPS">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="МЕСЯЦ" ColumnName="МЕСЯЦ" />
-                <ScalarProperty Name="ВРЕМЯ_Ч" ColumnName="ВРЕМЯ_Ч" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -943,6 +905,33 @@ FROM "SBT_REP"."SDBO_ACT_SPEC_AUG" "SDBO_ACT_SPEC_AUG"</DefiningQuery>
                 <ScalarProperty Name="КОДЗНИ" ColumnName="КОДЗНИ" />
                 <ScalarProperty Name="ПОДРАЗДВЕРХ" ColumnName="ПОДРАЗДВЕРХ" />
                 <ScalarProperty Name="ПОДРАЗДНИЗ" ColumnName="ПОДРАЗДНИЗ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SUM_PROJECT_ACTIVITY">
+            <EntityTypeMapping TypeName="LaborModel.SUM_PROJECT_ACTIVITY">
+              <MappingFragment StoreEntitySet="SUM_PROJECT_ACTIVITY">
+                <ScalarProperty Name="ВРЕМЯ_Ч" ColumnName="ВРЕМЯ_Ч" />
+                <ScalarProperty Name="МЕСЯЦ" ColumnName="МЕСЯЦ" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SUM_TASK_NOT_LINKED_ASBPS">
+            <EntityTypeMapping TypeName="LaborModel.SUM_TASK_NOT_LINKED_ASBPS">
+              <MappingFragment StoreEntitySet="SUM_TASK_NOT_LINKED_ASBPS">
+                <ScalarProperty Name="ВРЕМЯ_Ч" ColumnName="ВРЕМЯ_Ч" />
+                <ScalarProperty Name="МЕСЯЦ" ColumnName="МЕСЯЦ" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SUM_ZNI_TASK_ASBPS">
+            <EntityTypeMapping TypeName="LaborModel.SUM_ZNI_TASK_ASBPS">
+              <MappingFragment StoreEntitySet="SUM_ZNI_TASK_ASBPS">
+                <ScalarProperty Name="ВРЕМЯ_Ч" ColumnName="ВРЕМЯ_Ч" />
+                <ScalarProperty Name="МЕСЯЦ" ColumnName="МЕСЯЦ" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

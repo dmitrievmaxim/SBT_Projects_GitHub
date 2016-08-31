@@ -1,21 +1,136 @@
-﻿
+﻿@model SmartBI.Classes.ZNI_BPS
+
 @{
-    ViewBag.Title = "ЗНИ для БПС";
+    ViewBag.Title = "GetZNI_BPS";
 }
 
-<h2>View</h2>
+<h2>ЗНИ для БПС</h2>
 
-<table class="table">
-    @foreach (var item in Model.ZNI_BPS_SUM_PROJECT_ACTIVITY)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.МЕСЯЦ)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ВРЕМЯ_Ч)
-            </td>
-        </tr>
+<style type="text/css">
+    .result {
+        width: 300px; /* Ширина таблицы */
+        border-collapse: collapse; /* Убираем двойные линии между ячейками */
     }
 
-</table>
+    .border {
+        padding: 3px; /* Поля вокруг содержимого таблицы */
+        border: 1px solid black; /* Параметры рамки */
+    }
+
+    TH {
+        background: #b0e0e6; /* Цвет фона */
+    }
+</style>
+
+    <table width="460" height="49" cellpadding="0" cellspacing="2">
+        <tr>
+            <td height="49" valign="top">
+                <table width="230" height="50" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td height="48" valign="top">
+
+
+                            <table class="result">
+                                <tr>Сумма трудозатрат по проектам, входящим в категорию "проектная деятельность"</tr>
+                                <tr>
+                                    <th class="border">Месяц</th>
+                                    <th class="border">Время, ч</th>
+                                </tr>
+                                    @foreach (var item in Model.ZNI_BPS_SUM_PROJECT_ACTIVITY)
+                                    {
+                                    <tr>
+                                        <td class="border">
+                                            @item.МЕСЯЦ
+                                        </td>
+                                        <td class="border">
+                                            @item.ВРЕМЯ_Ч
+                                        </td>
+                                    </tr>
+                                    }
+                            </table>
+
+                </td>
+
+                    </tr>
+                </table>
+            </td>
+
+
+
+
+            <td valign="top">
+                <table width="230" height="50" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td height="48" valign="top">
+
+
+
+
+
+                            <table class="result">
+                                <tr>Сумма трудозатрат по задачам, которые не привязаны к ЗНИ в проекте ASBPS</tr>
+                                <tr>
+                                    <th class="border">Месяц</th>
+                                    <th class="border">Время, ч</th>
+                                </tr>
+
+                                @foreach (var item in Model.ZNI_BPS_SUM_TASK_NOT_LINKED_ASBPS)
+                                {
+                                    <tr>
+                                        <td class="border">
+                                            @item.МЕСЯЦ
+                                        </td>
+                                        <td class="border">
+                                            @item.ВРЕМЯ_Ч
+                                        </td>
+                                    </tr>
+                                }
+                            </table>
+                        </td>
+
+                    </tr>
+                </table>
+            </td>
+
+
+
+
+
+            <td valign="top">
+    <table width="230" height="50" cellpadding="0" cellspacing="0">
+        <tr>
+            <td height="48" valign="top">
+
+
+
+
+
+                <table class="result">
+                    <tr>Сумма трудозатрат по ЗНИ и связанным с ними задачам в проекте ASBPS</tr>
+                    <tr>
+                        <th class="border">Месяц</th>
+                        <th class="border">Время, ч</th>
+                    </tr>
+
+                    @foreach (var item in Model.ZNI_BPS_SUM_ZNI_TASK_ASBPS)
+                    {
+                        <tr>
+                            <td class="border">
+                                @item.МЕСЯЦ
+                            </td>
+                            <td class="border">
+                                @item.ВРЕМЯ_Ч
+                            </td>
+                        </tr>
+                    }
+                </table>
+
+                        </td>
+
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+

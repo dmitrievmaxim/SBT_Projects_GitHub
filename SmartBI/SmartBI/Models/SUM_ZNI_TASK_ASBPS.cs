@@ -14,8 +14,8 @@ namespace SmartBI.Models
     
     public partial class SUM_ZNI_TASK_ASBPS
     {
-        public int ID { get; set; }
+        public decimal ID { get; set; }
         public string МЕСЯЦ { get; set; }
-        public Nullable<int> ВРЕМЯ_Ч { get; set; }
+        public Nullable<decimal> ВРЕМЯ_Ч { get; set; }
     }
 }
