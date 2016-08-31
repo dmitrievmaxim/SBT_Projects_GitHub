@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "ЗНИ для БПС";
+}
+
+<h2>View</h2>
+
+<table class="table">
+    @foreach (var item in Model.ZNI_BPS_SUM_PROJECT_ACTIVITY)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.МЕСЯЦ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ВРЕМЯ_Ч)
+            </td>
+        </tr>
+    }
+
+</table>

@@ -22,8 +22,10 @@ namespace Integration_Service.Controllers
         }
 
         // POST api/values
-        public void Post([FromBody]string value)
+        [HttpPost]
+        public void VendorWorker([FromBody]string value)
         {
+            var item = value;
         }
 
         // PUT api/values/5

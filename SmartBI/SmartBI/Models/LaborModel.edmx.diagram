@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="988edbfa1a87499ba0c2c3b615f8b53f" Name="Diagram1">
+        <EntityTypeShape EntityType="LaborModel.ALL_ZNI_BUGS_JIRA" Width="1.5" PointX="0.5" PointY="1" IsExpanded="false" />
+        <EntityTypeShape EntityType="LaborModel.CONF_REP_LABOR_JIRA_HPSM" Width="2.375" PointX="2.625" PointY="1.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="LaborModel.DATA_1C" Width="1.5" PointX="5.5" PointY="1.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="LaborModel.HPSMLABOR" Width="1.5" PointX="11.625" PointY="1.125" IsExpanded="false" />
+        <EntityTypeShape EntityType="LaborModel.TEMPOLABOR" Width="1.5" PointX="7.5" PointY="1.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="LaborModel.STRUCTURES" Width="1.5" PointX="9.625" PointY="1.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="LaborModel.ASBPS_ACT_SPEC_AUG" Width="2.5" PointX="0.75" PointY="3" IsExpanded="false" />
+        <EntityTypeShape EntityType="LaborModel.NKFO2_ACT_SPEC_AUG" Width="3.375" PointX="5" PointY="3.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="LaborModel.SDBO_ACT_SPEC_AUG" Width="3.5" PointX="9.25" PointY="3" IsExpanded="false" />
+        <EntityTypeShape EntityType="LaborModel.SUM_PROJECT_ACTIVITY" Width="3.5" PointX="1.125" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaborModel.SUM_TASK_NOT_LINKED_ASBPS" Width="3.5" PointX="5.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaborModel.SUM_ZNI_TASK_ASBPS" Width="3.5" PointX="10.5" PointY="4.375" IsExpanded="true" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

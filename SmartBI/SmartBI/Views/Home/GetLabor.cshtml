@@ -1,0 +1,186 @@
+﻿@model PagedList.IPagedList<SmartBI.Models.CONF_REP_LABOR_JIRA_HPSM>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "GetLabor";
+}
+
+<h2>Трудозатраты JIRA + HPSM</h2>
+
+@Html.ActionLink("Скачать в Excel", "ExportToExcel_epplus_LABOR_JIRA_HPSM", new { Model = this.Model })
+
+<table class="table">
+    <tr>
+        <th>
+            СИСТЕМА
+        </th>
+        <th>
+            ПОДРАЗДНИЗ
+        </th>
+        <th>
+            ПОДРАЗДВЕРХ
+        </th>
+        <th>
+            КАТЕГОРИЯ
+        </th>
+        <th>
+            PROJECT
+        </th>
+        <th>
+            КОДЗНИ
+        </th>
+        <th>
+            НОМЕР_ЗНИ
+        </th>
+        <th>
+            ДАТА_РЕГ
+        </th>
+        <th>
+            СТАТУСЗНИ
+        </th>
+        <th>
+            ДАТАРЕЗОЛЗНИ
+        </th>
+        <th>
+            @Html.ActionLink("КОДЗАДАЧИ", "GetLabor", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            ТИПЗАПРОСА
+        </th>
+        <th>
+            СТАТУСЗАДАЧИ
+        </th>
+        <th>
+            ИСПОЛНИТЕЛЬ
+        </th>
+        <th>
+            ДАТАСОЗДАНИЯ
+        </th>
+        <th>
+            ДАТАРЕЗОЛЗАДАЧИ
+        </th>
+        <th>
+            @Html.ActionLink("ДАТА_РАБОТЫ", "GetLabor", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            АС_НОМЕР
+        </th>
+        <th>
+            АС_НАЗВАНИЕ
+        </th>
+        <th>
+            СУМТРУД
+        </th>
+        <th>
+            ПОЛНОЕ_ИМЯ
+        </th>
+        <th>
+            GRADE
+        </th>
+        <th>
+            CATEGORY
+        </th>
+        <th>
+            ТРУДОЗАТРАТЫ
+        </th>
+        <th>
+            WORK_TYPE_VAL
+        </th>
+        <th>
+            ACCOUNT_VAL
+        </th>
+        <th>
+            ПРИОРИТЕТ
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.СИСТЕМА)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ПОДРАЗДНИЗ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ПОДРАЗДВЕРХ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Категория)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PROJECT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.КОДЗНИ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.НОМЕР_ЗНИ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ДАТА_РЕГ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.СТАТУСЗНИ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ДАТАРЕЗОЛЗНИ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.КОДЗАДАЧИ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ТИПЗАПРОСА)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.СТАТУСЗАДАЧИ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ИСПОЛНИТЕЛЬ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ДАТАСОЗДАНИЯ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ДАТАРЕЗОЛЗАДАЧИ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ДАТА_РАБОТЫ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.АС_НОМЕР)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.АС_НАЗВАНИЕ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.СУМТРУД)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ПОЛНОЕ_ИМЯ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GRADE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CATEGORY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ТРУДОЗАТРАТЫ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WORK_TYPE_VAL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACCOUNT_VAL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ПРИОРИТЕТ)
+        </td>
+    </tr>
+}
+
+</table>
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("GetLabor", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

@@ -1,0 +1,129 @@
+﻿@model PagedList.IPagedList<SmartBI.Models.ALL_ZNI_BUGS_JIRA>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "GetZni";
+}
+
+<h2>Все дефекты + ЗНИ</h2> 
+
+@Html.ActionLink("Скачать в Excel", "ExportToExcel_closeXML", new { Model = this.Model})
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("ISSUE", "GetZni", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            
+        </th>
+        <th>
+            PROJECT
+        </th>
+        <th>
+            COMPONENT
+        </th>
+        <th>
+            REPORTER
+        </th>
+        <th>
+            ASSIGNEE
+        </th>
+        <th>
+            CREATOR
+        </th>
+        <th>
+            ISSUETYPE
+        </th>
+        <th>
+            SUMMARY
+        </th>
+        <th>
+            DESCRIPTION
+        </th>
+        <th>
+            ENVIRONMENT
+        </th>
+        <th>
+            PRIORITY
+        </th>
+        <th>
+            RESOLUTION
+        </th>
+        <th>
+            STATUS
+        </th>
+        <th>
+            CREATED
+        </th>
+        <th>
+            UPDATED
+        </th>
+        <th>
+            DUEDATE
+        </th>
+        <th>
+            @Html.ActionLink("RESOLUTIONDATE", "GetZni", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+            
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ISSUE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PROJECT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.COMPONENT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.REPORTER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ASSIGNEE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CREATOR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ISSUETYPE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SUMMARY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DESCRIPTION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ENVIRONMENT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRIORITY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RESOLUTION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STATUS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CREATED)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UPDATED)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DUEDATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RESOLUTIONDATE)
+        </td>
+    </tr>
+}
+
+</table>
+Page @(Model.PageCount < Model.PageNumber ? 0:Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("GetZni", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter}))
