@@ -31,11 +31,11 @@ namespace SmartBI.Models
         public virtual DbSet<HPSMLABOR> HPSMLABOR { get; set; }
         public virtual DbSet<TEMPOLABOR> TEMPOLABOR { get; set; }
         public virtual DbSet<STRUCTURES> STRUCTURES { get; set; }
-        public virtual DbSet<ASBPS_ACT_SPEC_AUG> ASBPS_ACT_SPEC_AUG { get; set; }
-        public virtual DbSet<NKFO2_ACT_SPEC_AUG> NKFO2_ACT_SPEC_AUG { get; set; }
-        public virtual DbSet<SDBO_ACT_SPEC_AUG> SDBO_ACT_SPEC_AUG { get; set; }
         public virtual DbSet<SUM_PROJECT_ACTIVITY> SUM_PROJECT_ACTIVITY { get; set; }
         public virtual DbSet<SUM_TASK_NOT_LINKED_ASBPS> SUM_TASK_NOT_LINKED_ASBPS { get; set; }
         public virtual DbSet<SUM_ZNI_TASK_ASBPS> SUM_ZNI_TASK_ASBPS { get; set; }
+        public virtual DbSet<ASBPS_ACT_SPEC_OCT> ASBPS_ACT_SPEC_OCT { get; set; }
+        public virtual DbSet<NKFO2_ACT_SPEC_OCT> NKFO2_ACT_SPEC_OCT { get; set; }
+        public virtual DbSet<SDBO_ACT_SPEC_OCT> SDBO_ACT_SPEC_OCT { get; set; }
     }
 }

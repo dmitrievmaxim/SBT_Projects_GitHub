@@ -15,6 +15,7 @@ using System.Reflection;
 using OfficeOpenXml;
 using SmartBI.Classes;
 using System.Data.Entity.Core.Objects;
+using System.Threading;
 
 namespace SmartBI.Controllers
 {
@@ -120,7 +121,7 @@ namespace SmartBI.Controllers
             return View(Oracle_ADO_Worker.GetActSpecASBPSContext());
         }
 
-        public ActionResult GetActSpecASBPS_AUG(string sortOrder, string currentFilter, string searchString, int? page)
+        public ActionResult GetActSpecASBPS_OCT(string sortOrder, string currentFilter, string searchString, int? page)
         {
             ViewBag.CurrentSort = sortOrder;
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
@@ -137,7 +138,7 @@ namespace SmartBI.Controllers
 
             ViewBag.CurrentFilter = searchString;
 
-            var items = from i in db.ASBPS_ACT_SPEC_AUG select i;
+            var items = from i in db.ASBPS_ACT_SPEC_OCT select i;
             switch (sortOrder)
             {
                 case "name_desc":
@@ -158,7 +159,7 @@ namespace SmartBI.Controllers
             return View(items.ToPagedList(pageNumber, pageSize));
         }
 
-        public ActionResult GetActSpecNKFO2_AUG(string sortOrder, string currentFilter, string searchString, int? page)
+        public ActionResult GetActSpecNKFO2_OCT(string sortOrder, string currentFilter, string searchString, int? page)
         {
             ViewBag.CurrentSort = sortOrder;
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
@@ -175,7 +176,7 @@ namespace SmartBI.Controllers
 
             ViewBag.CurrentFilter = searchString;
 
-            var items = from i in db.NKFO2_ACT_SPEC_AUG select i;
+            var items = from i in db.NKFO2_ACT_SPEC_OCT select i;
             switch (sortOrder)
             {
                 case "name_desc":
@@ -196,7 +197,7 @@ namespace SmartBI.Controllers
             return View(items.ToPagedList(pageNumber, pageSize));
         }
 
-        public ActionResult GetActSpecSDBO_AUG(string sortOrder, string currentFilter, string searchString, int? page)
+        public ActionResult GetActSpecSDBO_OCT(string sortOrder, string currentFilter, string searchString, int? page)
         {
             ViewBag.CurrentSort = sortOrder;
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
@@ -213,7 +214,7 @@ namespace SmartBI.Controllers
 
             ViewBag.CurrentFilter = searchString;
 
-            var items = from i in db.SDBO_ACT_SPEC_AUG select i;
+            var items = from i in db.SDBO_ACT_SPEC_OCT select i;
             switch (sortOrder)
             {
                 case "name_desc":
@@ -349,7 +350,8 @@ namespace SmartBI.Controllers
                     WORK_TYPE_VAL = i.WORK_TYPE_VAL,
                     ACCOUNT_VAL = i.ACCOUNT_VAL,
                     ID = i.ID,
-                    ПРИОРИТЕТ = i.ПРИОРИТЕТ}).ToList();
+                    ПРИОРИТЕТ = i.ПРИОРИТЕТ,
+                    СТАТУС_СОТР = i.СТАТУС_СОТР}).ToList();
 
                 DataTable dt = ConvertListToDataTable(items);
 
@@ -378,33 +380,35 @@ namespace SmartBI.Controllers
             Response.Clear();
             Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
             Response.AddHeader("content-disposition", "attachment;filename=" + HttpUtility.UrlEncode("Labor.xlsx", System.Text.Encoding.UTF8));
-
             using (ExcelPackage pck = new ExcelPackage())
             {
-                var items = (from i in db.ASBPS_ACT_SPEC_AUG select new {
-                    ПОДРАЗДНИЗ = i.ПОДРАЗДНИЗ,
-                    ПОДРАЗДВЕРХ = i.ПОДРАЗДВЕРХ,
-                    КОДЗНИ = i.КОДЗНИ,
-                    НОМЕР_ЗНИ = i.НОМЕР_ЗНИ,
-                    ДАТА_РЕГ = EntityFunctions.TruncateTime(i.ДАТА_РЕГ),
-                    МЕНЕДЖЕР_ДИТ = i.МЕНЕДЖЕР_ДИТ,
-                    ИСТОЧНИК_ЗНИ = i.ИСТОЧНИК_ЗНИ,
-                    ДАТА_РЕГ_ЗНИ = EntityFunctions.TruncateTime(i.ДАТА_РЕГ_ЗНИ),
-                    СТАТУСЗНИ = i.СТАТУСЗНИ,
-                    ДАТАРЕЗОЛЗНИ = EntityFunctions.TruncateTime(i.ДАТАРЕЗОЛЗНИ),
-                    КОДЗАДАЧИ = i.КОДЗАДАЧИ,
-                    ОПИСАНИЕ_РАБОТЫ = i.ОПИСАНИЕ_РАБОТЫ,
-                    СТАТУСЗАДАЧИ = i.СТАТУСЗАДАЧИ,
-                    ДАТАРЕЗОЛЗАДАЧИ = EntityFunctions.TruncateTime(i.ДАТАРЕЗОЛЗАДАЧИ),
-                    ДАТАСОЗДЗАДАЧИ = EntityFunctions.TruncateTime(i.ДАТАСОЗДЗАДАЧИ),
-                    ДАТА_РАБОТЫ = EntityFunctions.TruncateTime(i.ДАТА_РАБОТЫ),
-                    АС_НОМЕР = i.АС_НОМЕР,
-                    АС_НАЗВАНИЕ = i.АС_НАЗВАНИЕ,
-                    СУМТРУД = i.СУМТРУД,
-                    ПОЛНОЕ_ИМЯ = i.ПОЛНОЕ_ИМЯ,
-                    GRADE = i.GRADE,
-                    ТРУДОЗАТРАТЫ = i.ТРУДОЗАТРАТЫ,
-                    WORK_TYPE_VAL = i.WORK_TYPE_VAL}).ToList();
+                var items = (from i in db.ASBPS_ACT_SPEC_OCT
+                             select new
+                             {
+                                 ПОДРАЗДНИЗ = i.ПОДРАЗДНИЗ,
+                                 ПОДРАЗДВЕРХ = i.ПОДРАЗДВЕРХ,
+                                 КОДЗНИ = i.КОДЗНИ,
+                                 НОМЕР_ЗНИ = i.НОМЕР_ЗНИ,
+                                 ДАТА_РЕГ = EntityFunctions.TruncateTime(i.ДАТА_РЕГ),
+                                 МЕНЕДЖЕР_ДИТ = i.МЕНЕДЖЕР_ДИТ,
+                                 ИСТОЧНИК_ЗНИ = i.ИСТОЧНИК_ЗНИ,
+                                 ДАТА_РЕГ_ЗНИ = EntityFunctions.TruncateTime(i.ДАТА_РЕГ_ЗНИ),
+                                 СТАТУСЗНИ = i.СТАТУСЗНИ,
+                                 ДАТАРЕЗОЛЗНИ = EntityFunctions.TruncateTime(i.ДАТАРЕЗОЛЗНИ),
+                                 КОДЗАДАЧИ = i.КОДЗАДАЧИ,
+                                 ОПИСАНИЕ_РАБОТЫ = i.ОПИСАНИЕ_РАБОТЫ,
+                                 СТАТУСЗАДАЧИ = i.СТАТУСЗАДАЧИ,
+                                 ДАТАРЕЗОЛЗАДАЧИ = EntityFunctions.TruncateTime(i.ДАТАРЕЗОЛЗАДАЧИ),
+                                 ДАТАСОЗДЗАДАЧИ = EntityFunctions.TruncateTime(i.ДАТАСОЗДЗАДАЧИ),
+                                 ДАТА_РАБОТЫ = EntityFunctions.TruncateTime(i.ДАТА_РАБОТЫ),
+                                 АС_НОМЕР = i.АС_НОМЕР,
+                                 АС_НАЗВАНИЕ = i.АС_НАЗВАНИЕ,
+                                 СУМТРУД = i.СУМТРУД,
+                                 ПОЛНОЕ_ИМЯ = i.ПОЛНОЕ_ИМЯ,
+                                 GRADE = i.GRADE,
+                                 ТРУДОЗАТРАТЫ = i.ТРУДОЗАТРАТЫ,
+                                 WORK_TYPE_VAL = i.WORK_TYPE_VAL
+                             }).ToList();
 
                 DataTable dt = ConvertListToDataTable(items);
 
@@ -436,7 +440,7 @@ namespace SmartBI.Controllers
 
             using (ExcelPackage pck = new ExcelPackage())
             {
-                var items = (from i in db.NKFO2_ACT_SPEC_AUG
+                var items = (from i in db.NKFO2_ACT_SPEC_OCT
                              select new
                              {
                                  ПОДРАЗДНИЗ = i.ПОДРАЗДНИЗ,
@@ -493,7 +497,7 @@ namespace SmartBI.Controllers
 
             using (ExcelPackage pck = new ExcelPackage())
             {
-                var items = (from i in db.SDBO_ACT_SPEC_AUG
+                var items = (from i in db.SDBO_ACT_SPEC_OCT
                              select new
                              {
                                  ПОДРАЗДНИЗ = i.ПОДРАЗДНИЗ,

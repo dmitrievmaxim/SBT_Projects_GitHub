@@ -5,6 +5,7 @@
 *.suo
 *.user
 *.sln.docstates
+bckp/
 
 # Build results
 [Dd]ebug/

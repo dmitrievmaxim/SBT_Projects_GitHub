@@ -81,7 +81,7 @@ namespace GetDataFromJIRATempo.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("62")]
+        [global::System.Configuration.DefaultSettingValueAttribute("45")]
         public int deltaTime {
             get {
                 return ((int)(this["deltaTime"]));
@@ -90,7 +90,7 @@ namespace GetDataFromJIRATempo.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("30")]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
         public int threadLimit {
             get {
                 return ((int)(this["threadLimit"]));

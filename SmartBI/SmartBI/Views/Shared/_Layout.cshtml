@@ -3,11 +3,14 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Портал отчетности</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script type="text/javascript" src="~/Scripts/loadingoverlay.min.js"></script>
 </head>
-<body>
+<body onload="$.LoadingOverlay('hide')">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -22,9 +25,9 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Дефекты + ЗНИ", "GetZni", "Home")</li>
                     <li>@Html.ActionLink("Трудозатраты JIRA + HPSM", "GetLabor", "Home")</li>
-                    <li>@Html.ActionLink("Скачать ASBPS август", "ExportToExcel_epplus_act_spec_asbps", "Home")</li>
-                    <li>@Html.ActionLink("Скачать NKFO2 август", "ExportToExcel_epplus_act_spec_nkfo2", "Home")</li>
-                    <li>@Html.ActionLink("Скачать SDBO август", "ExportToExcel_epplus_act_spec_sdbo", "Home")</li>
+                    <li>@Html.ActionLink("Скачать ASBPS октябрь", "ExportToExcel_epplus_act_spec_asbps", "Home", new { id = "act_spec_asbps"})</li>
+                    <li>@Html.ActionLink("Скачать NKFO2 октябрь", "ExportToExcel_epplus_act_spec_nkfo2", "Home")</li>
+                    <li>@Html.ActionLink("Скачать SDBO октябрь", "ExportToExcel_epplus_act_spec_sdbo", "Home")</li>
                     <li>@Html.ActionLink("ЗНИ для БПС", "GetZNI_BPS", "Home")</li>
                     <li>@Html.ActionLink("Контакты", "Contact", "Home")</li>
                 </ul>
@@ -48,8 +51,6 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
 </html>

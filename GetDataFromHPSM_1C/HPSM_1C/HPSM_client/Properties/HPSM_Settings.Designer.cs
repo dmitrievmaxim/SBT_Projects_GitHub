@@ -68,7 +68,7 @@ namespace HPSM_client.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("\\\\172.29.75.120\\Export\\HPSM\\")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\SBT-Dmitriev-MV\\Desktop\\tmp\\")]
         public string pathToFiles {
             get {
                 return ((string)(this["pathToFiles"]));

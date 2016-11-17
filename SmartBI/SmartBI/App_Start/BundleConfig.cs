@@ -26,6 +26,9 @@ namespace SmartBI
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            //bundles.Add(new ScriptBundle("~bundles/loadingoverlay").Include(
+            //          "~Scripts/loadingoverlay.min.js"));
         }
     }
 }

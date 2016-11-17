@@ -5,6 +5,8 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="LaborModel.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SBT_REP.CONF_REP_LABOR_JIRA_HPSM' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="CONF_REP_LABOR_JIRA_HPSM">
           <Key>
             <PropertyRef Name="ID" />
@@ -37,6 +39,7 @@
           <Property Name="ACCOUNT_VAL" Type="varchar2" MaxLength="1000" />
           <Property Name="ПРИОРИТЕТ" Type="varchar2" MaxLength="20" />
           <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="СТАТУС_СОТР" Type="varchar2" MaxLength="70" />
         </EntityType>
         <EntityType Name="DATA_1C">
           <Key>
@@ -125,9 +128,9 @@ warning 6002: The table/view 'SBT_REP.ALL_ZNI_BUGS_JIRA' does not have a primary
           <Property Name="ISSUE" Type="varchar2" MaxLength="296" />
           <Property Name="PROJECT" Type="varchar2" MaxLength="255" />
           <Property Name="COMPONENT" Type="varchar2" MaxLength="4000" />
-          <Property Name="REPORTER" Type="varchar2" MaxLength="255" />
-          <Property Name="ASSIGNEE" Type="varchar2" MaxLength="255" />
-          <Property Name="CREATOR" Type="varchar2" MaxLength="255" />
+          <Property Name="REPORTER" Type="varchar2" MaxLength="2040" />
+          <Property Name="ASSIGNEE" Type="varchar2" MaxLength="2040" />
+          <Property Name="CREATOR" Type="varchar2" MaxLength="2040" />
           <Property Name="ISSUETYPE" Type="varchar2" MaxLength="60" />
           <Property Name="SUMMARY" Type="varchar2" MaxLength="255" />
           <Property Name="DESCRIPTION" Type="clob" />
@@ -141,12 +144,11 @@ warning 6002: The table/view 'SBT_REP.ALL_ZNI_BUGS_JIRA' does not have a primary
           <Property Name="RESOLUTIONDATE" Type="date" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'SBT_REP.ASBPS_ACT_SPEC_AUG' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="ASBPS_ACT_SPEC_AUG">
+warning 6002: The table/view 'SBT_REP.ASBPS_ACT_SPEC_OCT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ASBPS_ACT_SPEC_OCT">
           <Key>
             <PropertyRef Name="КОДЗАДАЧИ" />
             <PropertyRef Name="ДАТА_РАБОТЫ" />
-            <PropertyRef Name="ПОЛНОЕ_ИМЯ" />
             <PropertyRef Name="ТРУДОЗАТРАТЫ" />
           </Key>
           <Property Name="ПОДРАЗДНИЗ" Type="varchar2" MaxLength="1000" />
@@ -168,18 +170,17 @@ warning 6002: The table/view 'SBT_REP.ASBPS_ACT_SPEC_AUG' does not have a primar
           <Property Name="АС_НОМЕР" Type="varchar2" MaxLength="1000" />
           <Property Name="АС_НАЗВАНИЕ" Type="varchar2" MaxLength="1000" />
           <Property Name="СУМТРУД" Type="number" Precision="38" Scale="0" />
-          <Property Name="ПОЛНОЕ_ИМЯ" Type="varchar2" MaxLength="200" Nullable="false" />
+          <Property Name="ПОЛНОЕ_ИМЯ" Type="varchar2" MaxLength="400" />
           <Property Name="GRADE" Type="number" Precision="38" Scale="0" />
           <Property Name="ТРУДОЗАТРАТЫ" Type="float" Precision="126" Scale="0" Nullable="false" />
           <Property Name="WORK_TYPE_VAL" Type="varchar2" MaxLength="1000" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'SBT_REP.NKFO2_ACT_SPEC_AUG' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="NKFO2_ACT_SPEC_AUG">
+warning 6002: The table/view 'SBT_REP.NKFO2_ACT_SPEC_OCT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="NKFO2_ACT_SPEC_OCT">
           <Key>
             <PropertyRef Name="КОДЗАДАЧИ" />
             <PropertyRef Name="ДАТА_РАБОТЫ" />
-            <PropertyRef Name="ПОЛНОЕ_ИМЯ" />
             <PropertyRef Name="ТРУДОЗАТРАТЫ" />
           </Key>
           <Property Name="ПОДРАЗДНИЗ" Type="varchar2" MaxLength="1000" />
@@ -201,18 +202,17 @@ warning 6002: The table/view 'SBT_REP.NKFO2_ACT_SPEC_AUG' does not have a primar
           <Property Name="АС_НОМЕР" Type="varchar2" MaxLength="1000" />
           <Property Name="АС_НАЗВАНИЕ" Type="varchar2" MaxLength="1000" />
           <Property Name="СУМТРУД" Type="number" Precision="38" Scale="0" />
-          <Property Name="ПОЛНОЕ_ИМЯ" Type="varchar2" MaxLength="200" Nullable="false" />
+          <Property Name="ПОЛНОЕ_ИМЯ" Type="varchar2" MaxLength="400" />
           <Property Name="GRADE" Type="number" Precision="38" Scale="0" />
           <Property Name="ТРУДОЗАТРАТЫ" Type="float" Precision="126" Scale="0" Nullable="false" />
           <Property Name="WORK_TYPE_VAL" Type="varchar2" MaxLength="1000" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'SBT_REP.SDBO_ACT_SPEC_AUG' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="SDBO_ACT_SPEC_AUG">
+warning 6002: The table/view 'SBT_REP.SDBO_ACT_SPEC_OCT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SDBO_ACT_SPEC_OCT">
           <Key>
             <PropertyRef Name="КОДЗАДАЧИ" />
             <PropertyRef Name="ДАТА_РАБОТЫ" />
-            <PropertyRef Name="ПОЛНОЕ_ИМЯ" />
             <PropertyRef Name="ТРУДОЗАТРАТЫ" />
           </Key>
           <Property Name="ПОДРАЗДНИЗ" Type="varchar2" MaxLength="1000" />
@@ -234,7 +234,7 @@ warning 6002: The table/view 'SBT_REP.SDBO_ACT_SPEC_AUG' does not have a primary
           <Property Name="АС_НОМЕР" Type="varchar2" MaxLength="1000" />
           <Property Name="АС_НАЗВАНИЕ" Type="varchar2" MaxLength="1000" />
           <Property Name="СУМТРУД" Type="number" Precision="38" Scale="0" />
-          <Property Name="ПОЛНОЕ_ИМЯ" Type="varchar2" MaxLength="200" Nullable="false" />
+          <Property Name="ПОЛНОЕ_ИМЯ" Type="varchar2" MaxLength="400" />
           <Property Name="GRADE" Type="number" Precision="38" Scale="0" />
           <Property Name="ТРУДОЗАТРАТЫ" Type="float" Precision="126" Scale="0" Nullable="false" />
           <Property Name="WORK_TYPE_VAL" Type="varchar2" MaxLength="1000" />
@@ -270,10 +270,42 @@ warning 6002: The table/view 'SBT_REP.SUM_ZNI_TASK_ASBPS' does not have a primar
           <Property Name="ВРЕМЯ_Ч" Type="number" Precision="38" Scale="0" />
         </EntityType>
         <EntityContainer Name="LaborModelStoreContainer">
-          <EntitySet Name="CONF_REP_LABOR_JIRA_HPSM" EntityType="Self.CONF_REP_LABOR_JIRA_HPSM" Schema="SBT_REP" store:Type="Tables" />
           <EntitySet Name="DATA_1C" EntityType="Self.DATA_1C" Schema="SBT_REP" store:Type="Tables" />
           <EntitySet Name="HPSMLABOR" EntityType="Self.HPSMLABOR" Schema="SBT_REP" store:Type="Tables" />
           <EntitySet Name="TEMPOLABOR" EntityType="Self.TEMPOLABOR" Schema="SBT_REP" store:Type="Tables" />
+          <EntitySet Name="CONF_REP_LABOR_JIRA_HPSM" EntityType="Self.CONF_REP_LABOR_JIRA_HPSM" store:Type="Tables" store:Schema="SBT_REP">
+            <DefiningQuery>SELECT 
+"CONF_REP_LABOR_JIRA_HPSM"."СИСТЕМА" AS "СИСТЕМА", 
+"CONF_REP_LABOR_JIRA_HPSM"."ПОДРАЗДНИЗ" AS "ПОДРАЗДНИЗ", 
+"CONF_REP_LABOR_JIRA_HPSM"."ПОДРАЗДВЕРХ" AS "ПОДРАЗДВЕРХ", 
+"CONF_REP_LABOR_JIRA_HPSM"."Категория" AS "Категория", 
+"CONF_REP_LABOR_JIRA_HPSM"."PROJECT" AS "PROJECT", 
+"CONF_REP_LABOR_JIRA_HPSM"."КОДЗНИ" AS "КОДЗНИ", 
+"CONF_REP_LABOR_JIRA_HPSM"."НОМЕР_ЗНИ" AS "НОМЕР_ЗНИ", 
+"CONF_REP_LABOR_JIRA_HPSM"."ДАТА_РЕГ" AS "ДАТА_РЕГ", 
+"CONF_REP_LABOR_JIRA_HPSM"."СТАТУСЗНИ" AS "СТАТУСЗНИ", 
+"CONF_REP_LABOR_JIRA_HPSM"."ДАТАРЕЗОЛЗНИ" AS "ДАТАРЕЗОЛЗНИ", 
+"CONF_REP_LABOR_JIRA_HPSM"."КОДЗАДАЧИ" AS "КОДЗАДАЧИ", 
+"CONF_REP_LABOR_JIRA_HPSM"."ТИПЗАПРОСА" AS "ТИПЗАПРОСА", 
+"CONF_REP_LABOR_JIRA_HPSM"."СТАТУСЗАДАЧИ" AS "СТАТУСЗАДАЧИ", 
+"CONF_REP_LABOR_JIRA_HPSM"."ИСПОЛНИТЕЛЬ" AS "ИСПОЛНИТЕЛЬ", 
+"CONF_REP_LABOR_JIRA_HPSM"."ДАТАСОЗДАНИЯ" AS "ДАТАСОЗДАНИЯ", 
+"CONF_REP_LABOR_JIRA_HPSM"."ДАТАРЕЗОЛЗАДАЧИ" AS "ДАТАРЕЗОЛЗАДАЧИ", 
+"CONF_REP_LABOR_JIRA_HPSM"."ДАТА_РАБОТЫ" AS "ДАТА_РАБОТЫ", 
+"CONF_REP_LABOR_JIRA_HPSM"."АС_НОМЕР" AS "АС_НОМЕР", 
+"CONF_REP_LABOR_JIRA_HPSM"."АС_НАЗВАНИЕ" AS "АС_НАЗВАНИЕ", 
+"CONF_REP_LABOR_JIRA_HPSM"."СУМТРУД" AS "СУМТРУД", 
+"CONF_REP_LABOR_JIRA_HPSM"."ПОЛНОЕ_ИМЯ" AS "ПОЛНОЕ_ИМЯ", 
+"CONF_REP_LABOR_JIRA_HPSM"."GRADE" AS "GRADE", 
+"CONF_REP_LABOR_JIRA_HPSM"."CATEGORY" AS "CATEGORY", 
+"CONF_REP_LABOR_JIRA_HPSM"."ТРУДОЗАТРАТЫ" AS "ТРУДОЗАТРАТЫ", 
+"CONF_REP_LABOR_JIRA_HPSM"."WORK_TYPE_VAL" AS "WORK_TYPE_VAL", 
+"CONF_REP_LABOR_JIRA_HPSM"."ACCOUNT_VAL" AS "ACCOUNT_VAL", 
+"CONF_REP_LABOR_JIRA_HPSM"."ПРИОРИТЕТ" AS "ПРИОРИТЕТ", 
+"CONF_REP_LABOR_JIRA_HPSM"."ID" AS "ID", 
+"CONF_REP_LABOR_JIRA_HPSM"."СТАТУС_СОТР" AS "СТАТУС_СОТР"
+FROM "SBT_REP"."CONF_REP_LABOR_JIRA_HPSM" "CONF_REP_LABOR_JIRA_HPSM"</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="STRUCTURES" EntityType="Self.STRUCTURES" store:Type="Tables" store:Schema="SBT_REP">
             <DefiningQuery>SELECT 
 "STRUCTURES"."ID" AS "ID", 
@@ -307,86 +339,86 @@ FROM "SBT_REP"."STRUCTURES" "STRUCTURES"</DefiningQuery>
 "ALL_ZNI_BUGS_JIRA"."RESOLUTIONDATE" AS "RESOLUTIONDATE"
 FROM "SBT_REP"."ALL_ZNI_BUGS_JIRA" "ALL_ZNI_BUGS_JIRA"</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="ASBPS_ACT_SPEC_AUG" EntityType="Self.ASBPS_ACT_SPEC_AUG" store:Type="Views" store:Schema="SBT_REP">
+          <EntitySet Name="ASBPS_ACT_SPEC_OCT" EntityType="Self.ASBPS_ACT_SPEC_OCT" store:Type="Views" store:Schema="SBT_REP">
             <DefiningQuery>SELECT 
-"ASBPS_ACT_SPEC_AUG"."ПОДРАЗДНИЗ" AS "ПОДРАЗДНИЗ", 
-"ASBPS_ACT_SPEC_AUG"."ПОДРАЗДВЕРХ" AS "ПОДРАЗДВЕРХ", 
-"ASBPS_ACT_SPEC_AUG"."КОДЗНИ" AS "КОДЗНИ", 
-"ASBPS_ACT_SPEC_AUG"."НОМЕР_ЗНИ" AS "НОМЕР_ЗНИ", 
-"ASBPS_ACT_SPEC_AUG"."ДАТА_РЕГ" AS "ДАТА_РЕГ", 
-"ASBPS_ACT_SPEC_AUG"."МЕНЕДЖЕР_ДИТ" AS "МЕНЕДЖЕР_ДИТ", 
-"ASBPS_ACT_SPEC_AUG"."ИСТОЧНИК_ЗНИ" AS "ИСТОЧНИК_ЗНИ", 
-"ASBPS_ACT_SPEC_AUG"."ДАТА_РЕГ_ЗНИ" AS "ДАТА_РЕГ_ЗНИ", 
-"ASBPS_ACT_SPEC_AUG"."СТАТУСЗНИ" AS "СТАТУСЗНИ", 
-"ASBPS_ACT_SPEC_AUG"."ДАТАРЕЗОЛЗНИ" AS "ДАТАРЕЗОЛЗНИ", 
-"ASBPS_ACT_SPEC_AUG"."КОДЗАДАЧИ" AS "КОДЗАДАЧИ", 
-"ASBPS_ACT_SPEC_AUG"."ОПИСАНИЕ_РАБОТЫ" AS "ОПИСАНИЕ_РАБОТЫ", 
-"ASBPS_ACT_SPEC_AUG"."СТАТУСЗАДАЧИ" AS "СТАТУСЗАДАЧИ", 
-"ASBPS_ACT_SPEC_AUG"."ДАТАРЕЗОЛЗАДАЧИ" AS "ДАТАРЕЗОЛЗАДАЧИ", 
-"ASBPS_ACT_SPEC_AUG"."ДАТАСОЗДЗАДАЧИ" AS "ДАТАСОЗДЗАДАЧИ", 
-"ASBPS_ACT_SPEC_AUG"."ДАТА_РАБОТЫ" AS "ДАТА_РАБОТЫ", 
-"ASBPS_ACT_SPEC_AUG"."АС_НОМЕР" AS "АС_НОМЕР", 
-"ASBPS_ACT_SPEC_AUG"."АС_НАЗВАНИЕ" AS "АС_НАЗВАНИЕ", 
-"ASBPS_ACT_SPEC_AUG"."СУМТРУД" AS "СУМТРУД", 
-"ASBPS_ACT_SPEC_AUG"."ПОЛНОЕ_ИМЯ" AS "ПОЛНОЕ_ИМЯ", 
-"ASBPS_ACT_SPEC_AUG"."GRADE" AS "GRADE", 
-"ASBPS_ACT_SPEC_AUG"."ТРУДОЗАТРАТЫ" AS "ТРУДОЗАТРАТЫ", 
-"ASBPS_ACT_SPEC_AUG"."WORK_TYPE_VAL" AS "WORK_TYPE_VAL"
-FROM "SBT_REP"."ASBPS_ACT_SPEC_AUG" "ASBPS_ACT_SPEC_AUG"</DefiningQuery>
+"ASBPS_ACT_SPEC_OCT"."ПОДРАЗДНИЗ" AS "ПОДРАЗДНИЗ", 
+"ASBPS_ACT_SPEC_OCT"."ПОДРАЗДВЕРХ" AS "ПОДРАЗДВЕРХ", 
+"ASBPS_ACT_SPEC_OCT"."КОДЗНИ" AS "КОДЗНИ", 
+"ASBPS_ACT_SPEC_OCT"."НОМЕР_ЗНИ" AS "НОМЕР_ЗНИ", 
+"ASBPS_ACT_SPEC_OCT"."ДАТА_РЕГ" AS "ДАТА_РЕГ", 
+"ASBPS_ACT_SPEC_OCT"."МЕНЕДЖЕР_ДИТ" AS "МЕНЕДЖЕР_ДИТ", 
+"ASBPS_ACT_SPEC_OCT"."ИСТОЧНИК_ЗНИ" AS "ИСТОЧНИК_ЗНИ", 
+"ASBPS_ACT_SPEC_OCT"."ДАТА_РЕГ_ЗНИ" AS "ДАТА_РЕГ_ЗНИ", 
+"ASBPS_ACT_SPEC_OCT"."СТАТУСЗНИ" AS "СТАТУСЗНИ", 
+"ASBPS_ACT_SPEC_OCT"."ДАТАРЕЗОЛЗНИ" AS "ДАТАРЕЗОЛЗНИ", 
+"ASBPS_ACT_SPEC_OCT"."КОДЗАДАЧИ" AS "КОДЗАДАЧИ", 
+"ASBPS_ACT_SPEC_OCT"."ОПИСАНИЕ_РАБОТЫ" AS "ОПИСАНИЕ_РАБОТЫ", 
+"ASBPS_ACT_SPEC_OCT"."СТАТУСЗАДАЧИ" AS "СТАТУСЗАДАЧИ", 
+"ASBPS_ACT_SPEC_OCT"."ДАТАРЕЗОЛЗАДАЧИ" AS "ДАТАРЕЗОЛЗАДАЧИ", 
+"ASBPS_ACT_SPEC_OCT"."ДАТАСОЗДЗАДАЧИ" AS "ДАТАСОЗДЗАДАЧИ", 
+"ASBPS_ACT_SPEC_OCT"."ДАТА_РАБОТЫ" AS "ДАТА_РАБОТЫ", 
+"ASBPS_ACT_SPEC_OCT"."АС_НОМЕР" AS "АС_НОМЕР", 
+"ASBPS_ACT_SPEC_OCT"."АС_НАЗВАНИЕ" AS "АС_НАЗВАНИЕ", 
+"ASBPS_ACT_SPEC_OCT"."СУМТРУД" AS "СУМТРУД", 
+"ASBPS_ACT_SPEC_OCT"."ПОЛНОЕ_ИМЯ" AS "ПОЛНОЕ_ИМЯ", 
+"ASBPS_ACT_SPEC_OCT"."GRADE" AS "GRADE", 
+"ASBPS_ACT_SPEC_OCT"."ТРУДОЗАТРАТЫ" AS "ТРУДОЗАТРАТЫ", 
+"ASBPS_ACT_SPEC_OCT"."WORK_TYPE_VAL" AS "WORK_TYPE_VAL"
+FROM "SBT_REP"."ASBPS_ACT_SPEC_OCT" "ASBPS_ACT_SPEC_OCT"</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="NKFO2_ACT_SPEC_AUG" EntityType="Self.NKFO2_ACT_SPEC_AUG" store:Type="Views" store:Schema="SBT_REP">
+          <EntitySet Name="NKFO2_ACT_SPEC_OCT" EntityType="Self.NKFO2_ACT_SPEC_OCT" store:Type="Views" store:Schema="SBT_REP">
             <DefiningQuery>SELECT 
-"NKFO2_ACT_SPEC_AUG"."ПОДРАЗДНИЗ" AS "ПОДРАЗДНИЗ", 
-"NKFO2_ACT_SPEC_AUG"."ПОДРАЗДВЕРХ" AS "ПОДРАЗДВЕРХ", 
-"NKFO2_ACT_SPEC_AUG"."КОДЗНИ" AS "КОДЗНИ", 
-"NKFO2_ACT_SPEC_AUG"."НОМЕР_ЗНИ" AS "НОМЕР_ЗНИ", 
-"NKFO2_ACT_SPEC_AUG"."ДАТА_РЕГ" AS "ДАТА_РЕГ", 
-"NKFO2_ACT_SPEC_AUG"."МЕНЕДЖЕР_ДИТ" AS "МЕНЕДЖЕР_ДИТ", 
-"NKFO2_ACT_SPEC_AUG"."ИСТОЧНИК_ЗНИ" AS "ИСТОЧНИК_ЗНИ", 
-"NKFO2_ACT_SPEC_AUG"."ДАТА_РЕГ_ЗНИ" AS "ДАТА_РЕГ_ЗНИ", 
-"NKFO2_ACT_SPEC_AUG"."СТАТУСЗНИ" AS "СТАТУСЗНИ", 
-"NKFO2_ACT_SPEC_AUG"."ДАТАРЕЗОЛЗНИ" AS "ДАТАРЕЗОЛЗНИ", 
-"NKFO2_ACT_SPEC_AUG"."КОДЗАДАЧИ" AS "КОДЗАДАЧИ", 
-"NKFO2_ACT_SPEC_AUG"."ОПИСАНИЕ_РАБОТЫ" AS "ОПИСАНИЕ_РАБОТЫ", 
-"NKFO2_ACT_SPEC_AUG"."СТАТУСЗАДАЧИ" AS "СТАТУСЗАДАЧИ", 
-"NKFO2_ACT_SPEC_AUG"."ДАТАРЕЗОЛЗАДАЧИ" AS "ДАТАРЕЗОЛЗАДАЧИ", 
-"NKFO2_ACT_SPEC_AUG"."ДАТАСОЗДЗАДАЧИ" AS "ДАТАСОЗДЗАДАЧИ", 
-"NKFO2_ACT_SPEC_AUG"."ДАТА_РАБОТЫ" AS "ДАТА_РАБОТЫ", 
-"NKFO2_ACT_SPEC_AUG"."АС_НОМЕР" AS "АС_НОМЕР", 
-"NKFO2_ACT_SPEC_AUG"."АС_НАЗВАНИЕ" AS "АС_НАЗВАНИЕ", 
-"NKFO2_ACT_SPEC_AUG"."СУМТРУД" AS "СУМТРУД", 
-"NKFO2_ACT_SPEC_AUG"."ПОЛНОЕ_ИМЯ" AS "ПОЛНОЕ_ИМЯ", 
-"NKFO2_ACT_SPEC_AUG"."GRADE" AS "GRADE", 
-"NKFO2_ACT_SPEC_AUG"."ТРУДОЗАТРАТЫ" AS "ТРУДОЗАТРАТЫ", 
-"NKFO2_ACT_SPEC_AUG"."WORK_TYPE_VAL" AS "WORK_TYPE_VAL"
-FROM "SBT_REP"."NKFO2_ACT_SPEC_AUG" "NKFO2_ACT_SPEC_AUG"</DefiningQuery>
+"NKFO2_ACT_SPEC_OCT"."ПОДРАЗДНИЗ" AS "ПОДРАЗДНИЗ", 
+"NKFO2_ACT_SPEC_OCT"."ПОДРАЗДВЕРХ" AS "ПОДРАЗДВЕРХ", 
+"NKFO2_ACT_SPEC_OCT"."КОДЗНИ" AS "КОДЗНИ", 
+"NKFO2_ACT_SPEC_OCT"."НОМЕР_ЗНИ" AS "НОМЕР_ЗНИ", 
+"NKFO2_ACT_SPEC_OCT"."ДАТА_РЕГ" AS "ДАТА_РЕГ", 
+"NKFO2_ACT_SPEC_OCT"."МЕНЕДЖЕР_ДИТ" AS "МЕНЕДЖЕР_ДИТ", 
+"NKFO2_ACT_SPEC_OCT"."ИСТОЧНИК_ЗНИ" AS "ИСТОЧНИК_ЗНИ", 
+"NKFO2_ACT_SPEC_OCT"."ДАТА_РЕГ_ЗНИ" AS "ДАТА_РЕГ_ЗНИ", 
+"NKFO2_ACT_SPEC_OCT"."СТАТУСЗНИ" AS "СТАТУСЗНИ", 
+"NKFO2_ACT_SPEC_OCT"."ДАТАРЕЗОЛЗНИ" AS "ДАТАРЕЗОЛЗНИ", 
+"NKFO2_ACT_SPEC_OCT"."КОДЗАДАЧИ" AS "КОДЗАДАЧИ", 
+"NKFO2_ACT_SPEC_OCT"."ОПИСАНИЕ_РАБОТЫ" AS "ОПИСАНИЕ_РАБОТЫ", 
+"NKFO2_ACT_SPEC_OCT"."СТАТУСЗАДАЧИ" AS "СТАТУСЗАДАЧИ", 
+"NKFO2_ACT_SPEC_OCT"."ДАТАРЕЗОЛЗАДАЧИ" AS "ДАТАРЕЗОЛЗАДАЧИ", 
+"NKFO2_ACT_SPEC_OCT"."ДАТАСОЗДЗАДАЧИ" AS "ДАТАСОЗДЗАДАЧИ", 
+"NKFO2_ACT_SPEC_OCT"."ДАТА_РАБОТЫ" AS "ДАТА_РАБОТЫ", 
+"NKFO2_ACT_SPEC_OCT"."АС_НОМЕР" AS "АС_НОМЕР", 
+"NKFO2_ACT_SPEC_OCT"."АС_НАЗВАНИЕ" AS "АС_НАЗВАНИЕ", 
+"NKFO2_ACT_SPEC_OCT"."СУМТРУД" AS "СУМТРУД", 
+"NKFO2_ACT_SPEC_OCT"."ПОЛНОЕ_ИМЯ" AS "ПОЛНОЕ_ИМЯ", 
+"NKFO2_ACT_SPEC_OCT"."GRADE" AS "GRADE", 
+"NKFO2_ACT_SPEC_OCT"."ТРУДОЗАТРАТЫ" AS "ТРУДОЗАТРАТЫ", 
+"NKFO2_ACT_SPEC_OCT"."WORK_TYPE_VAL" AS "WORK_TYPE_VAL"
+FROM "SBT_REP"."NKFO2_ACT_SPEC_OCT" "NKFO2_ACT_SPEC_OCT"</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="SDBO_ACT_SPEC_AUG" EntityType="Self.SDBO_ACT_SPEC_AUG" store:Type="Views" store:Schema="SBT_REP">
+          <EntitySet Name="SDBO_ACT_SPEC_OCT" EntityType="Self.SDBO_ACT_SPEC_OCT" store:Type="Views" store:Schema="SBT_REP">
             <DefiningQuery>SELECT 
-"SDBO_ACT_SPEC_AUG"."ПОДРАЗДНИЗ" AS "ПОДРАЗДНИЗ", 
-"SDBO_ACT_SPEC_AUG"."ПОДРАЗДВЕРХ" AS "ПОДРАЗДВЕРХ", 
-"SDBO_ACT_SPEC_AUG"."КОДЗНИ" AS "КОДЗНИ", 
-"SDBO_ACT_SPEC_AUG"."НОМЕР_ЗНИ" AS "НОМЕР_ЗНИ", 
-"SDBO_ACT_SPEC_AUG"."ДАТА_РЕГ" AS "ДАТА_РЕГ", 
-"SDBO_ACT_SPEC_AUG"."МЕНЕДЖЕР_ДИТ" AS "МЕНЕДЖЕР_ДИТ", 
-"SDBO_ACT_SPEC_AUG"."ИСТОЧНИК_ЗНИ" AS "ИСТОЧНИК_ЗНИ", 
-"SDBO_ACT_SPEC_AUG"."ДАТА_РЕГ_ЗНИ" AS "ДАТА_РЕГ_ЗНИ", 
-"SDBO_ACT_SPEC_AUG"."СТАТУСЗНИ" AS "СТАТУСЗНИ", 
-"SDBO_ACT_SPEC_AUG"."ДАТАРЕЗОЛЗНИ" AS "ДАТАРЕЗОЛЗНИ", 
-"SDBO_ACT_SPEC_AUG"."КОДЗАДАЧИ" AS "КОДЗАДАЧИ", 
-"SDBO_ACT_SPEC_AUG"."ОПИСАНИЕ_РАБОТЫ" AS "ОПИСАНИЕ_РАБОТЫ", 
-"SDBO_ACT_SPEC_AUG"."СТАТУСЗАДАЧИ" AS "СТАТУСЗАДАЧИ", 
-"SDBO_ACT_SPEC_AUG"."ДАТАРЕЗОЛЗАДАЧИ" AS "ДАТАРЕЗОЛЗАДАЧИ", 
-"SDBO_ACT_SPEC_AUG"."ДАТАСОЗДЗАДАЧИ" AS "ДАТАСОЗДЗАДАЧИ", 
-"SDBO_ACT_SPEC_AUG"."ДАТА_РАБОТЫ" AS "ДАТА_РАБОТЫ", 
-"SDBO_ACT_SPEC_AUG"."АС_НОМЕР" AS "АС_НОМЕР", 
-"SDBO_ACT_SPEC_AUG"."АС_НАЗВАНИЕ" AS "АС_НАЗВАНИЕ", 
-"SDBO_ACT_SPEC_AUG"."СУМТРУД" AS "СУМТРУД", 
-"SDBO_ACT_SPEC_AUG"."ПОЛНОЕ_ИМЯ" AS "ПОЛНОЕ_ИМЯ", 
-"SDBO_ACT_SPEC_AUG"."GRADE" AS "GRADE", 
-"SDBO_ACT_SPEC_AUG"."ТРУДОЗАТРАТЫ" AS "ТРУДОЗАТРАТЫ", 
-"SDBO_ACT_SPEC_AUG"."WORK_TYPE_VAL" AS "WORK_TYPE_VAL"
-FROM "SBT_REP"."SDBO_ACT_SPEC_AUG" "SDBO_ACT_SPEC_AUG"</DefiningQuery>
+"SDBO_ACT_SPEC_OCT"."ПОДРАЗДНИЗ" AS "ПОДРАЗДНИЗ", 
+"SDBO_ACT_SPEC_OCT"."ПОДРАЗДВЕРХ" AS "ПОДРАЗДВЕРХ", 
+"SDBO_ACT_SPEC_OCT"."КОДЗНИ" AS "КОДЗНИ", 
+"SDBO_ACT_SPEC_OCT"."НОМЕР_ЗНИ" AS "НОМЕР_ЗНИ", 
+"SDBO_ACT_SPEC_OCT"."ДАТА_РЕГ" AS "ДАТА_РЕГ", 
+"SDBO_ACT_SPEC_OCT"."МЕНЕДЖЕР_ДИТ" AS "МЕНЕДЖЕР_ДИТ", 
+"SDBO_ACT_SPEC_OCT"."ИСТОЧНИК_ЗНИ" AS "ИСТОЧНИК_ЗНИ", 
+"SDBO_ACT_SPEC_OCT"."ДАТА_РЕГ_ЗНИ" AS "ДАТА_РЕГ_ЗНИ", 
+"SDBO_ACT_SPEC_OCT"."СТАТУСЗНИ" AS "СТАТУСЗНИ", 
+"SDBO_ACT_SPEC_OCT"."ДАТАРЕЗОЛЗНИ" AS "ДАТАРЕЗОЛЗНИ", 
+"SDBO_ACT_SPEC_OCT"."КОДЗАДАЧИ" AS "КОДЗАДАЧИ", 
+"SDBO_ACT_SPEC_OCT"."ОПИСАНИЕ_РАБОТЫ" AS "ОПИСАНИЕ_РАБОТЫ", 
+"SDBO_ACT_SPEC_OCT"."СТАТУСЗАДАЧИ" AS "СТАТУСЗАДАЧИ", 
+"SDBO_ACT_SPEC_OCT"."ДАТАРЕЗОЛЗАДАЧИ" AS "ДАТАРЕЗОЛЗАДАЧИ", 
+"SDBO_ACT_SPEC_OCT"."ДАТАСОЗДЗАДАЧИ" AS "ДАТАСОЗДЗАДАЧИ", 
+"SDBO_ACT_SPEC_OCT"."ДАТА_РАБОТЫ" AS "ДАТА_РАБОТЫ", 
+"SDBO_ACT_SPEC_OCT"."АС_НОМЕР" AS "АС_НОМЕР", 
+"SDBO_ACT_SPEC_OCT"."АС_НАЗВАНИЕ" AS "АС_НАЗВАНИЕ", 
+"SDBO_ACT_SPEC_OCT"."СУМТРУД" AS "СУМТРУД", 
+"SDBO_ACT_SPEC_OCT"."ПОЛНОЕ_ИМЯ" AS "ПОЛНОЕ_ИМЯ", 
+"SDBO_ACT_SPEC_OCT"."GRADE" AS "GRADE", 
+"SDBO_ACT_SPEC_OCT"."ТРУДОЗАТРАТЫ" AS "ТРУДОЗАТРАТЫ", 
+"SDBO_ACT_SPEC_OCT"."WORK_TYPE_VAL" AS "WORK_TYPE_VAL"
+FROM "SBT_REP"."SDBO_ACT_SPEC_OCT" "SDBO_ACT_SPEC_OCT"</DefiningQuery>
           </EntitySet>
           <EntitySet Name="SUM_PROJECT_ACTIVITY" EntityType="Self.SUM_PROJECT_ACTIVITY" store:Type="Views" store:Schema="SBT_REP">
             <DefiningQuery>SELECT 
@@ -421,12 +453,12 @@ FROM "SBT_REP"."SUM_ZNI_TASK_ASBPS" "SUM_ZNI_TASK_ASBPS"</DefiningQuery>
           <EntitySet Name="HPSMLABOR" EntityType="LaborModel.HPSMLABOR" />
           <EntitySet Name="TEMPOLABOR" EntityType="LaborModel.TEMPOLABOR" />
           <EntitySet Name="STRUCTURES" EntityType="LaborModel.STRUCTURES" />
-          <EntitySet Name="ASBPS_ACT_SPEC_AUG" EntityType="LaborModel.ASBPS_ACT_SPEC_AUG" />
-          <EntitySet Name="NKFO2_ACT_SPEC_AUG" EntityType="LaborModel.NKFO2_ACT_SPEC_AUG" />
-          <EntitySet Name="SDBO_ACT_SPEC_AUG" EntityType="LaborModel.SDBO_ACT_SPEC_AUG" />
           <EntitySet Name="SUM_PROJECT_ACTIVITY" EntityType="LaborModel.SUM_PROJECT_ACTIVITY" />
           <EntitySet Name="SUM_TASK_NOT_LINKED_ASBPS" EntityType="LaborModel.SUM_TASK_NOT_LINKED_ASBPS" />
           <EntitySet Name="SUM_ZNI_TASK_ASBPS" EntityType="LaborModel.SUM_ZNI_TASK_ASBPS" />
+          <EntitySet Name="ASBPS_ACT_SPEC_OCT" EntityType="LaborModel.ASBPS_ACT_SPEC_OCT" />
+          <EntitySet Name="NKFO2_ACT_SPEC_OCT" EntityType="LaborModel.NKFO2_ACT_SPEC_OCT" />
+          <EntitySet Name="SDBO_ACT_SPEC_OCT" EntityType="LaborModel.SDBO_ACT_SPEC_OCT" />
         </EntityContainer>
         <EntityType Name="ALL_ZNI_BUGS_JIRA">
           <Key>
@@ -483,6 +515,7 @@ FROM "SBT_REP"."SUM_ZNI_TASK_ASBPS" "SUM_ZNI_TASK_ASBPS"</DefiningQuery>
           <Property Name="ACCOUNT_VAL" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
           <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
           <Property Name="ПРИОРИТЕТ" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="СТАТУС_СОТР" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
         </EntityType>
         
         <EntityType Name="DATA_1C">
@@ -560,99 +593,6 @@ FROM "SBT_REP"."SUM_ZNI_TASK_ASBPS" "SUM_ZNI_TASK_ASBPS"</DefiningQuery>
           <Property Name="ID_CHILD" Type="Decimal" Precision="38" Scale="0" />
           <Property Name="NAME_CHILD" Type="String" MaxLength="296" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="ASBPS_ACT_SPEC_AUG">
-          <Key>
-            <PropertyRef Name="КОДЗАДАЧИ" />
-            <PropertyRef Name="ДАТА_РАБОТЫ" />
-            <PropertyRef Name="ПОЛНОЕ_ИМЯ" />
-            <PropertyRef Name="ТРУДОЗАТРАТЫ" />
-          </Key>
-          <Property Name="ПОДРАЗДНИЗ" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Name="ПОДРАЗДВЕРХ" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Name="КОДЗНИ" Type="String" MaxLength="296" FixedLength="false" Unicode="false" />
-          <Property Name="НОМЕР_ЗНИ" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="ДАТА_РЕГ" Type="DateTime" />
-          <Property Name="МЕНЕДЖЕР_ДИТ" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="ИСТОЧНИК_ЗНИ" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="ДАТА_РЕГ_ЗНИ" Type="DateTime" />
-          <Property Name="СТАТУСЗНИ" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-          <Property Name="ДАТАРЕЗОЛЗНИ" Type="DateTime" />
-          <Property Name="КОДЗАДАЧИ" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="ОПИСАНИЕ_РАБОТЫ" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
-          <Property Name="СТАТУСЗАДАЧИ" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-          <Property Name="ДАТАРЕЗОЛЗАДАЧИ" Type="DateTime" />
-          <Property Name="ДАТАСОЗДЗАДАЧИ" Type="DateTime" />
-          <Property Name="ДАТА_РАБОТЫ" Type="DateTime" Nullable="false" />
-          <Property Name="АС_НОМЕР" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Name="АС_НАЗВАНИЕ" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Name="СУМТРУД" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="ПОЛНОЕ_ИМЯ" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="GRADE" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="ТРУДОЗАТРАТЫ" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
-          <Property Name="WORK_TYPE_VAL" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="NKFO2_ACT_SPEC_AUG">
-          <Key>
-            <PropertyRef Name="КОДЗАДАЧИ" />
-            <PropertyRef Name="ДАТА_РАБОТЫ" />
-            <PropertyRef Name="ПОЛНОЕ_ИМЯ" />
-            <PropertyRef Name="ТРУДОЗАТРАТЫ" />
-          </Key>
-          <Property Name="ПОДРАЗДНИЗ" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Name="ПОДРАЗДВЕРХ" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Name="КОДЗНИ" Type="String" MaxLength="296" FixedLength="false" Unicode="false" />
-          <Property Name="НОМЕР_ЗНИ" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="ДАТА_РЕГ" Type="DateTime" />
-          <Property Name="МЕНЕДЖЕР_ДИТ" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="ИСТОЧНИК_ЗНИ" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="ДАТА_РЕГ_ЗНИ" Type="DateTime" />
-          <Property Name="СТАТУСЗНИ" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-          <Property Name="ДАТАРЕЗОЛЗНИ" Type="DateTime" />
-          <Property Name="КОДЗАДАЧИ" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="ОПИСАНИЕ_РАБОТЫ" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
-          <Property Name="СТАТУСЗАДАЧИ" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-          <Property Name="ДАТАРЕЗОЛЗАДАЧИ" Type="DateTime" />
-          <Property Name="ДАТАСОЗДЗАДАЧИ" Type="DateTime" />
-          <Property Name="ДАТА_РАБОТЫ" Type="DateTime" Nullable="false" />
-          <Property Name="АС_НОМЕР" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Name="АС_НАЗВАНИЕ" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Name="СУМТРУД" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="ПОЛНОЕ_ИМЯ" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="GRADE" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="ТРУДОЗАТРАТЫ" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
-          <Property Name="WORK_TYPE_VAL" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="SDBO_ACT_SPEC_AUG">
-          <Key>
-            <PropertyRef Name="КОДЗАДАЧИ" />
-            <PropertyRef Name="ДАТА_РАБОТЫ" />
-            <PropertyRef Name="ПОЛНОЕ_ИМЯ" />
-            <PropertyRef Name="ТРУДОЗАТРАТЫ" />
-          </Key>
-          <Property Name="ПОДРАЗДНИЗ" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Name="ПОДРАЗДВЕРХ" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Name="КОДЗНИ" Type="String" MaxLength="296" FixedLength="false" Unicode="false" />
-          <Property Name="НОМЕР_ЗНИ" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="ДАТА_РЕГ" Type="DateTime" />
-          <Property Name="МЕНЕДЖЕР_ДИТ" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="ИСТОЧНИК_ЗНИ" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="ДАТА_РЕГ_ЗНИ" Type="DateTime" />
-          <Property Name="СТАТУСЗНИ" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-          <Property Name="ДАТАРЕЗОЛЗНИ" Type="DateTime" />
-          <Property Name="КОДЗАДАЧИ" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="ОПИСАНИЕ_РАБОТЫ" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
-          <Property Name="СТАТУСЗАДАЧИ" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-          <Property Name="ДАТАРЕЗОЛЗАДАЧИ" Type="DateTime" />
-          <Property Name="ДАТАСОЗДЗАДАЧИ" Type="DateTime" />
-          <Property Name="ДАТА_РАБОТЫ" Type="DateTime" Nullable="false" />
-          <Property Name="АС_НОМЕР" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Name="АС_НАЗВАНИЕ" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Name="СУМТРУД" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="ПОЛНОЕ_ИМЯ" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="GRADE" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="ТРУДОЗАТРАТЫ" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
-          <Property Name="WORK_TYPE_VAL" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="SUM_PROJECT_ACTIVITY">
           <Key>
             <PropertyRef Name="ID" />
@@ -676,6 +616,96 @@ FROM "SBT_REP"."SUM_ZNI_TASK_ASBPS" "SUM_ZNI_TASK_ASBPS"</DefiningQuery>
           <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
           <Property Name="МЕСЯЦ" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
           <Property Name="ВРЕМЯ_Ч" Type="Decimal" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="ASBPS_ACT_SPEC_OCT">
+          <Key>
+            <PropertyRef Name="КОДЗАДАЧИ" />
+            <PropertyRef Name="ДАТА_РАБОТЫ" />
+            <PropertyRef Name="ТРУДОЗАТРАТЫ" />
+          </Key>
+          <Property Name="ПОДРАЗДНИЗ" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="ПОДРАЗДВЕРХ" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="КОДЗНИ" Type="String" MaxLength="296" FixedLength="false" Unicode="false" />
+          <Property Name="НОМЕР_ЗНИ" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ДАТА_РЕГ" Type="DateTime" />
+          <Property Name="МЕНЕДЖЕР_ДИТ" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ИСТОЧНИК_ЗНИ" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ДАТА_РЕГ_ЗНИ" Type="DateTime" />
+          <Property Name="СТАТУСЗНИ" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="ДАТАРЕЗОЛЗНИ" Type="DateTime" />
+          <Property Name="КОДЗАДАЧИ" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ОПИСАНИЕ_РАБОТЫ" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="СТАТУСЗАДАЧИ" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="ДАТАРЕЗОЛЗАДАЧИ" Type="DateTime" />
+          <Property Name="ДАТАСОЗДЗАДАЧИ" Type="DateTime" />
+          <Property Name="ДАТА_РАБОТЫ" Type="DateTime" Nullable="false" />
+          <Property Name="АС_НОМЕР" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="АС_НАЗВАНИЕ" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="СУМТРУД" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ПОЛНОЕ_ИМЯ" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Name="GRADE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ТРУДОЗАТРАТЫ" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="WORK_TYPE_VAL" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="NKFO2_ACT_SPEC_OCT">
+          <Key>
+            <PropertyRef Name="КОДЗАДАЧИ" />
+            <PropertyRef Name="ДАТА_РАБОТЫ" />
+            <PropertyRef Name="ТРУДОЗАТРАТЫ" />
+          </Key>
+          <Property Name="ПОДРАЗДНИЗ" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="ПОДРАЗДВЕРХ" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="КОДЗНИ" Type="String" MaxLength="296" FixedLength="false" Unicode="false" />
+          <Property Name="НОМЕР_ЗНИ" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ДАТА_РЕГ" Type="DateTime" />
+          <Property Name="МЕНЕДЖЕР_ДИТ" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ИСТОЧНИК_ЗНИ" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ДАТА_РЕГ_ЗНИ" Type="DateTime" />
+          <Property Name="СТАТУСЗНИ" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="ДАТАРЕЗОЛЗНИ" Type="DateTime" />
+          <Property Name="КОДЗАДАЧИ" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ОПИСАНИЕ_РАБОТЫ" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="СТАТУСЗАДАЧИ" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="ДАТАРЕЗОЛЗАДАЧИ" Type="DateTime" />
+          <Property Name="ДАТАСОЗДЗАДАЧИ" Type="DateTime" />
+          <Property Name="ДАТА_РАБОТЫ" Type="DateTime" Nullable="false" />
+          <Property Name="АС_НОМЕР" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="АС_НАЗВАНИЕ" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="СУМТРУД" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ПОЛНОЕ_ИМЯ" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Name="GRADE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ТРУДОЗАТРАТЫ" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="WORK_TYPE_VAL" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SDBO_ACT_SPEC_OCT">
+          <Key>
+            <PropertyRef Name="КОДЗАДАЧИ" />
+            <PropertyRef Name="ДАТА_РАБОТЫ" />
+            <PropertyRef Name="ТРУДОЗАТРАТЫ" />
+          </Key>
+          <Property Name="ПОДРАЗДНИЗ" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="ПОДРАЗДВЕРХ" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="КОДЗНИ" Type="String" MaxLength="296" FixedLength="false" Unicode="false" />
+          <Property Name="НОМЕР_ЗНИ" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ДАТА_РЕГ" Type="DateTime" />
+          <Property Name="МЕНЕДЖЕР_ДИТ" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ИСТОЧНИК_ЗНИ" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ДАТА_РЕГ_ЗНИ" Type="DateTime" />
+          <Property Name="СТАТУСЗНИ" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="ДАТАРЕЗОЛЗНИ" Type="DateTime" />
+          <Property Name="КОДЗАДАЧИ" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ОПИСАНИЕ_РАБОТЫ" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="СТАТУСЗАДАЧИ" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="ДАТАРЕЗОЛЗАДАЧИ" Type="DateTime" />
+          <Property Name="ДАТАСОЗДЗАДАЧИ" Type="DateTime" />
+          <Property Name="ДАТА_РАБОТЫ" Type="DateTime" Nullable="false" />
+          <Property Name="АС_НОМЕР" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="АС_НАЗВАНИЕ" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="СУМТРУД" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ПОЛНОЕ_ИМЯ" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Name="GRADE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ТРУДОЗАТРАТЫ" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="WORK_TYPE_VAL" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -710,6 +740,7 @@ FROM "SBT_REP"."SUM_ZNI_TASK_ASBPS" "SUM_ZNI_TASK_ASBPS"</DefiningQuery>
           <EntitySetMapping Name="CONF_REP_LABOR_JIRA_HPSM">
             <EntityTypeMapping TypeName="LaborModel.CONF_REP_LABOR_JIRA_HPSM">
               <MappingFragment StoreEntitySet="CONF_REP_LABOR_JIRA_HPSM">
+                <ScalarProperty Name="СТАТУС_СОТР" ColumnName="СТАТУС_СОТР" />
                 <ScalarProperty Name="ПРИОРИТЕТ" ColumnName="ПРИОРИТЕТ" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ACCOUNT_VAL" ColumnName="ACCOUNT_VAL" />
@@ -821,93 +852,6 @@ FROM "SBT_REP"."SUM_ZNI_TASK_ASBPS" "SUM_ZNI_TASK_ASBPS"</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ASBPS_ACT_SPEC_AUG">
-            <EntityTypeMapping TypeName="LaborModel.ASBPS_ACT_SPEC_AUG">
-              <MappingFragment StoreEntitySet="ASBPS_ACT_SPEC_AUG">
-                <ScalarProperty Name="WORK_TYPE_VAL" ColumnName="WORK_TYPE_VAL" />
-                <ScalarProperty Name="ТРУДОЗАТРАТЫ" ColumnName="ТРУДОЗАТРАТЫ" />
-                <ScalarProperty Name="GRADE" ColumnName="GRADE" />
-                <ScalarProperty Name="ПОЛНОЕ_ИМЯ" ColumnName="ПОЛНОЕ_ИМЯ" />
-                <ScalarProperty Name="СУМТРУД" ColumnName="СУМТРУД" />
-                <ScalarProperty Name="АС_НАЗВАНИЕ" ColumnName="АС_НАЗВАНИЕ" />
-                <ScalarProperty Name="АС_НОМЕР" ColumnName="АС_НОМЕР" />
-                <ScalarProperty Name="ДАТА_РАБОТЫ" ColumnName="ДАТА_РАБОТЫ" />
-                <ScalarProperty Name="ДАТАСОЗДЗАДАЧИ" ColumnName="ДАТАСОЗДЗАДАЧИ" />
-                <ScalarProperty Name="ДАТАРЕЗОЛЗАДАЧИ" ColumnName="ДАТАРЕЗОЛЗАДАЧИ" />
-                <ScalarProperty Name="СТАТУСЗАДАЧИ" ColumnName="СТАТУСЗАДАЧИ" />
-                <ScalarProperty Name="ОПИСАНИЕ_РАБОТЫ" ColumnName="ОПИСАНИЕ_РАБОТЫ" />
-                <ScalarProperty Name="КОДЗАДАЧИ" ColumnName="КОДЗАДАЧИ" />
-                <ScalarProperty Name="ДАТАРЕЗОЛЗНИ" ColumnName="ДАТАРЕЗОЛЗНИ" />
-                <ScalarProperty Name="СТАТУСЗНИ" ColumnName="СТАТУСЗНИ" />
-                <ScalarProperty Name="ДАТА_РЕГ_ЗНИ" ColumnName="ДАТА_РЕГ_ЗНИ" />
-                <ScalarProperty Name="ИСТОЧНИК_ЗНИ" ColumnName="ИСТОЧНИК_ЗНИ" />
-                <ScalarProperty Name="МЕНЕДЖЕР_ДИТ" ColumnName="МЕНЕДЖЕР_ДИТ" />
-                <ScalarProperty Name="ДАТА_РЕГ" ColumnName="ДАТА_РЕГ" />
-                <ScalarProperty Name="НОМЕР_ЗНИ" ColumnName="НОМЕР_ЗНИ" />
-                <ScalarProperty Name="КОДЗНИ" ColumnName="КОДЗНИ" />
-                <ScalarProperty Name="ПОДРАЗДВЕРХ" ColumnName="ПОДРАЗДВЕРХ" />
-                <ScalarProperty Name="ПОДРАЗДНИЗ" ColumnName="ПОДРАЗДНИЗ" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="NKFO2_ACT_SPEC_AUG">
-            <EntityTypeMapping TypeName="LaborModel.NKFO2_ACT_SPEC_AUG">
-              <MappingFragment StoreEntitySet="NKFO2_ACT_SPEC_AUG">
-                <ScalarProperty Name="WORK_TYPE_VAL" ColumnName="WORK_TYPE_VAL" />
-                <ScalarProperty Name="ТРУДОЗАТРАТЫ" ColumnName="ТРУДОЗАТРАТЫ" />
-                <ScalarProperty Name="GRADE" ColumnName="GRADE" />
-                <ScalarProperty Name="ПОЛНОЕ_ИМЯ" ColumnName="ПОЛНОЕ_ИМЯ" />
-                <ScalarProperty Name="СУМТРУД" ColumnName="СУМТРУД" />
-                <ScalarProperty Name="АС_НАЗВАНИЕ" ColumnName="АС_НАЗВАНИЕ" />
-                <ScalarProperty Name="АС_НОМЕР" ColumnName="АС_НОМЕР" />
-                <ScalarProperty Name="ДАТА_РАБОТЫ" ColumnName="ДАТА_РАБОТЫ" />
-                <ScalarProperty Name="ДАТАСОЗДЗАДАЧИ" ColumnName="ДАТАСОЗДЗАДАЧИ" />
-                <ScalarProperty Name="ДАТАРЕЗОЛЗАДАЧИ" ColumnName="ДАТАРЕЗОЛЗАДАЧИ" />
-                <ScalarProperty Name="СТАТУСЗАДАЧИ" ColumnName="СТАТУСЗАДАЧИ" />
-                <ScalarProperty Name="ОПИСАНИЕ_РАБОТЫ" ColumnName="ОПИСАНИЕ_РАБОТЫ" />
-                <ScalarProperty Name="КОДЗАДАЧИ" ColumnName="КОДЗАДАЧИ" />
-                <ScalarProperty Name="ДАТАРЕЗОЛЗНИ" ColumnName="ДАТАРЕЗОЛЗНИ" />
-                <ScalarProperty Name="СТАТУСЗНИ" ColumnName="СТАТУСЗНИ" />
-                <ScalarProperty Name="ДАТА_РЕГ_ЗНИ" ColumnName="ДАТА_РЕГ_ЗНИ" />
-                <ScalarProperty Name="ИСТОЧНИК_ЗНИ" ColumnName="ИСТОЧНИК_ЗНИ" />
-                <ScalarProperty Name="МЕНЕДЖЕР_ДИТ" ColumnName="МЕНЕДЖЕР_ДИТ" />
-                <ScalarProperty Name="ДАТА_РЕГ" ColumnName="ДАТА_РЕГ" />
-                <ScalarProperty Name="НОМЕР_ЗНИ" ColumnName="НОМЕР_ЗНИ" />
-                <ScalarProperty Name="КОДЗНИ" ColumnName="КОДЗНИ" />
-                <ScalarProperty Name="ПОДРАЗДВЕРХ" ColumnName="ПОДРАЗДВЕРХ" />
-                <ScalarProperty Name="ПОДРАЗДНИЗ" ColumnName="ПОДРАЗДНИЗ" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SDBO_ACT_SPEC_AUG">
-            <EntityTypeMapping TypeName="LaborModel.SDBO_ACT_SPEC_AUG">
-              <MappingFragment StoreEntitySet="SDBO_ACT_SPEC_AUG">
-                <ScalarProperty Name="WORK_TYPE_VAL" ColumnName="WORK_TYPE_VAL" />
-                <ScalarProperty Name="ТРУДОЗАТРАТЫ" ColumnName="ТРУДОЗАТРАТЫ" />
-                <ScalarProperty Name="GRADE" ColumnName="GRADE" />
-                <ScalarProperty Name="ПОЛНОЕ_ИМЯ" ColumnName="ПОЛНОЕ_ИМЯ" />
-                <ScalarProperty Name="СУМТРУД" ColumnName="СУМТРУД" />
-                <ScalarProperty Name="АС_НАЗВАНИЕ" ColumnName="АС_НАЗВАНИЕ" />
-                <ScalarProperty Name="АС_НОМЕР" ColumnName="АС_НОМЕР" />
-                <ScalarProperty Name="ДАТА_РАБОТЫ" ColumnName="ДАТА_РАБОТЫ" />
-                <ScalarProperty Name="ДАТАСОЗДЗАДАЧИ" ColumnName="ДАТАСОЗДЗАДАЧИ" />
-                <ScalarProperty Name="ДАТАРЕЗОЛЗАДАЧИ" ColumnName="ДАТАРЕЗОЛЗАДАЧИ" />
-                <ScalarProperty Name="СТАТУСЗАДАЧИ" ColumnName="СТАТУСЗАДАЧИ" />
-                <ScalarProperty Name="ОПИСАНИЕ_РАБОТЫ" ColumnName="ОПИСАНИЕ_РАБОТЫ" />
-                <ScalarProperty Name="КОДЗАДАЧИ" ColumnName="КОДЗАДАЧИ" />
-                <ScalarProperty Name="ДАТАРЕЗОЛЗНИ" ColumnName="ДАТАРЕЗОЛЗНИ" />
-                <ScalarProperty Name="СТАТУСЗНИ" ColumnName="СТАТУСЗНИ" />
-                <ScalarProperty Name="ДАТА_РЕГ_ЗНИ" ColumnName="ДАТА_РЕГ_ЗНИ" />
-                <ScalarProperty Name="ИСТОЧНИК_ЗНИ" ColumnName="ИСТОЧНИК_ЗНИ" />
-                <ScalarProperty Name="МЕНЕДЖЕР_ДИТ" ColumnName="МЕНЕДЖЕР_ДИТ" />
-                <ScalarProperty Name="ДАТА_РЕГ" ColumnName="ДАТА_РЕГ" />
-                <ScalarProperty Name="НОМЕР_ЗНИ" ColumnName="НОМЕР_ЗНИ" />
-                <ScalarProperty Name="КОДЗНИ" ColumnName="КОДЗНИ" />
-                <ScalarProperty Name="ПОДРАЗДВЕРХ" ColumnName="ПОДРАЗДВЕРХ" />
-                <ScalarProperty Name="ПОДРАЗДНИЗ" ColumnName="ПОДРАЗДНИЗ" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="SUM_PROJECT_ACTIVITY">
             <EntityTypeMapping TypeName="LaborModel.SUM_PROJECT_ACTIVITY">
               <MappingFragment StoreEntitySet="SUM_PROJECT_ACTIVITY">
@@ -932,6 +876,93 @@ FROM "SBT_REP"."SUM_ZNI_TASK_ASBPS" "SUM_ZNI_TASK_ASBPS"</DefiningQuery>
                 <ScalarProperty Name="ВРЕМЯ_Ч" ColumnName="ВРЕМЯ_Ч" />
                 <ScalarProperty Name="МЕСЯЦ" ColumnName="МЕСЯЦ" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ASBPS_ACT_SPEC_OCT">
+            <EntityTypeMapping TypeName="LaborModel.ASBPS_ACT_SPEC_OCT">
+              <MappingFragment StoreEntitySet="ASBPS_ACT_SPEC_OCT">
+                <ScalarProperty Name="WORK_TYPE_VAL" ColumnName="WORK_TYPE_VAL" />
+                <ScalarProperty Name="ТРУДОЗАТРАТЫ" ColumnName="ТРУДОЗАТРАТЫ" />
+                <ScalarProperty Name="GRADE" ColumnName="GRADE" />
+                <ScalarProperty Name="ПОЛНОЕ_ИМЯ" ColumnName="ПОЛНОЕ_ИМЯ" />
+                <ScalarProperty Name="СУМТРУД" ColumnName="СУМТРУД" />
+                <ScalarProperty Name="АС_НАЗВАНИЕ" ColumnName="АС_НАЗВАНИЕ" />
+                <ScalarProperty Name="АС_НОМЕР" ColumnName="АС_НОМЕР" />
+                <ScalarProperty Name="ДАТА_РАБОТЫ" ColumnName="ДАТА_РАБОТЫ" />
+                <ScalarProperty Name="ДАТАСОЗДЗАДАЧИ" ColumnName="ДАТАСОЗДЗАДАЧИ" />
+                <ScalarProperty Name="ДАТАРЕЗОЛЗАДАЧИ" ColumnName="ДАТАРЕЗОЛЗАДАЧИ" />
+                <ScalarProperty Name="СТАТУСЗАДАЧИ" ColumnName="СТАТУСЗАДАЧИ" />
+                <ScalarProperty Name="ОПИСАНИЕ_РАБОТЫ" ColumnName="ОПИСАНИЕ_РАБОТЫ" />
+                <ScalarProperty Name="КОДЗАДАЧИ" ColumnName="КОДЗАДАЧИ" />
+                <ScalarProperty Name="ДАТАРЕЗОЛЗНИ" ColumnName="ДАТАРЕЗОЛЗНИ" />
+                <ScalarProperty Name="СТАТУСЗНИ" ColumnName="СТАТУСЗНИ" />
+                <ScalarProperty Name="ДАТА_РЕГ_ЗНИ" ColumnName="ДАТА_РЕГ_ЗНИ" />
+                <ScalarProperty Name="ИСТОЧНИК_ЗНИ" ColumnName="ИСТОЧНИК_ЗНИ" />
+                <ScalarProperty Name="МЕНЕДЖЕР_ДИТ" ColumnName="МЕНЕДЖЕР_ДИТ" />
+                <ScalarProperty Name="ДАТА_РЕГ" ColumnName="ДАТА_РЕГ" />
+                <ScalarProperty Name="НОМЕР_ЗНИ" ColumnName="НОМЕР_ЗНИ" />
+                <ScalarProperty Name="КОДЗНИ" ColumnName="КОДЗНИ" />
+                <ScalarProperty Name="ПОДРАЗДВЕРХ" ColumnName="ПОДРАЗДВЕРХ" />
+                <ScalarProperty Name="ПОДРАЗДНИЗ" ColumnName="ПОДРАЗДНИЗ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NKFO2_ACT_SPEC_OCT">
+            <EntityTypeMapping TypeName="LaborModel.NKFO2_ACT_SPEC_OCT">
+              <MappingFragment StoreEntitySet="NKFO2_ACT_SPEC_OCT">
+                <ScalarProperty Name="WORK_TYPE_VAL" ColumnName="WORK_TYPE_VAL" />
+                <ScalarProperty Name="ТРУДОЗАТРАТЫ" ColumnName="ТРУДОЗАТРАТЫ" />
+                <ScalarProperty Name="GRADE" ColumnName="GRADE" />
+                <ScalarProperty Name="ПОЛНОЕ_ИМЯ" ColumnName="ПОЛНОЕ_ИМЯ" />
+                <ScalarProperty Name="СУМТРУД" ColumnName="СУМТРУД" />
+                <ScalarProperty Name="АС_НАЗВАНИЕ" ColumnName="АС_НАЗВАНИЕ" />
+                <ScalarProperty Name="АС_НОМЕР" ColumnName="АС_НОМЕР" />
+                <ScalarProperty Name="ДАТА_РАБОТЫ" ColumnName="ДАТА_РАБОТЫ" />
+                <ScalarProperty Name="ДАТАСОЗДЗАДАЧИ" ColumnName="ДАТАСОЗДЗАДАЧИ" />
+                <ScalarProperty Name="ДАТАРЕЗОЛЗАДАЧИ" ColumnName="ДАТАРЕЗОЛЗАДАЧИ" />
+                <ScalarProperty Name="СТАТУСЗАДАЧИ" ColumnName="СТАТУСЗАДАЧИ" />
+                <ScalarProperty Name="ОПИСАНИЕ_РАБОТЫ" ColumnName="ОПИСАНИЕ_РАБОТЫ" />
+                <ScalarProperty Name="КОДЗАДАЧИ" ColumnName="КОДЗАДАЧИ" />
+                <ScalarProperty Name="ДАТАРЕЗОЛЗНИ" ColumnName="ДАТАРЕЗОЛЗНИ" />
+                <ScalarProperty Name="СТАТУСЗНИ" ColumnName="СТАТУСЗНИ" />
+                <ScalarProperty Name="ДАТА_РЕГ_ЗНИ" ColumnName="ДАТА_РЕГ_ЗНИ" />
+                <ScalarProperty Name="ИСТОЧНИК_ЗНИ" ColumnName="ИСТОЧНИК_ЗНИ" />
+                <ScalarProperty Name="МЕНЕДЖЕР_ДИТ" ColumnName="МЕНЕДЖЕР_ДИТ" />
+                <ScalarProperty Name="ДАТА_РЕГ" ColumnName="ДАТА_РЕГ" />
+                <ScalarProperty Name="НОМЕР_ЗНИ" ColumnName="НОМЕР_ЗНИ" />
+                <ScalarProperty Name="КОДЗНИ" ColumnName="КОДЗНИ" />
+                <ScalarProperty Name="ПОДРАЗДВЕРХ" ColumnName="ПОДРАЗДВЕРХ" />
+                <ScalarProperty Name="ПОДРАЗДНИЗ" ColumnName="ПОДРАЗДНИЗ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SDBO_ACT_SPEC_OCT">
+            <EntityTypeMapping TypeName="LaborModel.SDBO_ACT_SPEC_OCT">
+              <MappingFragment StoreEntitySet="SDBO_ACT_SPEC_OCT">
+                <ScalarProperty Name="WORK_TYPE_VAL" ColumnName="WORK_TYPE_VAL" />
+                <ScalarProperty Name="ТРУДОЗАТРАТЫ" ColumnName="ТРУДОЗАТРАТЫ" />
+                <ScalarProperty Name="GRADE" ColumnName="GRADE" />
+                <ScalarProperty Name="ПОЛНОЕ_ИМЯ" ColumnName="ПОЛНОЕ_ИМЯ" />
+                <ScalarProperty Name="СУМТРУД" ColumnName="СУМТРУД" />
+                <ScalarProperty Name="АС_НАЗВАНИЕ" ColumnName="АС_НАЗВАНИЕ" />
+                <ScalarProperty Name="АС_НОМЕР" ColumnName="АС_НОМЕР" />
+                <ScalarProperty Name="ДАТА_РАБОТЫ" ColumnName="ДАТА_РАБОТЫ" />
+                <ScalarProperty Name="ДАТАСОЗДЗАДАЧИ" ColumnName="ДАТАСОЗДЗАДАЧИ" />
+                <ScalarProperty Name="ДАТАРЕЗОЛЗАДАЧИ" ColumnName="ДАТАРЕЗОЛЗАДАЧИ" />
+                <ScalarProperty Name="СТАТУСЗАДАЧИ" ColumnName="СТАТУСЗАДАЧИ" />
+                <ScalarProperty Name="ОПИСАНИЕ_РАБОТЫ" ColumnName="ОПИСАНИЕ_РАБОТЫ" />
+                <ScalarProperty Name="КОДЗАДАЧИ" ColumnName="КОДЗАДАЧИ" />
+                <ScalarProperty Name="ДАТАРЕЗОЛЗНИ" ColumnName="ДАТАРЕЗОЛЗНИ" />
+                <ScalarProperty Name="СТАТУСЗНИ" ColumnName="СТАТУСЗНИ" />
+                <ScalarProperty Name="ДАТА_РЕГ_ЗНИ" ColumnName="ДАТА_РЕГ_ЗНИ" />
+                <ScalarProperty Name="ИСТОЧНИК_ЗНИ" ColumnName="ИСТОЧНИК_ЗНИ" />
+                <ScalarProperty Name="МЕНЕДЖЕР_ДИТ" ColumnName="МЕНЕДЖЕР_ДИТ" />
+                <ScalarProperty Name="ДАТА_РЕГ" ColumnName="ДАТА_РЕГ" />
+                <ScalarProperty Name="НОМЕР_ЗНИ" ColumnName="НОМЕР_ЗНИ" />
+                <ScalarProperty Name="КОДЗНИ" ColumnName="КОДЗНИ" />
+                <ScalarProperty Name="ПОДРАЗДВЕРХ" ColumnName="ПОДРАЗДВЕРХ" />
+                <ScalarProperty Name="ПОДРАЗДНИЗ" ColumnName="ПОДРАЗДНИЗ" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

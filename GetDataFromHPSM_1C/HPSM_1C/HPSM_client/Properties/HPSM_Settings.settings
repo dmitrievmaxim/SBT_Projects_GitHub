@@ -15,7 +15,7 @@
       <Value Profile="(Default)">2016-01-01</Value>
     </Setting>
     <Setting Name="pathToFiles" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">\\172.29.75.120\Export\HPSM\</Value>
+      <Value Profile="(Default)">C:\Users\SBT-Dmitriev-MV\Desktop\tmp\</Value>
     </Setting>
     <Setting Name="jiraProdConnectionString" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.99.114)(PORT=1500))(CONNECT_DATA=(SERVICE_NAME=SBTJ2)));User Id=SBT_REP;Password=S8T_R3P;</Value>

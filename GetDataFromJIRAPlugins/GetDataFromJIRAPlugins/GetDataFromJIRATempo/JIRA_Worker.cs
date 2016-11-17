@@ -63,20 +63,20 @@ namespace GetDataFromJIRAStructure
                 foreach (var thread in dictThreads)
                 {
                     thread.Value.Start(thread.Key);
+                    thread.Value.Join();
                 }
 
                 foreach (var thread in dictThreads)
                 {
                     do
                     {
-                        Thread.Sleep(100);
+                        Thread.Sleep(100); 
                     } while (thread.Value.IsAlive);
                 }
-
                 ExportData();
                 UpdateInsertTempo();
                 DeleteUnusedTempoWorklog();//Удаление из БД записей о работе, которые были удалены из JIRA
-                DropTables();
+                //DropTables();
             }
             catch (Exception ex)
             {
@@ -101,14 +101,15 @@ namespace GetDataFromJIRAStructure
             {
                 foreach (var project in _listAllProjects)
                 {
-                    string data = GetData(string.Format(Constants._jiraProdBaseURL + Constants._tempoRest, (dataObj as Data).startDate.ToString("yyyy-MM-dd"), (dataObj as Data).finDate.ToString("yyyy-MM-dd"), project.Name_project_PKEY), WebRequestMethods.Http.Get);
-                    if ((!string.IsNullOrEmpty(data)) && !data.Equals("[]"))
-                    {
-                        lock (_listAllTimesheets)
+                    //lock (_listAllProjects)
+                    //{
+                        string data = GetData(string.Format(Constants._jiraProdBaseURL + Constants._tempoRest, (dataObj as Data).startDate.ToString("yyyy-MM-dd"), (dataObj as Data).finDate.ToString("yyyy-MM-dd"), project.Name_project_PKEY), WebRequestMethods.Http.Get);
+                        if ((!string.IsNullOrEmpty(data)) && !data.Equals("[]"))
                         {
-                            _listAllTimesheets = _listAllTimesheets.Concat(GetObjTempo(data)).ToList();
+                            lock (_listAllTimesheets)
+                                _listAllTimesheets = _listAllTimesheets.Concat(GetObjTempo(data)).ToList();
                         }
-                    }
+                    //}
                 }
             }
             catch (Exception ex)
@@ -274,20 +275,35 @@ namespace GetDataFromJIRAStructure
         {
             try
             {
+                //ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                 HttpWebRequest request = WebRequest.Create(uri) as HttpWebRequest;
                 request.Accept = "application/json";
                 request.Method = method;
                 request.Headers.Add("Authorization", "Basic " + GetEncodedCredentials());
                 //request.UseDefaultCredentials = false;
-                HttpWebResponse response = request.GetResponse() as HttpWebResponse;
-                string result = string.Empty;
 
-                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                string result = string.Empty;
+                using(HttpWebResponse response = request.GetResponse() as HttpWebResponse)
                 {
-                    result = reader.ReadToEnd();
-                    //Debug.WriteLine(result);
+                    request = null;
+                    using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                    {
+                        result = reader.ReadToEnd();
+                    }
                 }
                 return result;
+
+
+                //HttpWebResponse response = request.GetResponse() as HttpWebResponse;
+                //string result = string.Empty;
+                //using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                //{
+                //    result = reader.ReadToEnd();
+                //    //Debug.WriteLine(result);
+                //}
+                //response.Close();
+                //response.Dispose();
+                //return result;
             }
             catch (Exception ex)
             {

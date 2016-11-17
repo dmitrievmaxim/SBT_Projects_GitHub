@@ -42,5 +42,6 @@ namespace SmartBI.Models
         public string ACCOUNT_VAL { get; set; }
         public decimal ID { get; set; }
         public string ПРИОРИТЕТ { get; set; }
+        public string СТАТУС_СОТР { get; set; }
     }
 }

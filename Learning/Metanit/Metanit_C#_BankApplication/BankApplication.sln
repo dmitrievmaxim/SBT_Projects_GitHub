@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankApplication", "BankApplication\BankApplication.csproj", "{38D495F6-E903-42C7-9D23-9F484DCD7D41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankLibrary", "BankLibrary\BankLibrary.csproj", "{116763AE-C205-4851-820C-52662824E02F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Singleton", "Singleton\Singleton.csproj", "{CA4046EE-6B4D-4CD1-8C88-CA1EE5F9E290}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38D495F6-E903-42C7-9D23-9F484DCD7D41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38D495F6-E903-42C7-9D23-9F484DCD7D41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38D495F6-E903-42C7-9D23-9F484DCD7D41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38D495F6-E903-42C7-9D23-9F484DCD7D41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{116763AE-C205-4851-820C-52662824E02F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{116763AE-C205-4851-820C-52662824E02F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{116763AE-C205-4851-820C-52662824E02F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{116763AE-C205-4851-820C-52662824E02F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA4046EE-6B4D-4CD1-8C88-CA1EE5F9E290}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA4046EE-6B4D-4CD1-8C88-CA1EE5F9E290}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA4046EE-6B4D-4CD1-8C88-CA1EE5F9E290}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA4046EE-6B4D-4CD1-8C88-CA1EE5F9E290}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

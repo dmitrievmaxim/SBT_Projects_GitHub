@@ -92,6 +92,9 @@
         <th>
             ПРИОРИТЕТ
         </th>
+        <th>
+            СТАТУС_СОТРУДНИКА
+        </th>
     </tr>
 
 @foreach (var item in Model) {
@@ -176,6 +179,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ПРИОРИТЕТ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.СТАТУС_СОТР)
         </td>
     </tr>
 }

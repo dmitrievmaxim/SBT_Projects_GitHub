@@ -155,7 +155,7 @@
     <Compile Include="Models\ALL_ZNI_BUGS_JIRA.cs">
       <DependentUpon>LaborModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ASBPS_ACT_SPEC_AUG.cs">
+    <Compile Include="Models\ASBPS_ACT_SPEC_OCT.cs">
       <DependentUpon>LaborModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CONF_REP_LABOR_JIRA_HPSM.cs">
@@ -182,10 +182,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LaborModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\NKFO2_ACT_SPEC_AUG.cs">
+    <Compile Include="Models\NKFO2_ACT_SPEC_OCT.cs">
       <DependentUpon>LaborModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\SDBO_ACT_SPEC_AUG.cs">
+    <Compile Include="Models\SDBO_ACT_SPEC_OCT.cs">
       <DependentUpon>LaborModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\STRUCTURES.cs">
@@ -244,6 +244,8 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\loadingoverlay.js" />
+    <Content Include="Scripts\loadingoverlay.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -265,9 +267,9 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\GetZni.cshtml" />
     <Content Include="Views\Home\GetLabor.cshtml" />
-    <Content Include="Views\Home\GetActSpecASBPS_AUG.cshtml" />
-    <Content Include="Views\Home\GetActSpecNKFO2_AUG.cshtml" />
-    <Content Include="Views\Home\GetActSpecSDBO_AUG.cshtml" />
+    <Content Include="Views\Home\GetActSpecASBPS_OCT.cshtml" />
+    <Content Include="Views\Home\GetActSpecNKFO2_OCT.cshtml" />
+    <Content Include="Views\Home\GetActSpecSDBO_OCT.cshtml" />
     <Content Include="Views\Home\GetZNI_BPS.cshtml" />
   </ItemGroup>
   <ItemGroup>
