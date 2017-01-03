@@ -138,7 +138,7 @@ namespace SmartBI.Controllers
 
             ViewBag.CurrentFilter = searchString;
 
-            var items = from i in db.ASBPS_ACT_SPEC_OCT select i;
+            var items = from i in db.ASBPS_ACT_SPEC_NOV select i;
             switch (sortOrder)
             {
                 case "name_desc":
@@ -176,7 +176,7 @@ namespace SmartBI.Controllers
 
             ViewBag.CurrentFilter = searchString;
 
-            var items = from i in db.NKFO2_ACT_SPEC_OCT select i;
+            var items = from i in db.NKFO2_ACT_SPEC_NOV select i;
             switch (sortOrder)
             {
                 case "name_desc":
@@ -214,7 +214,7 @@ namespace SmartBI.Controllers
 
             ViewBag.CurrentFilter = searchString;
 
-            var items = from i in db.SDBO_ACT_SPEC_OCT select i;
+            var items = from i in db.SDBO_ACT_SPEC_NOV select i;
             switch (sortOrder)
             {
                 case "name_desc":
@@ -382,7 +382,7 @@ namespace SmartBI.Controllers
             Response.AddHeader("content-disposition", "attachment;filename=" + HttpUtility.UrlEncode("Labor.xlsx", System.Text.Encoding.UTF8));
             using (ExcelPackage pck = new ExcelPackage())
             {
-                var items = (from i in db.ASBPS_ACT_SPEC_OCT
+                var items = (from i in db.ASBPS_ACT_SPEC_NOV
                              select new
                              {
                                  ПОДРАЗДНИЗ = i.ПОДРАЗДНИЗ,
@@ -440,7 +440,7 @@ namespace SmartBI.Controllers
 
             using (ExcelPackage pck = new ExcelPackage())
             {
-                var items = (from i in db.NKFO2_ACT_SPEC_OCT
+                var items = (from i in db.NKFO2_ACT_SPEC_NOV
                              select new
                              {
                                  ПОДРАЗДНИЗ = i.ПОДРАЗДНИЗ,
@@ -497,7 +497,7 @@ namespace SmartBI.Controllers
 
             using (ExcelPackage pck = new ExcelPackage())
             {
-                var items = (from i in db.SDBO_ACT_SPEC_OCT
+                var items = (from i in db.SDBO_ACT_SPEC_NOV
                              select new
                              {
                                  ПОДРАЗДНИЗ = i.ПОДРАЗДНИЗ,
@@ -576,6 +576,29 @@ namespace SmartBI.Controllers
             }
             return table;
         }
+
+        public ActionResult Act_spec_asbps()
+        {
+            return View();
+        }
+
+        public ActionResult Act_spec_nkfo2()
+        {
+            return View();
+        }
+
+        public ActionResult Act_spec_sdbo()
+        {
+            return View();
+        }
+
+        public void GetLaborASBPS()
+        {
+            int x = db.GETLABORASBPS_FUNC(DateTime.Parse("01.11.16"), DateTime.Parse("01.12.16")).Count();
+            int y = x;
+        }
+
+
 
     }
 }

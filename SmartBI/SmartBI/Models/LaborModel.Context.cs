@@ -12,6 +12,8 @@ namespace SmartBI.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class Entities : DbContext
     {
@@ -34,8 +36,21 @@ namespace SmartBI.Models
         public virtual DbSet<SUM_PROJECT_ACTIVITY> SUM_PROJECT_ACTIVITY { get; set; }
         public virtual DbSet<SUM_TASK_NOT_LINKED_ASBPS> SUM_TASK_NOT_LINKED_ASBPS { get; set; }
         public virtual DbSet<SUM_ZNI_TASK_ASBPS> SUM_ZNI_TASK_ASBPS { get; set; }
-        public virtual DbSet<ASBPS_ACT_SPEC_OCT> ASBPS_ACT_SPEC_OCT { get; set; }
-        public virtual DbSet<NKFO2_ACT_SPEC_OCT> NKFO2_ACT_SPEC_OCT { get; set; }
-        public virtual DbSet<SDBO_ACT_SPEC_OCT> SDBO_ACT_SPEC_OCT { get; set; }
+        public virtual DbSet<ASBPS_ACT_SPEC_NOV> ASBPS_ACT_SPEC_NOV { get; set; }
+        public virtual DbSet<NKFO2_ACT_SPEC_NOV> NKFO2_ACT_SPEC_NOV { get; set; }
+        public virtual DbSet<SDBO_ACT_SPEC_NOV> SDBO_ACT_SPEC_NOV { get; set; }
+    
+        public virtual ObjectResult<GETLABORASBPS_FUNC_Result> GETLABORASBPS_FUNC(Nullable<System.DateTime> dATESTART, Nullable<System.DateTime> dATEFIN)
+        {
+            var dATESTARTParameter = dATESTART.HasValue ?
+                new ObjectParameter("DATESTART", dATESTART) :
+                new ObjectParameter("DATESTART", typeof(System.DateTime));
+    
+            var dATEFINParameter = dATEFIN.HasValue ?
+                new ObjectParameter("DATEFIN", dATEFIN) :
+                new ObjectParameter("DATEFIN", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GETLABORASBPS_FUNC_Result>("GETLABORASBPS_FUNC", dATESTARTParameter, dATEFINParameter);
+        }
     }
 }

@@ -144,8 +144,8 @@ warning 6002: The table/view 'SBT_REP.ALL_ZNI_BUGS_JIRA' does not have a primary
           <Property Name="RESOLUTIONDATE" Type="date" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'SBT_REP.ASBPS_ACT_SPEC_OCT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="ASBPS_ACT_SPEC_OCT">
+warning 6002: The table/view 'SBT_REP.ASBPS_ACT_SPEC_NOV' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ASBPS_ACT_SPEC_NOV">
           <Key>
             <PropertyRef Name="КОДЗАДАЧИ" />
             <PropertyRef Name="ДАТА_РАБОТЫ" />
@@ -176,8 +176,8 @@ warning 6002: The table/view 'SBT_REP.ASBPS_ACT_SPEC_OCT' does not have a primar
           <Property Name="WORK_TYPE_VAL" Type="varchar2" MaxLength="1000" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'SBT_REP.NKFO2_ACT_SPEC_OCT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="NKFO2_ACT_SPEC_OCT">
+warning 6002: The table/view 'SBT_REP.NKFO2_ACT_SPEC_NOV' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="NKFO2_ACT_SPEC_NOV">
           <Key>
             <PropertyRef Name="КОДЗАДАЧИ" />
             <PropertyRef Name="ДАТА_РАБОТЫ" />
@@ -208,8 +208,8 @@ warning 6002: The table/view 'SBT_REP.NKFO2_ACT_SPEC_OCT' does not have a primar
           <Property Name="WORK_TYPE_VAL" Type="varchar2" MaxLength="1000" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'SBT_REP.SDBO_ACT_SPEC_OCT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="SDBO_ACT_SPEC_OCT">
+warning 6002: The table/view 'SBT_REP.SDBO_ACT_SPEC_NOV' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SDBO_ACT_SPEC_NOV">
           <Key>
             <PropertyRef Name="КОДЗАДАЧИ" />
             <PropertyRef Name="ДАТА_РАБОТЫ" />
@@ -269,6 +269,10 @@ warning 6002: The table/view 'SBT_REP.SUM_ZNI_TASK_ASBPS' does not have a primar
           <Property Name="МЕСЯЦ" Type="varchar2" MaxLength="16" />
           <Property Name="ВРЕМЯ_Ч" Type="number" Precision="38" Scale="0" />
         </EntityType>
+        <Function Name="GETLABORASBPS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SBT_REP">
+          <Parameter Name="DATESTART" Type="date" Mode="In" />
+          <Parameter Name="DATEFIN" Type="date" Mode="In" />
+        </Function>
         <EntityContainer Name="LaborModelStoreContainer">
           <EntitySet Name="DATA_1C" EntityType="Self.DATA_1C" Schema="SBT_REP" store:Type="Tables" />
           <EntitySet Name="HPSMLABOR" EntityType="Self.HPSMLABOR" Schema="SBT_REP" store:Type="Tables" />
@@ -339,86 +343,86 @@ FROM "SBT_REP"."STRUCTURES" "STRUCTURES"</DefiningQuery>
 "ALL_ZNI_BUGS_JIRA"."RESOLUTIONDATE" AS "RESOLUTIONDATE"
 FROM "SBT_REP"."ALL_ZNI_BUGS_JIRA" "ALL_ZNI_BUGS_JIRA"</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="ASBPS_ACT_SPEC_OCT" EntityType="Self.ASBPS_ACT_SPEC_OCT" store:Type="Views" store:Schema="SBT_REP">
+          <EntitySet Name="ASBPS_ACT_SPEC_NOV" EntityType="Self.ASBPS_ACT_SPEC_NOV" store:Type="Views" store:Schema="SBT_REP">
             <DefiningQuery>SELECT 
-"ASBPS_ACT_SPEC_OCT"."ПОДРАЗДНИЗ" AS "ПОДРАЗДНИЗ", 
-"ASBPS_ACT_SPEC_OCT"."ПОДРАЗДВЕРХ" AS "ПОДРАЗДВЕРХ", 
-"ASBPS_ACT_SPEC_OCT"."КОДЗНИ" AS "КОДЗНИ", 
-"ASBPS_ACT_SPEC_OCT"."НОМЕР_ЗНИ" AS "НОМЕР_ЗНИ", 
-"ASBPS_ACT_SPEC_OCT"."ДАТА_РЕГ" AS "ДАТА_РЕГ", 
-"ASBPS_ACT_SPEC_OCT"."МЕНЕДЖЕР_ДИТ" AS "МЕНЕДЖЕР_ДИТ", 
-"ASBPS_ACT_SPEC_OCT"."ИСТОЧНИК_ЗНИ" AS "ИСТОЧНИК_ЗНИ", 
-"ASBPS_ACT_SPEC_OCT"."ДАТА_РЕГ_ЗНИ" AS "ДАТА_РЕГ_ЗНИ", 
-"ASBPS_ACT_SPEC_OCT"."СТАТУСЗНИ" AS "СТАТУСЗНИ", 
-"ASBPS_ACT_SPEC_OCT"."ДАТАРЕЗОЛЗНИ" AS "ДАТАРЕЗОЛЗНИ", 
-"ASBPS_ACT_SPEC_OCT"."КОДЗАДАЧИ" AS "КОДЗАДАЧИ", 
-"ASBPS_ACT_SPEC_OCT"."ОПИСАНИЕ_РАБОТЫ" AS "ОПИСАНИЕ_РАБОТЫ", 
-"ASBPS_ACT_SPEC_OCT"."СТАТУСЗАДАЧИ" AS "СТАТУСЗАДАЧИ", 
-"ASBPS_ACT_SPEC_OCT"."ДАТАРЕЗОЛЗАДАЧИ" AS "ДАТАРЕЗОЛЗАДАЧИ", 
-"ASBPS_ACT_SPEC_OCT"."ДАТАСОЗДЗАДАЧИ" AS "ДАТАСОЗДЗАДАЧИ", 
-"ASBPS_ACT_SPEC_OCT"."ДАТА_РАБОТЫ" AS "ДАТА_РАБОТЫ", 
-"ASBPS_ACT_SPEC_OCT"."АС_НОМЕР" AS "АС_НОМЕР", 
-"ASBPS_ACT_SPEC_OCT"."АС_НАЗВАНИЕ" AS "АС_НАЗВАНИЕ", 
-"ASBPS_ACT_SPEC_OCT"."СУМТРУД" AS "СУМТРУД", 
-"ASBPS_ACT_SPEC_OCT"."ПОЛНОЕ_ИМЯ" AS "ПОЛНОЕ_ИМЯ", 
-"ASBPS_ACT_SPEC_OCT"."GRADE" AS "GRADE", 
-"ASBPS_ACT_SPEC_OCT"."ТРУДОЗАТРАТЫ" AS "ТРУДОЗАТРАТЫ", 
-"ASBPS_ACT_SPEC_OCT"."WORK_TYPE_VAL" AS "WORK_TYPE_VAL"
-FROM "SBT_REP"."ASBPS_ACT_SPEC_OCT" "ASBPS_ACT_SPEC_OCT"</DefiningQuery>
+"ASBPS_ACT_SPEC_NOV"."ПОДРАЗДНИЗ" AS "ПОДРАЗДНИЗ", 
+"ASBPS_ACT_SPEC_NOV"."ПОДРАЗДВЕРХ" AS "ПОДРАЗДВЕРХ", 
+"ASBPS_ACT_SPEC_NOV"."КОДЗНИ" AS "КОДЗНИ", 
+"ASBPS_ACT_SPEC_NOV"."НОМЕР_ЗНИ" AS "НОМЕР_ЗНИ", 
+"ASBPS_ACT_SPEC_NOV"."ДАТА_РЕГ" AS "ДАТА_РЕГ", 
+"ASBPS_ACT_SPEC_NOV"."МЕНЕДЖЕР_ДИТ" AS "МЕНЕДЖЕР_ДИТ", 
+"ASBPS_ACT_SPEC_NOV"."ИСТОЧНИК_ЗНИ" AS "ИСТОЧНИК_ЗНИ", 
+"ASBPS_ACT_SPEC_NOV"."ДАТА_РЕГ_ЗНИ" AS "ДАТА_РЕГ_ЗНИ", 
+"ASBPS_ACT_SPEC_NOV"."СТАТУСЗНИ" AS "СТАТУСЗНИ", 
+"ASBPS_ACT_SPEC_NOV"."ДАТАРЕЗОЛЗНИ" AS "ДАТАРЕЗОЛЗНИ", 
+"ASBPS_ACT_SPEC_NOV"."КОДЗАДАЧИ" AS "КОДЗАДАЧИ", 
+"ASBPS_ACT_SPEC_NOV"."ОПИСАНИЕ_РАБОТЫ" AS "ОПИСАНИЕ_РАБОТЫ", 
+"ASBPS_ACT_SPEC_NOV"."СТАТУСЗАДАЧИ" AS "СТАТУСЗАДАЧИ", 
+"ASBPS_ACT_SPEC_NOV"."ДАТАРЕЗОЛЗАДАЧИ" AS "ДАТАРЕЗОЛЗАДАЧИ", 
+"ASBPS_ACT_SPEC_NOV"."ДАТАСОЗДЗАДАЧИ" AS "ДАТАСОЗДЗАДАЧИ", 
+"ASBPS_ACT_SPEC_NOV"."ДАТА_РАБОТЫ" AS "ДАТА_РАБОТЫ", 
+"ASBPS_ACT_SPEC_NOV"."АС_НОМЕР" AS "АС_НОМЕР", 
+"ASBPS_ACT_SPEC_NOV"."АС_НАЗВАНИЕ" AS "АС_НАЗВАНИЕ", 
+"ASBPS_ACT_SPEC_NOV"."СУМТРУД" AS "СУМТРУД", 
+"ASBPS_ACT_SPEC_NOV"."ПОЛНОЕ_ИМЯ" AS "ПОЛНОЕ_ИМЯ", 
+"ASBPS_ACT_SPEC_NOV"."GRADE" AS "GRADE", 
+"ASBPS_ACT_SPEC_NOV"."ТРУДОЗАТРАТЫ" AS "ТРУДОЗАТРАТЫ", 
+"ASBPS_ACT_SPEC_NOV"."WORK_TYPE_VAL" AS "WORK_TYPE_VAL"
+FROM "SBT_REP"."ASBPS_ACT_SPEC_NOV" "ASBPS_ACT_SPEC_NOV"</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="NKFO2_ACT_SPEC_OCT" EntityType="Self.NKFO2_ACT_SPEC_OCT" store:Type="Views" store:Schema="SBT_REP">
+          <EntitySet Name="NKFO2_ACT_SPEC_NOV" EntityType="Self.NKFO2_ACT_SPEC_NOV" store:Type="Views" store:Schema="SBT_REP">
             <DefiningQuery>SELECT 
-"NKFO2_ACT_SPEC_OCT"."ПОДРАЗДНИЗ" AS "ПОДРАЗДНИЗ", 
-"NKFO2_ACT_SPEC_OCT"."ПОДРАЗДВЕРХ" AS "ПОДРАЗДВЕРХ", 
-"NKFO2_ACT_SPEC_OCT"."КОДЗНИ" AS "КОДЗНИ", 
-"NKFO2_ACT_SPEC_OCT"."НОМЕР_ЗНИ" AS "НОМЕР_ЗНИ", 
-"NKFO2_ACT_SPEC_OCT"."ДАТА_РЕГ" AS "ДАТА_РЕГ", 
-"NKFO2_ACT_SPEC_OCT"."МЕНЕДЖЕР_ДИТ" AS "МЕНЕДЖЕР_ДИТ", 
-"NKFO2_ACT_SPEC_OCT"."ИСТОЧНИК_ЗНИ" AS "ИСТОЧНИК_ЗНИ", 
-"NKFO2_ACT_SPEC_OCT"."ДАТА_РЕГ_ЗНИ" AS "ДАТА_РЕГ_ЗНИ", 
-"NKFO2_ACT_SPEC_OCT"."СТАТУСЗНИ" AS "СТАТУСЗНИ", 
-"NKFO2_ACT_SPEC_OCT"."ДАТАРЕЗОЛЗНИ" AS "ДАТАРЕЗОЛЗНИ", 
-"NKFO2_ACT_SPEC_OCT"."КОДЗАДАЧИ" AS "КОДЗАДАЧИ", 
-"NKFO2_ACT_SPEC_OCT"."ОПИСАНИЕ_РАБОТЫ" AS "ОПИСАНИЕ_РАБОТЫ", 
-"NKFO2_ACT_SPEC_OCT"."СТАТУСЗАДАЧИ" AS "СТАТУСЗАДАЧИ", 
-"NKFO2_ACT_SPEC_OCT"."ДАТАРЕЗОЛЗАДАЧИ" AS "ДАТАРЕЗОЛЗАДАЧИ", 
-"NKFO2_ACT_SPEC_OCT"."ДАТАСОЗДЗАДАЧИ" AS "ДАТАСОЗДЗАДАЧИ", 
-"NKFO2_ACT_SPEC_OCT"."ДАТА_РАБОТЫ" AS "ДАТА_РАБОТЫ", 
-"NKFO2_ACT_SPEC_OCT"."АС_НОМЕР" AS "АС_НОМЕР", 
-"NKFO2_ACT_SPEC_OCT"."АС_НАЗВАНИЕ" AS "АС_НАЗВАНИЕ", 
-"NKFO2_ACT_SPEC_OCT"."СУМТРУД" AS "СУМТРУД", 
-"NKFO2_ACT_SPEC_OCT"."ПОЛНОЕ_ИМЯ" AS "ПОЛНОЕ_ИМЯ", 
-"NKFO2_ACT_SPEC_OCT"."GRADE" AS "GRADE", 
-"NKFO2_ACT_SPEC_OCT"."ТРУДОЗАТРАТЫ" AS "ТРУДОЗАТРАТЫ", 
-"NKFO2_ACT_SPEC_OCT"."WORK_TYPE_VAL" AS "WORK_TYPE_VAL"
-FROM "SBT_REP"."NKFO2_ACT_SPEC_OCT" "NKFO2_ACT_SPEC_OCT"</DefiningQuery>
+"NKFO2_ACT_SPEC_NOV"."ПОДРАЗДНИЗ" AS "ПОДРАЗДНИЗ", 
+"NKFO2_ACT_SPEC_NOV"."ПОДРАЗДВЕРХ" AS "ПОДРАЗДВЕРХ", 
+"NKFO2_ACT_SPEC_NOV"."КОДЗНИ" AS "КОДЗНИ", 
+"NKFO2_ACT_SPEC_NOV"."НОМЕР_ЗНИ" AS "НОМЕР_ЗНИ", 
+"NKFO2_ACT_SPEC_NOV"."ДАТА_РЕГ" AS "ДАТА_РЕГ", 
+"NKFO2_ACT_SPEC_NOV"."МЕНЕДЖЕР_ДИТ" AS "МЕНЕДЖЕР_ДИТ", 
+"NKFO2_ACT_SPEC_NOV"."ИСТОЧНИК_ЗНИ" AS "ИСТОЧНИК_ЗНИ", 
+"NKFO2_ACT_SPEC_NOV"."ДАТА_РЕГ_ЗНИ" AS "ДАТА_РЕГ_ЗНИ", 
+"NKFO2_ACT_SPEC_NOV"."СТАТУСЗНИ" AS "СТАТУСЗНИ", 
+"NKFO2_ACT_SPEC_NOV"."ДАТАРЕЗОЛЗНИ" AS "ДАТАРЕЗОЛЗНИ", 
+"NKFO2_ACT_SPEC_NOV"."КОДЗАДАЧИ" AS "КОДЗАДАЧИ", 
+"NKFO2_ACT_SPEC_NOV"."ОПИСАНИЕ_РАБОТЫ" AS "ОПИСАНИЕ_РАБОТЫ", 
+"NKFO2_ACT_SPEC_NOV"."СТАТУСЗАДАЧИ" AS "СТАТУСЗАДАЧИ", 
+"NKFO2_ACT_SPEC_NOV"."ДАТАРЕЗОЛЗАДАЧИ" AS "ДАТАРЕЗОЛЗАДАЧИ", 
+"NKFO2_ACT_SPEC_NOV"."ДАТАСОЗДЗАДАЧИ" AS "ДАТАСОЗДЗАДАЧИ", 
+"NKFO2_ACT_SPEC_NOV"."ДАТА_РАБОТЫ" AS "ДАТА_РАБОТЫ", 
+"NKFO2_ACT_SPEC_NOV"."АС_НОМЕР" AS "АС_НОМЕР", 
+"NKFO2_ACT_SPEC_NOV"."АС_НАЗВАНИЕ" AS "АС_НАЗВАНИЕ", 
+"NKFO2_ACT_SPEC_NOV"."СУМТРУД" AS "СУМТРУД", 
+"NKFO2_ACT_SPEC_NOV"."ПОЛНОЕ_ИМЯ" AS "ПОЛНОЕ_ИМЯ", 
+"NKFO2_ACT_SPEC_NOV"."GRADE" AS "GRADE", 
+"NKFO2_ACT_SPEC_NOV"."ТРУДОЗАТРАТЫ" AS "ТРУДОЗАТРАТЫ", 
+"NKFO2_ACT_SPEC_NOV"."WORK_TYPE_VAL" AS "WORK_TYPE_VAL"
+FROM "SBT_REP"."NKFO2_ACT_SPEC_NOV" "NKFO2_ACT_SPEC_NOV"</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="SDBO_ACT_SPEC_OCT" EntityType="Self.SDBO_ACT_SPEC_OCT" store:Type="Views" store:Schema="SBT_REP">
+          <EntitySet Name="SDBO_ACT_SPEC_NOV" EntityType="Self.SDBO_ACT_SPEC_NOV" store:Type="Views" store:Schema="SBT_REP">
             <DefiningQuery>SELECT 
-"SDBO_ACT_SPEC_OCT"."ПОДРАЗДНИЗ" AS "ПОДРАЗДНИЗ", 
-"SDBO_ACT_SPEC_OCT"."ПОДРАЗДВЕРХ" AS "ПОДРАЗДВЕРХ", 
-"SDBO_ACT_SPEC_OCT"."КОДЗНИ" AS "КОДЗНИ", 
-"SDBO_ACT_SPEC_OCT"."НОМЕР_ЗНИ" AS "НОМЕР_ЗНИ", 
-"SDBO_ACT_SPEC_OCT"."ДАТА_РЕГ" AS "ДАТА_РЕГ", 
-"SDBO_ACT_SPEC_OCT"."МЕНЕДЖЕР_ДИТ" AS "МЕНЕДЖЕР_ДИТ", 
-"SDBO_ACT_SPEC_OCT"."ИСТОЧНИК_ЗНИ" AS "ИСТОЧНИК_ЗНИ", 
-"SDBO_ACT_SPEC_OCT"."ДАТА_РЕГ_ЗНИ" AS "ДАТА_РЕГ_ЗНИ", 
-"SDBO_ACT_SPEC_OCT"."СТАТУСЗНИ" AS "СТАТУСЗНИ", 
-"SDBO_ACT_SPEC_OCT"."ДАТАРЕЗОЛЗНИ" AS "ДАТАРЕЗОЛЗНИ", 
-"SDBO_ACT_SPEC_OCT"."КОДЗАДАЧИ" AS "КОДЗАДАЧИ", 
-"SDBO_ACT_SPEC_OCT"."ОПИСАНИЕ_РАБОТЫ" AS "ОПИСАНИЕ_РАБОТЫ", 
-"SDBO_ACT_SPEC_OCT"."СТАТУСЗАДАЧИ" AS "СТАТУСЗАДАЧИ", 
-"SDBO_ACT_SPEC_OCT"."ДАТАРЕЗОЛЗАДАЧИ" AS "ДАТАРЕЗОЛЗАДАЧИ", 
-"SDBO_ACT_SPEC_OCT"."ДАТАСОЗДЗАДАЧИ" AS "ДАТАСОЗДЗАДАЧИ", 
-"SDBO_ACT_SPEC_OCT"."ДАТА_РАБОТЫ" AS "ДАТА_РАБОТЫ", 
-"SDBO_ACT_SPEC_OCT"."АС_НОМЕР" AS "АС_НОМЕР", 
-"SDBO_ACT_SPEC_OCT"."АС_НАЗВАНИЕ" AS "АС_НАЗВАНИЕ", 
-"SDBO_ACT_SPEC_OCT"."СУМТРУД" AS "СУМТРУД", 
-"SDBO_ACT_SPEC_OCT"."ПОЛНОЕ_ИМЯ" AS "ПОЛНОЕ_ИМЯ", 
-"SDBO_ACT_SPEC_OCT"."GRADE" AS "GRADE", 
-"SDBO_ACT_SPEC_OCT"."ТРУДОЗАТРАТЫ" AS "ТРУДОЗАТРАТЫ", 
-"SDBO_ACT_SPEC_OCT"."WORK_TYPE_VAL" AS "WORK_TYPE_VAL"
-FROM "SBT_REP"."SDBO_ACT_SPEC_OCT" "SDBO_ACT_SPEC_OCT"</DefiningQuery>
+"SDBO_ACT_SPEC_NOV"."ПОДРАЗДНИЗ" AS "ПОДРАЗДНИЗ", 
+"SDBO_ACT_SPEC_NOV"."ПОДРАЗДВЕРХ" AS "ПОДРАЗДВЕРХ", 
+"SDBO_ACT_SPEC_NOV"."КОДЗНИ" AS "КОДЗНИ", 
+"SDBO_ACT_SPEC_NOV"."НОМЕР_ЗНИ" AS "НОМЕР_ЗНИ", 
+"SDBO_ACT_SPEC_NOV"."ДАТА_РЕГ" AS "ДАТА_РЕГ", 
+"SDBO_ACT_SPEC_NOV"."МЕНЕДЖЕР_ДИТ" AS "МЕНЕДЖЕР_ДИТ", 
+"SDBO_ACT_SPEC_NOV"."ИСТОЧНИК_ЗНИ" AS "ИСТОЧНИК_ЗНИ", 
+"SDBO_ACT_SPEC_NOV"."ДАТА_РЕГ_ЗНИ" AS "ДАТА_РЕГ_ЗНИ", 
+"SDBO_ACT_SPEC_NOV"."СТАТУСЗНИ" AS "СТАТУСЗНИ", 
+"SDBO_ACT_SPEC_NOV"."ДАТАРЕЗОЛЗНИ" AS "ДАТАРЕЗОЛЗНИ", 
+"SDBO_ACT_SPEC_NOV"."КОДЗАДАЧИ" AS "КОДЗАДАЧИ", 
+"SDBO_ACT_SPEC_NOV"."ОПИСАНИЕ_РАБОТЫ" AS "ОПИСАНИЕ_РАБОТЫ", 
+"SDBO_ACT_SPEC_NOV"."СТАТУСЗАДАЧИ" AS "СТАТУСЗАДАЧИ", 
+"SDBO_ACT_SPEC_NOV"."ДАТАРЕЗОЛЗАДАЧИ" AS "ДАТАРЕЗОЛЗАДАЧИ", 
+"SDBO_ACT_SPEC_NOV"."ДАТАСОЗДЗАДАЧИ" AS "ДАТАСОЗДЗАДАЧИ", 
+"SDBO_ACT_SPEC_NOV"."ДАТА_РАБОТЫ" AS "ДАТА_РАБОТЫ", 
+"SDBO_ACT_SPEC_NOV"."АС_НОМЕР" AS "АС_НОМЕР", 
+"SDBO_ACT_SPEC_NOV"."АС_НАЗВАНИЕ" AS "АС_НАЗВАНИЕ", 
+"SDBO_ACT_SPEC_NOV"."СУМТРУД" AS "СУМТРУД", 
+"SDBO_ACT_SPEC_NOV"."ПОЛНОЕ_ИМЯ" AS "ПОЛНОЕ_ИМЯ", 
+"SDBO_ACT_SPEC_NOV"."GRADE" AS "GRADE", 
+"SDBO_ACT_SPEC_NOV"."ТРУДОЗАТРАТЫ" AS "ТРУДОЗАТРАТЫ", 
+"SDBO_ACT_SPEC_NOV"."WORK_TYPE_VAL" AS "WORK_TYPE_VAL"
+FROM "SBT_REP"."SDBO_ACT_SPEC_NOV" "SDBO_ACT_SPEC_NOV"</DefiningQuery>
           </EntitySet>
           <EntitySet Name="SUM_PROJECT_ACTIVITY" EntityType="Self.SUM_PROJECT_ACTIVITY" store:Type="Views" store:Schema="SBT_REP">
             <DefiningQuery>SELECT 
@@ -456,9 +460,13 @@ FROM "SBT_REP"."SUM_ZNI_TASK_ASBPS" "SUM_ZNI_TASK_ASBPS"</DefiningQuery>
           <EntitySet Name="SUM_PROJECT_ACTIVITY" EntityType="LaborModel.SUM_PROJECT_ACTIVITY" />
           <EntitySet Name="SUM_TASK_NOT_LINKED_ASBPS" EntityType="LaborModel.SUM_TASK_NOT_LINKED_ASBPS" />
           <EntitySet Name="SUM_ZNI_TASK_ASBPS" EntityType="LaborModel.SUM_ZNI_TASK_ASBPS" />
-          <EntitySet Name="ASBPS_ACT_SPEC_OCT" EntityType="LaborModel.ASBPS_ACT_SPEC_OCT" />
-          <EntitySet Name="NKFO2_ACT_SPEC_OCT" EntityType="LaborModel.NKFO2_ACT_SPEC_OCT" />
-          <EntitySet Name="SDBO_ACT_SPEC_OCT" EntityType="LaborModel.SDBO_ACT_SPEC_OCT" />
+          <EntitySet Name="ASBPS_ACT_SPEC_NOV" EntityType="LaborModel.ASBPS_ACT_SPEC_NOV" />
+          <EntitySet Name="NKFO2_ACT_SPEC_NOV" EntityType="LaborModel.NKFO2_ACT_SPEC_NOV" />
+          <EntitySet Name="SDBO_ACT_SPEC_NOV" EntityType="LaborModel.SDBO_ACT_SPEC_NOV" />
+          <FunctionImport Name="GETLABORASBPS_FUNC" ReturnType="Collection(LaborModel.GETLABORASBPS_FUNC_Result)">
+            <Parameter Name="DATESTART" Mode="In" Type="DateTime" />
+            <Parameter Name="DATEFIN" Mode="In" Type="DateTime" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="ALL_ZNI_BUGS_JIRA">
           <Key>
@@ -617,7 +625,7 @@ FROM "SBT_REP"."SUM_ZNI_TASK_ASBPS" "SUM_ZNI_TASK_ASBPS"</DefiningQuery>
           <Property Name="МЕСЯЦ" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
           <Property Name="ВРЕМЯ_Ч" Type="Decimal" Precision="38" Scale="0" />
         </EntityType>
-        <EntityType Name="ASBPS_ACT_SPEC_OCT">
+        <EntityType Name="ASBPS_ACT_SPEC_NOV">
           <Key>
             <PropertyRef Name="КОДЗАДАЧИ" />
             <PropertyRef Name="ДАТА_РАБОТЫ" />
@@ -647,7 +655,7 @@ FROM "SBT_REP"."SUM_ZNI_TASK_ASBPS" "SUM_ZNI_TASK_ASBPS"</DefiningQuery>
           <Property Name="ТРУДОЗАТРАТЫ" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
           <Property Name="WORK_TYPE_VAL" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="NKFO2_ACT_SPEC_OCT">
+        <EntityType Name="NKFO2_ACT_SPEC_NOV">
           <Key>
             <PropertyRef Name="КОДЗАДАЧИ" />
             <PropertyRef Name="ДАТА_РАБОТЫ" />
@@ -677,7 +685,7 @@ FROM "SBT_REP"."SUM_ZNI_TASK_ASBPS" "SUM_ZNI_TASK_ASBPS"</DefiningQuery>
           <Property Name="ТРУДОЗАТРАТЫ" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
           <Property Name="WORK_TYPE_VAL" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="SDBO_ACT_SPEC_OCT">
+        <EntityType Name="SDBO_ACT_SPEC_NOV">
           <Key>
             <PropertyRef Name="КОДЗАДАЧИ" />
             <PropertyRef Name="ДАТА_РАБОТЫ" />
@@ -707,6 +715,60 @@ FROM "SBT_REP"."SUM_ZNI_TASK_ASBPS" "SUM_ZNI_TASK_ASBPS"</DefiningQuery>
           <Property Name="ТРУДОЗАТРАТЫ" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
           <Property Name="WORK_TYPE_VAL" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
         </EntityType>
+        <ComplexType Name="GETLABORASBPS_Result">
+          <Property Type="String" Name="PROJECT" Nullable="true" />
+          <Property Type="Decimal" Name="ID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="GETLABORASBPS_FUNC">
+          <Property Type="String" Name="ПОДРАЗДНИЗ" Nullable="true" />
+          <Property Type="String" Name="ПОДРАЗДВЕРХ" Nullable="true" />
+          <Property Type="String" Name="КОДЗНИ" Nullable="true" />
+          <Property Type="String" Name="НОМЕР_ЗНИ" Nullable="true" />
+          <Property Type="DateTime" Name="ДАТА_РЕГ" Nullable="true" />
+          <Property Type="String" Name="МЕНЕДЖЕР_ДИТ" Nullable="true" />
+          <Property Type="String" Name="ИСТОЧНИК_ЗНИ" Nullable="true" />
+          <Property Type="DateTime" Name="ДАТА_РЕГ_ЗНИ" Nullable="true" />
+          <Property Type="String" Name="СТАТУСЗНИ" Nullable="true" />
+          <Property Type="DateTime" Name="ДАТАРЕЗОЛЗНИ" Nullable="true" />
+          <Property Type="String" Name="КОДЗАДАЧИ" Nullable="false" />
+          <Property Type="String" Name="ОПИСАНИЕ_РАБОТЫ" Nullable="true" />
+          <Property Type="String" Name="СТАТУСЗАДАЧИ" Nullable="true" />
+          <Property Type="DateTime" Name="ДАТАРЕЗОЛЗАДАЧИ" Nullable="true" />
+          <Property Type="DateTime" Name="ДАТАСОЗДЗАДАЧИ" Nullable="true" />
+          <Property Type="DateTime" Name="ДАТА_РАБОТЫ" Nullable="false" />
+          <Property Type="String" Name="АС_НОМЕР" Nullable="true" />
+          <Property Type="String" Name="АС_НАЗВАНИЕ" Nullable="true" />
+          <Property Type="Decimal" Name="СУМТРУД" Nullable="true" />
+          <Property Type="String" Name="ПОЛНОЕ_ИМЯ" Nullable="true" />
+          <Property Type="Decimal" Name="GRADE" Nullable="true" />
+          <Property Type="Decimal" Name="ТРУДОЗАТРАТЫ" Nullable="false" />
+          <Property Type="String" Name="WORK_TYPE_VAL" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GETLABORASBPS_FUNC_Result">
+          <Property Type="String" Name="ПОДРАЗДНИЗ" Nullable="true" />
+          <Property Type="String" Name="ПОДРАЗДВЕРХ" Nullable="true" />
+          <Property Type="String" Name="КОДЗНИ" Nullable="true" />
+          <Property Type="String" Name="НОМЕР_ЗНИ" Nullable="true" />
+          <Property Type="DateTime" Name="ДАТА_РЕГ" Nullable="true" />
+          <Property Type="String" Name="МЕНЕДЖЕР_ДИТ" Nullable="true" />
+          <Property Type="String" Name="ИСТОЧНИК_ЗНИ" Nullable="true" />
+          <Property Type="DateTime" Name="ДАТА_РЕГ_ЗНИ" Nullable="true" />
+          <Property Type="String" Name="СТАТУСЗНИ" Nullable="true" />
+          <Property Type="DateTime" Name="ДАТАРЕЗОЛЗНИ" Nullable="true" />
+          <Property Type="String" Name="КОДЗАДАЧИ" Nullable="false" />
+          <Property Type="String" Name="ОПИСАНИЕ_РАБОТЫ" Nullable="true" />
+          <Property Type="String" Name="СТАТУСЗАДАЧИ" Nullable="true" />
+          <Property Type="DateTime" Name="ДАТАРЕЗОЛЗАДАЧИ" Nullable="true" />
+          <Property Type="DateTime" Name="ДАТАСОЗДЗАДАЧИ" Nullable="true" />
+          <Property Type="DateTime" Name="ДАТА_РАБОТЫ" Nullable="false" />
+          <Property Type="String" Name="АС_НОМЕР" Nullable="true" />
+          <Property Type="String" Name="АС_НАЗВАНИЕ" Nullable="true" />
+          <Property Type="Decimal" Name="СУМТРУД" Nullable="true" />
+          <Property Type="String" Name="ПОЛНОЕ_ИМЯ" Nullable="true" />
+          <Property Type="Decimal" Name="GRADE" Nullable="true" />
+          <Property Type="Decimal" Name="ТРУДОЗАТРАТЫ" Nullable="false" />
+          <Property Type="String" Name="WORK_TYPE_VAL" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -879,9 +941,9 @@ FROM "SBT_REP"."SUM_ZNI_TASK_ASBPS" "SUM_ZNI_TASK_ASBPS"</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ASBPS_ACT_SPEC_OCT">
-            <EntityTypeMapping TypeName="LaborModel.ASBPS_ACT_SPEC_OCT">
-              <MappingFragment StoreEntitySet="ASBPS_ACT_SPEC_OCT">
+          <EntitySetMapping Name="ASBPS_ACT_SPEC_NOV">
+            <EntityTypeMapping TypeName="LaborModel.ASBPS_ACT_SPEC_NOV">
+              <MappingFragment StoreEntitySet="ASBPS_ACT_SPEC_NOV">
                 <ScalarProperty Name="WORK_TYPE_VAL" ColumnName="WORK_TYPE_VAL" />
                 <ScalarProperty Name="ТРУДОЗАТРАТЫ" ColumnName="ТРУДОЗАТРАТЫ" />
                 <ScalarProperty Name="GRADE" ColumnName="GRADE" />
@@ -908,9 +970,9 @@ FROM "SBT_REP"."SUM_ZNI_TASK_ASBPS" "SUM_ZNI_TASK_ASBPS"</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="NKFO2_ACT_SPEC_OCT">
-            <EntityTypeMapping TypeName="LaborModel.NKFO2_ACT_SPEC_OCT">
-              <MappingFragment StoreEntitySet="NKFO2_ACT_SPEC_OCT">
+          <EntitySetMapping Name="NKFO2_ACT_SPEC_NOV">
+            <EntityTypeMapping TypeName="LaborModel.NKFO2_ACT_SPEC_NOV">
+              <MappingFragment StoreEntitySet="NKFO2_ACT_SPEC_NOV">
                 <ScalarProperty Name="WORK_TYPE_VAL" ColumnName="WORK_TYPE_VAL" />
                 <ScalarProperty Name="ТРУДОЗАТРАТЫ" ColumnName="ТРУДОЗАТРАТЫ" />
                 <ScalarProperty Name="GRADE" ColumnName="GRADE" />
@@ -937,9 +999,9 @@ FROM "SBT_REP"."SUM_ZNI_TASK_ASBPS" "SUM_ZNI_TASK_ASBPS"</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="SDBO_ACT_SPEC_OCT">
-            <EntityTypeMapping TypeName="LaborModel.SDBO_ACT_SPEC_OCT">
-              <MappingFragment StoreEntitySet="SDBO_ACT_SPEC_OCT">
+          <EntitySetMapping Name="SDBO_ACT_SPEC_NOV">
+            <EntityTypeMapping TypeName="LaborModel.SDBO_ACT_SPEC_NOV">
+              <MappingFragment StoreEntitySet="SDBO_ACT_SPEC_NOV">
                 <ScalarProperty Name="WORK_TYPE_VAL" ColumnName="WORK_TYPE_VAL" />
                 <ScalarProperty Name="ТРУДОЗАТРАТЫ" ColumnName="ТРУДОЗАТРАТЫ" />
                 <ScalarProperty Name="GRADE" ColumnName="GRADE" />
@@ -966,7 +1028,36 @@ FROM "SBT_REP"."SUM_ZNI_TASK_ASBPS" "SUM_ZNI_TASK_ASBPS"</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-        </EntityContainerMapping>
+          <FunctionImportMapping FunctionImportName="GETLABORASBPS_FUNC" FunctionName="LaborModel.Store.GETLABORASBPS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LaborModel.GETLABORASBPS_FUNC_Result">
+                <ScalarProperty Name="ПОДРАЗДНИЗ" ColumnName="ПОДРАЗДНИЗ" />
+                <ScalarProperty Name="ПОДРАЗДВЕРХ" ColumnName="ПОДРАЗДВЕРХ" />
+                <ScalarProperty Name="КОДЗНИ" ColumnName="КОДЗНИ" />
+                <ScalarProperty Name="НОМЕР_ЗНИ" ColumnName="НОМЕР_ЗНИ" />
+                <ScalarProperty Name="ДАТА_РЕГ" ColumnName="ДАТА_РЕГ" />
+                <ScalarProperty Name="МЕНЕДЖЕР_ДИТ" ColumnName="МЕНЕДЖЕР_ДИТ" />
+                <ScalarProperty Name="ИСТОЧНИК_ЗНИ" ColumnName="ИСТОЧНИК_ЗНИ" />
+                <ScalarProperty Name="ДАТА_РЕГ_ЗНИ" ColumnName="ДАТА_РЕГ_ЗНИ" />
+                <ScalarProperty Name="СТАТУСЗНИ" ColumnName="СТАТУСЗНИ" />
+                <ScalarProperty Name="ДАТАРЕЗОЛЗНИ" ColumnName="ДАТАРЕЗОЛЗНИ" />
+                <ScalarProperty Name="КОДЗАДАЧИ" ColumnName="КОДЗАДАЧИ" />
+                <ScalarProperty Name="ОПИСАНИЕ_РАБОТЫ" ColumnName="ОПИСАНИЕ_РАБОТЫ" />
+                <ScalarProperty Name="СТАТУСЗАДАЧИ" ColumnName="СТАТУСЗАДАЧИ" />
+                <ScalarProperty Name="ДАТАРЕЗОЛЗАДАЧИ" ColumnName="ДАТАРЕЗОЛЗАДАЧИ" />
+                <ScalarProperty Name="ДАТАСОЗДЗАДАЧИ" ColumnName="ДАТАСОЗДЗАДАЧИ" />
+                <ScalarProperty Name="ДАТА_РАБОТЫ" ColumnName="ДАТА_РАБОТЫ" />
+                <ScalarProperty Name="АС_НОМЕР" ColumnName="АС_НОМЕР" />
+                <ScalarProperty Name="АС_НАЗВАНИЕ" ColumnName="АС_НАЗВАНИЕ" />
+                <ScalarProperty Name="СУМТРУД" ColumnName="СУМТРУД" />
+                <ScalarProperty Name="ПОЛНОЕ_ИМЯ" ColumnName="ПОЛНОЕ_ИМЯ" />
+                <ScalarProperty Name="GRADE" ColumnName="GRADE" />
+                <ScalarProperty Name="ТРУДОЗАТРАТЫ" ColumnName="ТРУДОЗАТРАТЫ" />
+                <ScalarProperty Name="WORK_TYPE_VAL" ColumnName="WORK_TYPE_VAL" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
@@ -984,6 +1075,9 @@ FROM "SBT_REP"."SUM_ZNI_TASK_ASBPS" "SUM_ZNI_TASK_ASBPS"</DefiningQuery>
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="DDLGenerationTemplate" Value="$(VSEFTools)\DBGen\SSDLToOracle.tt" />
+        <DesignerProperty Name="DefaultDatabaseSchema" Value="SBT_REP" />
+        <DesignerProperty Name="DatabaseGenerationWorkflow" Value="$(VSEFTools)\DBGen\Generate Oracle Via T4 (TPT).xaml" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->

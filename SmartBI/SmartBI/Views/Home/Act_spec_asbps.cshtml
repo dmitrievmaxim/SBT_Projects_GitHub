@@ -1,0 +1,136 @@
+﻿@model SmartBI.Models.ASBPS_ACT_SPEC_NOV
+
+@{
+    ViewBag.Title = "Отчет для ASBPS";
+}
+<h2>Отчет для ASBPS</h2>
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <h5>Введите дату начала и конца периода для формирования отчета</h5>
+    </div>
+</nav>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jquery-ui")
+}
+<script>
+    $(function () {
+        $(".datepicker").datepicker({dateFormat: 'dd.mm.yy'});
+    });
+</script>
+
+<script>
+    $(function () {
+        $.validator.addMethod("regexPatternDate", function (value, element, regex) { 
+            var reg = new RegExp(regex);
+            return this.optional(element)||reg.test(value);
+        });
+    })
+
+    //Or for example
+    //$.validator.addMethod('postalCode', function (value) {
+    //    return /^((\d{5}-\d{4})|(\d{5})|([A-Z]\d[A-Z]\s\d[A-Z]\d))$/.test(value);
+    //}, 'Please enter a valid US or Canadian postal code.');
+</script>
+
+<script>
+    $(function () {
+        $('form[name="inputdates"]').validate({
+            rules: {
+                datepicker_1: {
+                    required: true,
+                    maxlength: 10,
+                    regexPatternDate: "[0-9]{2}\.[0-9]{2}\.[0-9]{4}"
+                },
+                datepicker_2: {
+                    required: true,
+                    maxlength: 10,
+                    regexPatternDate: "[0-9]{2}\.[0-9]{2}\.[0-9]{4}"
+                }
+            },
+            highlight: function (element) {
+                var id_attr = "#" + $(element).attr("id") + "_val";
+                $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+                $(id_attr).removeClass('glyphicon-ok').addClass('glyphicon-remove').removeClass('greenconfirm').addClass('redexeption');
+            },
+            unhighlight: function (element) {
+                var id_attr = "#" + $(element).attr("id") + "_val";
+                $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+                $(id_attr).removeClass('glyphicon-remove').addClass('glyphicon-ok').removeClass('redexeption').addClass('greenconfirm');
+            },
+            messages:{
+                datepicker_1:{
+                    required:"Пожалуйста, введите дату",
+                    maxlength: "Максимальная длина 10 символов в формате ДД.ММ.ГГГГ",
+                    regexPatternDate: "Введите дату в формате ДД.ММ.ГГГГ"
+                },
+                datepicker_2:{
+                    required:"Пожалуйста, введите дату",
+                    maxlength: "Максимальная длина 10 символов в формате ДД.ММ.ГГГГ",
+                    regexPatternDate: "Введите дату в формате ДД.ММ.ГГГГ"
+                }
+            },
+            errorElement: 'span',
+            errorClass: 'help-block',
+            errorPlacement: function (error, element) {
+                if (element.length) {
+                    error.insertAfter(element);
+                } else {
+                    error.insertAfter(element);
+                }
+            }
+        });
+    });
+</script>
+
+<style>
+    .has-feedback .form-control-feedback {
+    position: absolute;
+    top: 3px;
+    right: -15px;
+    display: block;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+}
+    .redexeption{
+        color:#b94a48
+    }
+    .greenconfirm{
+        color:#0d8308
+    }
+    .form-horizontal .control-label{
+	text-align:left;
+}
+    .col-lg-2{
+	width:11%;
+}
+</style>
+
+<form name="inputdates" class="form-horizontal">
+    <div class="form-group has-feedback">
+        <label for="datepicker_1" class="control-label col-lg-2">Начало периода:</label>
+        <div class="col-md-4">
+            <input name="datepicker_1" title="Введите дату в формате ДД.ММ.ГГГГ" pattern="[0-9]{2}\.[0-9]{2}\.[0-9]{4}" type="text" class="datepicker form-control" id="datepicker_1" placeholder="01.01.2020" required>
+            <span class="glyphicon form-control-feedback" id="datepicker_1_val"></span>
+        </div>
+    </div>
+    <div class="form-group has-feedback">
+        <label for="datepicker_2" class="control-label col-lg-2">Конец периода:</label>
+        <div class="col-md-4">
+            <input name="datepicker_2" title="Введите дату в формате ДД.ММ.ГГГГ" pattern="[0-9]{2}\.[0-9]{2}\.[0-9]{4}" type="text" class="datepicker form-control" id="datepicker_2" placeholder="01.01.2020" required>
+            <span class="glyphicon form-control-feedback" id="datepicker_2_val"></span>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Сгенерировать отчет</button>
+</form>
+
+
+
+
