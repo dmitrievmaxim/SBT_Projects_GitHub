@@ -165,13 +165,13 @@
     <Compile Include="Models\DATA_1C.cs">
       <DependentUpon>LaborModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\GETLABORASBPS_FUNC.cs">
-      <DependentUpon>LaborModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\GETLABORASBPS_FUNC_Result.cs">
       <DependentUpon>LaborModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\GETLABORASBPS_Result.cs">
+    <Compile Include="Models\GETLABORNKFO2_FUNC_Result.cs">
+      <DependentUpon>LaborModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GETLABORSDBO_FUNC_Result.cs">
       <DependentUpon>LaborModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HPSMLABOR.cs">
@@ -333,6 +333,8 @@
     <Content Include="Views\Home\GetActSpecSDBO_NOV.cshtml" />
     <Content Include="Views\Home\GetZNI_BPS.cshtml" />
     <Content Include="Views\Home\Act_spec_asbps.cshtml" />
+    <Content Include="Views\Home\Act_spec_nkfo2.cshtml" />
+    <Content Include="Views\Home\Act_spec_sdbo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

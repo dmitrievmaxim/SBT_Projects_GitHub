@@ -5,8 +5,6 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartBI", "SmartBI\SmartBI.csproj", "{DDE035AB-729D-4E07-985A-E9D0ADFDA48A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartBI.Tests", "SmartBI.Tests\SmartBI.Tests.csproj", "{626CCD43-CA4C-4F04-B525-94418C1E778D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,14 +27,6 @@ Global
 		{DDE035AB-729D-4E07-985A-E9D0ADFDA48A}.Release|x64.Build.0 = Release|x86
 		{DDE035AB-729D-4E07-985A-E9D0ADFDA48A}.Release|x86.ActiveCfg = Release|x86
 		{DDE035AB-729D-4E07-985A-E9D0ADFDA48A}.Release|x86.Build.0 = Release|x86
-		{626CCD43-CA4C-4F04-B525-94418C1E778D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{626CCD43-CA4C-4F04-B525-94418C1E778D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{626CCD43-CA4C-4F04-B525-94418C1E778D}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{626CCD43-CA4C-4F04-B525-94418C1E778D}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{626CCD43-CA4C-4F04-B525-94418C1E778D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{626CCD43-CA4C-4F04-B525-94418C1E778D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{626CCD43-CA4C-4F04-B525-94418C1E778D}.Release|x64.ActiveCfg = Release|Any CPU
-		{626CCD43-CA4C-4F04-B525-94418C1E778D}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -11,7 +11,7 @@ namespace SmartBI.Models
 {
     using System;
     
-    public partial class GETLABORASBPS_FUNC
+    public partial class GETLABORNKFO2_FUNC_Result
     {
         public string ПОДРАЗДНИЗ { get; set; }
         public string ПОДРАЗДВЕРХ { get; set; }

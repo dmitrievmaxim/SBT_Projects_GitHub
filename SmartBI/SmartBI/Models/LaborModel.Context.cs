@@ -52,5 +52,31 @@ namespace SmartBI.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GETLABORASBPS_FUNC_Result>("GETLABORASBPS_FUNC", dATESTARTParameter, dATEFINParameter);
         }
+    
+        public virtual ObjectResult<GETLABORNKFO2_FUNC_Result> GETLABORNKFO2_FUNC(Nullable<System.DateTime> dATESTART, Nullable<System.DateTime> dATEFIN)
+        {
+            var dATESTARTParameter = dATESTART.HasValue ?
+                new ObjectParameter("DATESTART", dATESTART) :
+                new ObjectParameter("DATESTART", typeof(System.DateTime));
+    
+            var dATEFINParameter = dATEFIN.HasValue ?
+                new ObjectParameter("DATEFIN", dATEFIN) :
+                new ObjectParameter("DATEFIN", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GETLABORNKFO2_FUNC_Result>("GETLABORNKFO2_FUNC", dATESTARTParameter, dATEFINParameter);
+        }
+    
+        public virtual ObjectResult<GETLABORSDBO_FUNC_Result> GETLABORSDBO_FUNC(Nullable<System.DateTime> dATESTART, Nullable<System.DateTime> dATEFIN)
+        {
+            var dATESTARTParameter = dATESTART.HasValue ?
+                new ObjectParameter("DATESTART", dATESTART) :
+                new ObjectParameter("DATESTART", typeof(System.DateTime));
+    
+            var dATEFINParameter = dATEFIN.HasValue ?
+                new ObjectParameter("DATEFIN", dATEFIN) :
+                new ObjectParameter("DATEFIN", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GETLABORSDBO_FUNC_Result>("GETLABORSDBO_FUNC", dATESTARTParameter, dATEFINParameter);
+        }
     }
 }

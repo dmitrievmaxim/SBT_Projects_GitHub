@@ -1,7 +1,8 @@
-﻿@{
-    ViewBag.Title = "Отчет для ASBPS";
+﻿
+@{
+    ViewBag.Title = "Отчет для SDBO";
 }
-<h2>Отчет для ASBPS</h2>
+<h2>Отчет для SDBO</h2>
 
 <nav class="navbar navbar-default">
     <div class="container">
@@ -24,7 +25,7 @@
 
 <script>
     $(function () {
-        $.validator.addMethod("regexPatternDate", function (value, element, regex) { 
+        $.validator.addMethod("regexPatternDate", function (value, element, regex) {
             var reg = new RegExp(regex);
             return this.optional(element)||reg.test(value);
         });
@@ -88,30 +89,34 @@
 
 <style>
     .has-feedback .form-control-feedback {
-    position: absolute;
-    top: 3px;
-    right: -15px;
-    display: block;
-    width: 34px;
-    height: 34px;
-    line-height: 34px;
-    text-align: center;
-}
-    .redexeption{
-        color:#b94a48
+        position: absolute;
+        top: 3px;
+        right: -15px;
+        display: block;
+        width: 34px;
+        height: 34px;
+        line-height: 34px;
+        text-align: center;
     }
-    .greenconfirm{
-        color:#0d8308
+
+    .redexeption {
+        color: #b94a48;
     }
-    .form-horizontal .control-label{
-	text-align:left;
-}
-    .col-lg-2{
-	width:11%;
-}
+
+    .greenconfirm {
+        color: #0d8308;
+    }
+
+    .form-horizontal .control-label {
+        text-align: left;
+    }
+
+    .col-lg-2 {
+        width: 11%;
+    }
 </style>
 
-<form name="inputdates" class="form-horizontal" method="post" action="~/Home/ExportToExcel_epplus_act_spec_asbps">
+<form name="inputdates" class="form-horizontal" method="post" action="~/Home/ExportToExcel_epplus_act_spec_sdbo">
     <div class="form-group has-feedback">
         <label for="datepicker_1" class="control-label col-lg-2">Начало периода:</label>
         <div class="col-md-4">
@@ -128,6 +133,7 @@
     </div>
     <button type="submit" class="btn btn-primary">Сгенерировать отчет</button>
 </form>
+
 
 
 

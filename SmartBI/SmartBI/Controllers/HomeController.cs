@@ -255,7 +255,7 @@ namespace SmartBI.Controllers
 
         public ActionResult GetZNI_BPS()
         {
-            return View(new ZNI_BPS(db));
+            return View(new ZNI_BPS(ref db));
         }
         
         public void ExportToExcel_closeXML()
@@ -375,40 +375,42 @@ namespace SmartBI.Controllers
             }
         }
 
-        public void ExportToExcel_epplus_act_spec_asbps()
+        public void ExportToExcel_epplus_act_spec_asbps(string datepicker_1, string datepicker_2)
         {
             Response.Clear();
             Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
             Response.AddHeader("content-disposition", "attachment;filename=" + HttpUtility.UrlEncode("Labor.xlsx", System.Text.Encoding.UTF8));
+
             using (ExcelPackage pck = new ExcelPackage())
             {
-                var items = (from i in db.ASBPS_ACT_SPEC_NOV
-                             select new
-                             {
-                                 ПОДРАЗДНИЗ = i.ПОДРАЗДНИЗ,
-                                 ПОДРАЗДВЕРХ = i.ПОДРАЗДВЕРХ,
-                                 КОДЗНИ = i.КОДЗНИ,
-                                 НОМЕР_ЗНИ = i.НОМЕР_ЗНИ,
-                                 ДАТА_РЕГ = EntityFunctions.TruncateTime(i.ДАТА_РЕГ),
-                                 МЕНЕДЖЕР_ДИТ = i.МЕНЕДЖЕР_ДИТ,
-                                 ИСТОЧНИК_ЗНИ = i.ИСТОЧНИК_ЗНИ,
-                                 ДАТА_РЕГ_ЗНИ = EntityFunctions.TruncateTime(i.ДАТА_РЕГ_ЗНИ),
-                                 СТАТУСЗНИ = i.СТАТУСЗНИ,
-                                 ДАТАРЕЗОЛЗНИ = EntityFunctions.TruncateTime(i.ДАТАРЕЗОЛЗНИ),
-                                 КОДЗАДАЧИ = i.КОДЗАДАЧИ,
-                                 ОПИСАНИЕ_РАБОТЫ = i.ОПИСАНИЕ_РАБОТЫ,
-                                 СТАТУСЗАДАЧИ = i.СТАТУСЗАДАЧИ,
-                                 ДАТАРЕЗОЛЗАДАЧИ = EntityFunctions.TruncateTime(i.ДАТАРЕЗОЛЗАДАЧИ),
-                                 ДАТАСОЗДЗАДАЧИ = EntityFunctions.TruncateTime(i.ДАТАСОЗДЗАДАЧИ),
-                                 ДАТА_РАБОТЫ = EntityFunctions.TruncateTime(i.ДАТА_РАБОТЫ),
-                                 АС_НОМЕР = i.АС_НОМЕР,
-                                 АС_НАЗВАНИЕ = i.АС_НАЗВАНИЕ,
-                                 СУМТРУД = i.СУМТРУД,
-                                 ПОЛНОЕ_ИМЯ = i.ПОЛНОЕ_ИМЯ,
-                                 GRADE = i.GRADE,
-                                 ТРУДОЗАТРАТЫ = i.ТРУДОЗАТРАТЫ,
-                                 WORK_TYPE_VAL = i.WORK_TYPE_VAL
-                             }).ToList();
+                List<GETLABORASBPS_FUNC_Result> items = db.GETLABORASBPS_FUNC(DateTime.Parse(datepicker_1), DateTime.Parse(datepicker_2)).ToList<GETLABORASBPS_FUNC_Result>();
+                //var items = (from i in db.ASBPS_ACT_SPEC_NOV
+                //             select new
+                //             {
+                //                 ПОДРАЗДНИЗ = i.ПОДРАЗДНИЗ,
+                //                 ПОДРАЗДВЕРХ = i.ПОДРАЗДВЕРХ,
+                //                 КОДЗНИ = i.КОДЗНИ,
+                //                 НОМЕР_ЗНИ = i.НОМЕР_ЗНИ,
+                //                 ДАТА_РЕГ = EntityFunctions.TruncateTime(i.ДАТА_РЕГ),
+                //                 МЕНЕДЖЕР_ДИТ = i.МЕНЕДЖЕР_ДИТ,
+                //                 ИСТОЧНИК_ЗНИ = i.ИСТОЧНИК_ЗНИ,
+                //                 ДАТА_РЕГ_ЗНИ = EntityFunctions.TruncateTime(i.ДАТА_РЕГ_ЗНИ),
+                //                 СТАТУСЗНИ = i.СТАТУСЗНИ,
+                //                 ДАТАРЕЗОЛЗНИ = EntityFunctions.TruncateTime(i.ДАТАРЕЗОЛЗНИ),
+                //                 КОДЗАДАЧИ = i.КОДЗАДАЧИ,
+                //                 ОПИСАНИЕ_РАБОТЫ = i.ОПИСАНИЕ_РАБОТЫ,
+                //                 СТАТУСЗАДАЧИ = i.СТАТУСЗАДАЧИ,
+                //                 ДАТАРЕЗОЛЗАДАЧИ = EntityFunctions.TruncateTime(i.ДАТАРЕЗОЛЗАДАЧИ),
+                //                 ДАТАСОЗДЗАДАЧИ = EntityFunctions.TruncateTime(i.ДАТАСОЗДЗАДАЧИ),
+                //                 ДАТА_РАБОТЫ = EntityFunctions.TruncateTime(i.ДАТА_РАБОТЫ),
+                //                 АС_НОМЕР = i.АС_НОМЕР,
+                //                 АС_НАЗВАНИЕ = i.АС_НАЗВАНИЕ,
+                //                 СУМТРУД = i.СУМТРУД,
+                //                 ПОЛНОЕ_ИМЯ = i.ПОЛНОЕ_ИМЯ,
+                //                 GRADE = i.GRADE,
+                //                 ТРУДОЗАТРАТЫ = i.ТРУДОЗАТРАТЫ,
+                //                 WORK_TYPE_VAL = i.WORK_TYPE_VAL
+                //             }).ToList();
 
                 DataTable dt = ConvertListToDataTable(items);
 
@@ -432,7 +434,7 @@ namespace SmartBI.Controllers
             }
         }
 
-        public void ExportToExcel_epplus_act_spec_nkfo2()
+        public void ExportToExcel_epplus_act_spec_nkfo2(string datepicker_1, string datepicker_2)
         {
             Response.Clear();
             Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
@@ -440,32 +442,34 @@ namespace SmartBI.Controllers
 
             using (ExcelPackage pck = new ExcelPackage())
             {
-                var items = (from i in db.NKFO2_ACT_SPEC_NOV
-                             select new
-                             {
-                                 ПОДРАЗДНИЗ = i.ПОДРАЗДНИЗ,
-                                 ПОДРАЗДВЕРХ = i.ПОДРАЗДВЕРХ,
-                                 КОДЗНИ = i.КОДЗНИ,
-                                 НОМЕР_ЗНИ = i.НОМЕР_ЗНИ,
-                                 ДАТА_РЕГ = EntityFunctions.TruncateTime(i.ДАТА_РЕГ),
-                                 МЕНЕДЖЕР_ДИТ = i.МЕНЕДЖЕР_ДИТ,
-                                 ИСТОЧНИК_ЗНИ = i.ИСТОЧНИК_ЗНИ,
-                                 ДАТА_РЕГ_ЗНИ = EntityFunctions.TruncateTime(i.ДАТА_РЕГ_ЗНИ),
-                                 СТАТУСЗНИ = i.СТАТУСЗНИ,
-                                 ДАТАРЕЗОЛЗНИ = i.ДАТАРЕЗОЛЗНИ,
-                                 КОДЗАДАЧИ = i.КОДЗАДАЧИ,
-                                 ОПИСАНИЕ_РАБОТЫ = i.ОПИСАНИЕ_РАБОТЫ,
-                                 СТАТУСЗАДАЧИ = i.СТАТУСЗАДАЧИ,
-                                 ДАТАРЕЗОЛЗАДАЧИ = EntityFunctions.TruncateTime(i.ДАТАРЕЗОЛЗАДАЧИ),
-                                 ДАТАСОЗДЗАДАЧИ = EntityFunctions.TruncateTime(i.ДАТАСОЗДЗАДАЧИ),
-                                 ДАТА_РАБОТЫ = EntityFunctions.TruncateTime(i.ДАТА_РАБОТЫ),
-                                 АС_НОМЕР = i.АС_НОМЕР,
-                                 АС_НАЗВАНИЕ = i.АС_НАЗВАНИЕ,
-                                 СУМТРУД = i.СУМТРУД,
-                                 ПОЛНОЕ_ИМЯ = i.ПОЛНОЕ_ИМЯ,
-                                 GRADE = i.GRADE,
-                                 ТРУДОЗАТРАТЫ = i.ТРУДОЗАТРАТЫ,
-                                 WORK_TYPE_VAL = i.WORK_TYPE_VAL}).ToList();
+                List<GETLABORNKFO2_FUNC_Result> items = db.GETLABORNKFO2_FUNC(DateTime.Parse(datepicker_1), DateTime.Parse(datepicker_2)).ToList<GETLABORNKFO2_FUNC_Result>();
+
+                //var items = (from i in db.NKFO2_ACT_SPEC_NOV
+                //             select new
+                //             {
+                //                 ПОДРАЗДНИЗ = i.ПОДРАЗДНИЗ,
+                //                 ПОДРАЗДВЕРХ = i.ПОДРАЗДВЕРХ,
+                //                 КОДЗНИ = i.КОДЗНИ,
+                //                 НОМЕР_ЗНИ = i.НОМЕР_ЗНИ,
+                //                 ДАТА_РЕГ = EntityFunctions.TruncateTime(i.ДАТА_РЕГ),
+                //                 МЕНЕДЖЕР_ДИТ = i.МЕНЕДЖЕР_ДИТ,
+                //                 ИСТОЧНИК_ЗНИ = i.ИСТОЧНИК_ЗНИ,
+                //                 ДАТА_РЕГ_ЗНИ = EntityFunctions.TruncateTime(i.ДАТА_РЕГ_ЗНИ),
+                //                 СТАТУСЗНИ = i.СТАТУСЗНИ,
+                //                 ДАТАРЕЗОЛЗНИ = i.ДАТАРЕЗОЛЗНИ,
+                //                 КОДЗАДАЧИ = i.КОДЗАДАЧИ,
+                //                 ОПИСАНИЕ_РАБОТЫ = i.ОПИСАНИЕ_РАБОТЫ,
+                //                 СТАТУСЗАДАЧИ = i.СТАТУСЗАДАЧИ,
+                //                 ДАТАРЕЗОЛЗАДАЧИ = EntityFunctions.TruncateTime(i.ДАТАРЕЗОЛЗАДАЧИ),
+                //                 ДАТАСОЗДЗАДАЧИ = EntityFunctions.TruncateTime(i.ДАТАСОЗДЗАДАЧИ),
+                //                 ДАТА_РАБОТЫ = EntityFunctions.TruncateTime(i.ДАТА_РАБОТЫ),
+                //                 АС_НОМЕР = i.АС_НОМЕР,
+                //                 АС_НАЗВАНИЕ = i.АС_НАЗВАНИЕ,
+                //                 СУМТРУД = i.СУМТРУД,
+                //                 ПОЛНОЕ_ИМЯ = i.ПОЛНОЕ_ИМЯ,
+                //                 GRADE = i.GRADE,
+                //                 ТРУДОЗАТРАТЫ = i.ТРУДОЗАТРАТЫ,
+                //                 WORK_TYPE_VAL = i.WORK_TYPE_VAL}).ToList();
 
                 DataTable dt = ConvertListToDataTable(items);
 
@@ -489,7 +493,7 @@ namespace SmartBI.Controllers
             }
         }
 
-        public void ExportToExcel_epplus_act_spec_sdbo()
+        public void ExportToExcel_epplus_act_spec_sdbo(string datepicker_1, string datepicker_2)
         {
             Response.Clear();
             Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
@@ -497,33 +501,35 @@ namespace SmartBI.Controllers
 
             using (ExcelPackage pck = new ExcelPackage())
             {
-                var items = (from i in db.SDBO_ACT_SPEC_NOV
-                             select new
-                             {
-                                 ПОДРАЗДНИЗ = i.ПОДРАЗДНИЗ,
-                                 ПОДРАЗДВЕРХ = i.ПОДРАЗДВЕРХ,
-                                 КОДЗНИ = i.КОДЗНИ,
-                                 НОМЕР_ЗНИ = i.НОМЕР_ЗНИ,
-                                 ДАТА_РЕГ = EntityFunctions.TruncateTime(i.ДАТА_РЕГ),
-                                 МЕНЕДЖЕР_ДИТ = i.МЕНЕДЖЕР_ДИТ,
-                                 ИСТОЧНИК_ЗНИ = i.ИСТОЧНИК_ЗНИ,
-                                 ДАТА_РЕГ_ЗНИ = EntityFunctions.TruncateTime(i.ДАТА_РЕГ_ЗНИ),
-                                 СТАТУСЗНИ = i.СТАТУСЗНИ,
-                                 ДАТАРЕЗОЛЗНИ = i.ДАТАРЕЗОЛЗНИ,
-                                 КОДЗАДАЧИ = i.КОДЗАДАЧИ,
-                                 ОПИСАНИЕ_РАБОТЫ = i.ОПИСАНИЕ_РАБОТЫ,
-                                 СТАТУСЗАДАЧИ = i.СТАТУСЗАДАЧИ,
-                                 ДАТАРЕЗОЛЗАДАЧИ = EntityFunctions.TruncateTime(i.ДАТАРЕЗОЛЗАДАЧИ),
-                                 ДАТАСОЗДЗАДАЧИ = EntityFunctions.TruncateTime(i.ДАТАСОЗДЗАДАЧИ),
-                                 ДАТА_РАБОТЫ = EntityFunctions.TruncateTime(i.ДАТА_РАБОТЫ),
-                                 АС_НОМЕР = i.АС_НОМЕР,
-                                 АС_НАЗВАНИЕ = i.АС_НАЗВАНИЕ,
-                                 СУМТРУД = i.СУМТРУД,
-                                 ПОЛНОЕ_ИМЯ = i.ПОЛНОЕ_ИМЯ,
-                                 GRADE = i.GRADE,
-                                 ТРУДОЗАТРАТЫ = i.ТРУДОЗАТРАТЫ,
-                                 WORK_TYPE_VAL = i.WORK_TYPE_VAL
-                             }).ToList();
+                List<GETLABORSDBO_FUNC_Result> items = db.GETLABORSDBO_FUNC(DateTime.Parse(datepicker_1), DateTime.Parse(datepicker_2)).ToList<GETLABORSDBO_FUNC_Result>();
+
+                //var items = (from i in db.SDBO_ACT_SPEC_NOV
+                //             select new
+                //             {
+                //                 ПОДРАЗДНИЗ = i.ПОДРАЗДНИЗ,
+                //                 ПОДРАЗДВЕРХ = i.ПОДРАЗДВЕРХ,
+                //                 КОДЗНИ = i.КОДЗНИ,
+                //                 НОМЕР_ЗНИ = i.НОМЕР_ЗНИ,
+                //                 ДАТА_РЕГ = EntityFunctions.TruncateTime(i.ДАТА_РЕГ),
+                //                 МЕНЕДЖЕР_ДИТ = i.МЕНЕДЖЕР_ДИТ,
+                //                 ИСТОЧНИК_ЗНИ = i.ИСТОЧНИК_ЗНИ,
+                //                 ДАТА_РЕГ_ЗНИ = EntityFunctions.TruncateTime(i.ДАТА_РЕГ_ЗНИ),
+                //                 СТАТУСЗНИ = i.СТАТУСЗНИ,
+                //                 ДАТАРЕЗОЛЗНИ = i.ДАТАРЕЗОЛЗНИ,
+                //                 КОДЗАДАЧИ = i.КОДЗАДАЧИ,
+                //                 ОПИСАНИЕ_РАБОТЫ = i.ОПИСАНИЕ_РАБОТЫ,
+                //                 СТАТУСЗАДАЧИ = i.СТАТУСЗАДАЧИ,
+                //                 ДАТАРЕЗОЛЗАДАЧИ = EntityFunctions.TruncateTime(i.ДАТАРЕЗОЛЗАДАЧИ),
+                //                 ДАТАСОЗДЗАДАЧИ = EntityFunctions.TruncateTime(i.ДАТАСОЗДЗАДАЧИ),
+                //                 ДАТА_РАБОТЫ = EntityFunctions.TruncateTime(i.ДАТА_РАБОТЫ),
+                //                 АС_НОМЕР = i.АС_НОМЕР,
+                //                 АС_НАЗВАНИЕ = i.АС_НАЗВАНИЕ,
+                //                 СУМТРУД = i.СУМТРУД,
+                //                 ПОЛНОЕ_ИМЯ = i.ПОЛНОЕ_ИМЯ,
+                //                 GRADE = i.GRADE,
+                //                 ТРУДОЗАТРАТЫ = i.ТРУДОЗАТРАТЫ,
+                //                 WORK_TYPE_VAL = i.WORK_TYPE_VAL
+                //             }).ToList();
 
                 DataTable dt = ConvertListToDataTable(items);
 
@@ -591,14 +597,5 @@ namespace SmartBI.Controllers
         {
             return View();
         }
-
-        public void GetLaborASBPS()
-        {
-            int x = db.GETLABORASBPS_FUNC(DateTime.Parse("01.11.16"), DateTime.Parse("01.12.16")).Count();
-            int y = x;
-        }
-
-
-
     }
 }

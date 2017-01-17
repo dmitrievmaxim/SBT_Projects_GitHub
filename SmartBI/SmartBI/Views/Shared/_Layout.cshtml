@@ -25,11 +25,11 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Дефекты + ЗНИ", "GetZni", "Home")</li>
                     <li>@Html.ActionLink("Трудозатраты JIRA + HPSM", "GetLabor", "Home")</li>
-                    <li>@Html.ActionLink("Скачать ASBPS ноябрь", "ExportToExcel_epplus_act_spec_asbps", "Home", new { id = "act_spec_asbps"})</li>
-                    <li>@Html.ActionLink("Скачать NKFO2 ноябрь", "ExportToExcel_epplus_act_spec_nkfo2", "Home")</li>
-                    <li>@Html.ActionLink("Скачать SDBO ноябрь", "ExportToExcel_epplus_act_spec_sdbo", "Home")</li>
+                    <li>@Html.ActionLink("Отчет для ASBPS", "Act_spec_asbps", "Home")</li>
+                    <li>@Html.ActionLink("Отчет для NKFO2", "Act_spec_nkfo2", "Home")</li>
+                    <li>@Html.ActionLink("Отчет для SDBO", "Act_spec_sdbo", "Home")</li>
                     <li>@Html.ActionLink("ЗНИ для БПС", "GetZNI_BPS", "Home")</li>
-                    <li>@Html.ActionLink("Контакты", "Contact", "Home")</li>
+                    @*<li>@Html.ActionLink("Контакты", "Contact", "Home")</li>*@
                 </ul>
             </div>
         </div>

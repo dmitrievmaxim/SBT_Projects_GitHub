@@ -273,6 +273,14 @@ warning 6002: The table/view 'SBT_REP.SUM_ZNI_TASK_ASBPS' does not have a primar
           <Parameter Name="DATESTART" Type="date" Mode="In" />
           <Parameter Name="DATEFIN" Type="date" Mode="In" />
         </Function>
+        <Function Name="GETLABORNKFO2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SBT_REP">
+          <Parameter Name="DATESTART" Type="date" Mode="In" />
+          <Parameter Name="DATEFIN" Type="date" Mode="In" />
+        </Function>
+        <Function Name="GETLABORSDBO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SBT_REP">
+          <Parameter Name="DATESTART" Type="date" Mode="In" />
+          <Parameter Name="DATEFIN" Type="date" Mode="In" />
+        </Function>
         <EntityContainer Name="LaborModelStoreContainer">
           <EntitySet Name="DATA_1C" EntityType="Self.DATA_1C" Schema="SBT_REP" store:Type="Tables" />
           <EntitySet Name="HPSMLABOR" EntityType="Self.HPSMLABOR" Schema="SBT_REP" store:Type="Tables" />
@@ -467,6 +475,14 @@ FROM "SBT_REP"."SUM_ZNI_TASK_ASBPS" "SUM_ZNI_TASK_ASBPS"</DefiningQuery>
             <Parameter Name="DATESTART" Mode="In" Type="DateTime" />
             <Parameter Name="DATEFIN" Mode="In" Type="DateTime" />
           </FunctionImport>
+          <FunctionImport Name="GETLABORNKFO2_FUNC" ReturnType="Collection(LaborModel.GETLABORNKFO2_FUNC_Result)">
+            <Parameter Name="DATESTART" Mode="In" Type="DateTime" />
+            <Parameter Name="DATEFIN" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="GETLABORSDBO_FUNC" ReturnType="Collection(LaborModel.GETLABORSDBO_FUNC_Result)">
+            <Parameter Name="DATESTART" Mode="In" Type="DateTime" />
+            <Parameter Name="DATEFIN" Mode="In" Type="DateTime" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="ALL_ZNI_BUGS_JIRA">
           <Key>
@@ -658,8 +674,8 @@ FROM "SBT_REP"."SUM_ZNI_TASK_ASBPS" "SUM_ZNI_TASK_ASBPS"</DefiningQuery>
         <EntityType Name="NKFO2_ACT_SPEC_NOV">
           <Key>
             <PropertyRef Name="КОДЗАДАЧИ" />
-            <PropertyRef Name="ДАТА_РАБОТЫ" />
             <PropertyRef Name="ТРУДОЗАТРАТЫ" />
+            <PropertyRef Name="ДАТА_РАБОТЫ" />
           </Key>
           <Property Name="ПОДРАЗДНИЗ" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
           <Property Name="ПОДРАЗДВЕРХ" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
@@ -715,11 +731,7 @@ FROM "SBT_REP"."SUM_ZNI_TASK_ASBPS" "SUM_ZNI_TASK_ASBPS"</DefiningQuery>
           <Property Name="ТРУДОЗАТРАТЫ" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
           <Property Name="WORK_TYPE_VAL" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
         </EntityType>
-        <ComplexType Name="GETLABORASBPS_Result">
-          <Property Type="String" Name="PROJECT" Nullable="true" />
-          <Property Type="Decimal" Name="ID" Nullable="false" />
-        </ComplexType>
-        <ComplexType Name="GETLABORASBPS_FUNC">
+        <ComplexType Name="GETLABORASBPS_FUNC_Result">
           <Property Type="String" Name="ПОДРАЗДНИЗ" Nullable="true" />
           <Property Type="String" Name="ПОДРАЗДВЕРХ" Nullable="true" />
           <Property Type="String" Name="КОДЗНИ" Nullable="true" />
@@ -744,7 +756,32 @@ FROM "SBT_REP"."SUM_ZNI_TASK_ASBPS" "SUM_ZNI_TASK_ASBPS"</DefiningQuery>
           <Property Type="Decimal" Name="ТРУДОЗАТРАТЫ" Nullable="false" />
           <Property Type="String" Name="WORK_TYPE_VAL" Nullable="true" />
         </ComplexType>
-        <ComplexType Name="GETLABORASBPS_FUNC_Result">
+        <ComplexType Name="GETLABORNKFO2_FUNC_Result">
+          <Property Type="String" Name="ПОДРАЗДНИЗ" Nullable="true" />
+          <Property Type="String" Name="ПОДРАЗДВЕРХ" Nullable="true" />
+          <Property Type="String" Name="КОДЗНИ" Nullable="true" />
+          <Property Type="String" Name="НОМЕР_ЗНИ" Nullable="true" />
+          <Property Type="DateTime" Name="ДАТА_РЕГ" Nullable="true" />
+          <Property Type="String" Name="МЕНЕДЖЕР_ДИТ" Nullable="true" />
+          <Property Type="String" Name="ИСТОЧНИК_ЗНИ" Nullable="true" />
+          <Property Type="DateTime" Name="ДАТА_РЕГ_ЗНИ" Nullable="true" />
+          <Property Type="String" Name="СТАТУСЗНИ" Nullable="true" />
+          <Property Type="DateTime" Name="ДАТАРЕЗОЛЗНИ" Nullable="true" />
+          <Property Type="String" Name="КОДЗАДАЧИ" Nullable="false" />
+          <Property Type="String" Name="ОПИСАНИЕ_РАБОТЫ" Nullable="true" />
+          <Property Type="String" Name="СТАТУСЗАДАЧИ" Nullable="true" />
+          <Property Type="DateTime" Name="ДАТАРЕЗОЛЗАДАЧИ" Nullable="true" />
+          <Property Type="DateTime" Name="ДАТАСОЗДЗАДАЧИ" Nullable="true" />
+          <Property Type="DateTime" Name="ДАТА_РАБОТЫ" Nullable="false" />
+          <Property Type="String" Name="АС_НОМЕР" Nullable="true" />
+          <Property Type="String" Name="АС_НАЗВАНИЕ" Nullable="true" />
+          <Property Type="Decimal" Name="СУМТРУД" Nullable="true" />
+          <Property Type="String" Name="ПОЛНОЕ_ИМЯ" Nullable="true" />
+          <Property Type="Decimal" Name="GRADE" Nullable="true" />
+          <Property Type="Decimal" Name="ТРУДОЗАТРАТЫ" Nullable="false" />
+          <Property Type="String" Name="WORK_TYPE_VAL" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GETLABORSDBO_FUNC_Result">
           <Property Type="String" Name="ПОДРАЗДНИЗ" Nullable="true" />
           <Property Type="String" Name="ПОДРАЗДВЕРХ" Nullable="true" />
           <Property Type="String" Name="КОДЗНИ" Nullable="true" />
@@ -1031,6 +1068,64 @@ FROM "SBT_REP"."SUM_ZNI_TASK_ASBPS" "SUM_ZNI_TASK_ASBPS"</DefiningQuery>
           <FunctionImportMapping FunctionImportName="GETLABORASBPS_FUNC" FunctionName="LaborModel.Store.GETLABORASBPS">
             <ResultMapping>
               <ComplexTypeMapping TypeName="LaborModel.GETLABORASBPS_FUNC_Result">
+                <ScalarProperty Name="ПОДРАЗДНИЗ" ColumnName="ПОДРАЗДНИЗ" />
+                <ScalarProperty Name="ПОДРАЗДВЕРХ" ColumnName="ПОДРАЗДВЕРХ" />
+                <ScalarProperty Name="КОДЗНИ" ColumnName="КОДЗНИ" />
+                <ScalarProperty Name="НОМЕР_ЗНИ" ColumnName="НОМЕР_ЗНИ" />
+                <ScalarProperty Name="ДАТА_РЕГ" ColumnName="ДАТА_РЕГ" />
+                <ScalarProperty Name="МЕНЕДЖЕР_ДИТ" ColumnName="МЕНЕДЖЕР_ДИТ" />
+                <ScalarProperty Name="ИСТОЧНИК_ЗНИ" ColumnName="ИСТОЧНИК_ЗНИ" />
+                <ScalarProperty Name="ДАТА_РЕГ_ЗНИ" ColumnName="ДАТА_РЕГ_ЗНИ" />
+                <ScalarProperty Name="СТАТУСЗНИ" ColumnName="СТАТУСЗНИ" />
+                <ScalarProperty Name="ДАТАРЕЗОЛЗНИ" ColumnName="ДАТАРЕЗОЛЗНИ" />
+                <ScalarProperty Name="КОДЗАДАЧИ" ColumnName="КОДЗАДАЧИ" />
+                <ScalarProperty Name="ОПИСАНИЕ_РАБОТЫ" ColumnName="ОПИСАНИЕ_РАБОТЫ" />
+                <ScalarProperty Name="СТАТУСЗАДАЧИ" ColumnName="СТАТУСЗАДАЧИ" />
+                <ScalarProperty Name="ДАТАРЕЗОЛЗАДАЧИ" ColumnName="ДАТАРЕЗОЛЗАДАЧИ" />
+                <ScalarProperty Name="ДАТАСОЗДЗАДАЧИ" ColumnName="ДАТАСОЗДЗАДАЧИ" />
+                <ScalarProperty Name="ДАТА_РАБОТЫ" ColumnName="ДАТА_РАБОТЫ" />
+                <ScalarProperty Name="АС_НОМЕР" ColumnName="АС_НОМЕР" />
+                <ScalarProperty Name="АС_НАЗВАНИЕ" ColumnName="АС_НАЗВАНИЕ" />
+                <ScalarProperty Name="СУМТРУД" ColumnName="СУМТРУД" />
+                <ScalarProperty Name="ПОЛНОЕ_ИМЯ" ColumnName="ПОЛНОЕ_ИМЯ" />
+                <ScalarProperty Name="GRADE" ColumnName="GRADE" />
+                <ScalarProperty Name="ТРУДОЗАТРАТЫ" ColumnName="ТРУДОЗАТРАТЫ" />
+                <ScalarProperty Name="WORK_TYPE_VAL" ColumnName="WORK_TYPE_VAL" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GETLABORNKFO2_FUNC" FunctionName="LaborModel.Store.GETLABORNKFO2">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LaborModel.GETLABORNKFO2_FUNC_Result">
+                <ScalarProperty Name="ПОДРАЗДНИЗ" ColumnName="ПОДРАЗДНИЗ" />
+                <ScalarProperty Name="ПОДРАЗДВЕРХ" ColumnName="ПОДРАЗДВЕРХ" />
+                <ScalarProperty Name="КОДЗНИ" ColumnName="КОДЗНИ" />
+                <ScalarProperty Name="НОМЕР_ЗНИ" ColumnName="НОМЕР_ЗНИ" />
+                <ScalarProperty Name="ДАТА_РЕГ" ColumnName="ДАТА_РЕГ" />
+                <ScalarProperty Name="МЕНЕДЖЕР_ДИТ" ColumnName="МЕНЕДЖЕР_ДИТ" />
+                <ScalarProperty Name="ИСТОЧНИК_ЗНИ" ColumnName="ИСТОЧНИК_ЗНИ" />
+                <ScalarProperty Name="ДАТА_РЕГ_ЗНИ" ColumnName="ДАТА_РЕГ_ЗНИ" />
+                <ScalarProperty Name="СТАТУСЗНИ" ColumnName="СТАТУСЗНИ" />
+                <ScalarProperty Name="ДАТАРЕЗОЛЗНИ" ColumnName="ДАТАРЕЗОЛЗНИ" />
+                <ScalarProperty Name="КОДЗАДАЧИ" ColumnName="КОДЗАДАЧИ" />
+                <ScalarProperty Name="ОПИСАНИЕ_РАБОТЫ" ColumnName="ОПИСАНИЕ_РАБОТЫ" />
+                <ScalarProperty Name="СТАТУСЗАДАЧИ" ColumnName="СТАТУСЗАДАЧИ" />
+                <ScalarProperty Name="ДАТАРЕЗОЛЗАДАЧИ" ColumnName="ДАТАРЕЗОЛЗАДАЧИ" />
+                <ScalarProperty Name="ДАТАСОЗДЗАДАЧИ" ColumnName="ДАТАСОЗДЗАДАЧИ" />
+                <ScalarProperty Name="ДАТА_РАБОТЫ" ColumnName="ДАТА_РАБОТЫ" />
+                <ScalarProperty Name="АС_НОМЕР" ColumnName="АС_НОМЕР" />
+                <ScalarProperty Name="АС_НАЗВАНИЕ" ColumnName="АС_НАЗВАНИЕ" />
+                <ScalarProperty Name="СУМТРУД" ColumnName="СУМТРУД" />
+                <ScalarProperty Name="ПОЛНОЕ_ИМЯ" ColumnName="ПОЛНОЕ_ИМЯ" />
+                <ScalarProperty Name="GRADE" ColumnName="GRADE" />
+                <ScalarProperty Name="ТРУДОЗАТРАТЫ" ColumnName="ТРУДОЗАТРАТЫ" />
+                <ScalarProperty Name="WORK_TYPE_VAL" ColumnName="WORK_TYPE_VAL" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GETLABORSDBO_FUNC" FunctionName="LaborModel.Store.GETLABORSDBO">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LaborModel.GETLABORSDBO_FUNC_Result">
                 <ScalarProperty Name="ПОДРАЗДНИЗ" ColumnName="ПОДРАЗДНИЗ" />
                 <ScalarProperty Name="ПОДРАЗДВЕРХ" ColumnName="ПОДРАЗДВЕРХ" />
                 <ScalarProperty Name="КОДЗНИ" ColumnName="КОДЗНИ" />
